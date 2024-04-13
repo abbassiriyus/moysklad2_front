@@ -1,0 +1,147 @@
+.navbar{
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+}
+.navbar span{
+    transition: 3s;
+    border-bottom: 1px solid white;
+}
+.navbar span:hover{
+    border-bottom: 1px solid grey;
+}
+.chipdip{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0px 5px;
+
+}
+.status{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 30px;
+}
+/* .chipdip span{
+    border-bottom: 1px solid black;
+
+} */
+.logo img{
+    width: 40%;
+    height: 80px;
+}
+.loc{
+    display: flex;
+}
+.logo{
+    display: flex;
+    align-items: end;
+    gap: 20px; 
+}
+.loc p{
+    font-size: 15px;
+}
+.order{
+    display: block;
+}
+.kirish{
+    display: flex;
+    text-align: center;
+    gap: 30px;
+}
+.order span{
+    font-size: 14px;
+}
+.search{
+    display: grid;
+    grid-template-columns: 200px auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.red{
+    background-color: red;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    padding-left:10px;
+    height: 50px;
+    color: white;
+    gap: 10px;
+}
+.red span{
+    font-weight: 900;
+    /* font-size: 20px; */
+}
+.search_inp{
+    width: 100%;
+    align-items: center;
+    height: 50px;
+    gap: 10px;
+    display: flex;
+    background-color: rgba(128, 128, 128, 0.077);
+}
+.search_inp input{
+    width: 90%;
+    height: 50px;
+    outline: none;
+    border: none;
+    background-color: rgba(128, 128, 128, 0);
+}
+
+
+@media(max-width:1100px){
+    .status{
+        display: flex;
+        justify-content: center;
+
+        /* margin: auto; */
+        flex-wrap: wrap;
+    }
+}
+@media(max-width:843px){
+    .logo{
+     margin-bottom: 30px;
+    }
+ }
+ @media(max-width:700px){
+    .red span{
+        display: none;
+    }
+    .search{
+        display: grid;
+        grid-template-columns: 50px auto;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+ }
+@media(max-width:435px){
+    .logo{
+        display: flex;
+        flex-wrap: wrap;
+        margin:auto;
+        margin-bottom: 30px;
+    }
+    .status{
+        /* text-align: center; */
+        margin: auto;
+        /* text-align: center; */
+        align-items: center;
+    }
+    .loc{
+
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+}
+@media (max-width:370px) {
+    .navbar{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 30px;
+    }
+}
