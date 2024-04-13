@@ -14,20 +14,57 @@
 .carousel_img2{
   width: 90%;
   height: 400px;
-  background: url("../images/3646-min.jpg") no-repeat;
+  background: url("../images/cem-thermal-imagers.jpg") no-repeat;
   margin: auto;
 }
 .carousel_img3{
   width: 90%;
   height: 400px;
-  background: url("../images/3646-min.jpg") no-repeat;
+  background: url("../images/eaes.jpg") no-repeat;
   margin: auto;
 }
-.carousel-control-prev-icon{
-  position: absolute;
-  top: 1200px !important;
+
+.pair_big{
+  display: flex;
+  height: 90px;
+  background-color: #0f415a;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom:30px;
+  align-items: center;
+  justify-content: space-around;
 }
-.carousel-control-next-icon{
-  position: absolute;
-  top: 1200px;
+.pair_big:hover{
+  .button button{
+    box-shadow: white 0px 5px 25px;
+  }
+}
+.line {
+  width: 1px;
+  border-left: solid 1px #fff;
+  height: 29px;
+}
+.added {
+  padding-left: 20px;
+  font-size: 16px;
+}
+.button {
+  padding: 15px 48px 15px 25px;
+  text-align: center;
+}
+.button button{
+  padding: 9px 40px;
+  background-color: #0f415a;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: 1s;
+  color: #fff;
+  border: solid 1px #fff;
+}
+.popular_1{
+  display: flex;
+}
+.one_img{
+  background-color: grey;
+  
 }

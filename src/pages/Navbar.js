@@ -56,6 +56,7 @@ export default function Navbar() {
     <input type="text" placeholder='Поиск среди 8 637 350 компонентов, электроники, приборов, электрики, автозапчастей, инструментов, сантехники…' />
 </div>
 </div>
+
     </div>
   )
 }
