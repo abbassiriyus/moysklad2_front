@@ -12,6 +12,7 @@ import img1 from "../images/logo1.png"
 import { IoLocationSharp } from "react-icons/io5";
 export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
+ 
 
   useEffect(() => {
     const handleScroll = () => {
