@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import img1 from "../images/robot1.png"
+import { FaApple } from "react-icons/fa";
 import s from "../styles/footer_1.module.css"
 export default function footer_1() {
   return (
@@ -19,7 +20,7 @@ export default function footer_1() {
   </div>
 </div>
 <div className={s.footer1}>
-  <ul>
+  <ul className={s.black1}>
     <li>Магазины и оптовые отделы</li>
     <li>Видео</li>
     <li>Новости</li>
@@ -29,8 +30,8 @@ export default function footer_1() {
     <li>Калькуляторы</li>
     <li>Обратная связь</li>
   </ul>
-  <ul>
-    <h3>О компании</h3>
+  <ul className={s.ulh4}>
+    <h4>О компании</h4>
     <li>История компании</li>
     <li>«ЧИП и ДИП» сегодня</li>
     <li>28 лет в сфере e-com</li>
@@ -40,8 +41,8 @@ export default function footer_1() {
     <li>Планируете стать поставщиком?</li>
     <li>Работа в «ЧИП и ДИП»</li>
   </ul>
-  <ul>
-    <h3>Как купить?</h3>
+  <ul className={s.ulh4}>
+    <h4 >Как купить?</h4>
     <li>Как сделать заказ</li>
     <li>Способы доставки</li>
     <li>Способы оплаты</li>
@@ -49,6 +50,33 @@ export default function footer_1() {
     <li>Редактирование заказа</li>
     <li>Возврат и обмен товара</li>
     <li>Для юридических лиц</li>
+  </ul>
+
+  <ul className={s.ulh4}>
+    <h3 style={{fontSize:'25px',fontWeight:900}}>+7 495 544-00-08</h3>
+    <h4 style={{fontSize:'17px'}}>e-mail: sales@chipdip.ru</h4>
+    <p style={{marginTop:'40px',marginBottom:'10px'}}>Скачайте мобильное приложение</p>
+    <div className={s.app}>
+    <FaApple style={{fontSize:'30px'}} />
+      <div className={s.app1}>
+        <p>Загрузите в</p>  <span>APP Store</span>
+  
+      </div>
+    </div>
+    <div className={s.app}>
+    <FaApple style={{fontSize:'30px'}} />
+      <div className={s.app1}>
+        <p>Загрузите в</p>  <span>APP Store</span>
+  
+      </div>
+    </div>
+    <div className={s.app}>
+    <FaApple style={{fontSize:'30px'}} />
+      <div className={s.app1}>
+        <p>Загрузите в</p>  <span>APP Store</span>
+  
+      </div>
+    </div>
   </ul>
 </div>
     </div>
