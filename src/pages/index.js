@@ -2,6 +2,7 @@ import React from 'react'
 import s from "../styles/Home.module.css"
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer_1 from './footer_1';
 import Navbar from './Navbar';
 import Image from 'next/image';
 // import img from "../images/electromagenetic-relays.jpg"
@@ -41,7 +42,7 @@ export default function index() {
 <button>ПОДАТЬ ЗАЯВКУ</button>
      </div>
      </div>
-
+<Footer_1/>
       </div>
     </div>
   )
