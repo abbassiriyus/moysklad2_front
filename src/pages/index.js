@@ -41,23 +41,7 @@ export default function index() {
 <button>ПОДАТЬ ЗАЯВКУ</button>
      </div>
      </div>
-{/* <div className={s.popular_big}>
-<div className={s.popular_1}>
-<div className={one_img}>
-<img src={img1} alt="" />
-</div>
-<div className={two_img}></div>
-</div>
-<div className={s.popular_2}>
-<div className={one_img1}>
 
-</div>
-<div className={two_img2}></div>
-</div>
-<div className={s.popular_3}>
-
-</div>
-</div> */}
       </div>
     </div>
   )
