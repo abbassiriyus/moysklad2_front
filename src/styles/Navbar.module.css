@@ -30,6 +30,7 @@
     background-color: white;
     position: sticky !important;
     top: 0px;
+    z-index: 4333334;
 padding-top: 10px;
 padding-bottom: 10px;
 }
