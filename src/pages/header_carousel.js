@@ -32,8 +32,9 @@ className={s.header_carousel}
 ref={swiperRef}
       spaceBetween={50}
       slidesPerView={1}
+      loop={true}
       autoplay={{
-        delay: 5000,
+        delay: 2000,
         disableOnInteraction: false,
       }}
     >
