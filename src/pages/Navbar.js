@@ -12,7 +12,7 @@ import img1 from "../images/logo1.png"
 import { IoLocationSharp } from "react-icons/io5";
 export default function Navbar() {
   return (
-    <div>
+    <>
 <div className={s.navbar}>
     <span className={s.border}>+7 495 544-00-08</span>
     <div  className={s.chipdip}>
@@ -57,6 +57,6 @@ export default function Navbar() {
 </div>
 </div>
 
-    </div>
+    </>
   )
 }

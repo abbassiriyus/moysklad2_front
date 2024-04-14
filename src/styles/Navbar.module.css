@@ -4,6 +4,8 @@
     gap: 30px;
     align-items: center;
     font-family: "Open Sans", sans-serif;
+
+
 }
 
 .navbar .border{
@@ -25,6 +27,11 @@
     align-items: center;
     font-family: "Open Sans", sans-serif;
     margin-top: 30px;
+    background-color: white;
+    position: sticky !important;
+    top: 0px;
+padding-top: 10px;
+padding-bottom: 10px;
 }
 /* .chipdip span{
     border-bottom: 1px solid black;
