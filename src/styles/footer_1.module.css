@@ -63,12 +63,14 @@
 }
 
 .footer_big{
-    background-color: #00415a;
-    padding: 48px 40px 15px;
     color: white;
+    
 }
 .footer1{
     display: grid;
+    background-color: #00415a;
+    padding: 48px 40px 15px;
+    color: white;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .footer1 h4{
@@ -126,6 +128,13 @@
         color: white;
         grid-template-columns: 1fr 1fr 1fr ;
     }
+    .versiya_black{
+        display: grid;
+        background-color: black;
+        color: white;
+        padding: 20px 30px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 @media (max-width:960px) {
     .footer1{
@@ -133,6 +142,13 @@
         background-color: #00415a;
         padding: 48px 40px 15px;
         color: white;
+        grid-template-columns: 1fr 1fr ;
+    }
+    .versiya_black{
+        display: grid;
+        background-color: black;
+        color: white;
+        padding: 20px 30px;
         grid-template-columns: 1fr 1fr ;
     }
 }
@@ -194,5 +210,31 @@
 }
 .versiya_black{
     display: grid;
+    background-color: black;
+    color: white;
+    padding: 20px 30px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.versiya_black p{
+    font-size: 12px;
+}
+.sayt{
+    display: flex;
+    gap: 10px;
+}
+.appl{
+    background-color: white;
+    width: 30%;
+    padding: 5px 20px;
+}
+.appl img{
+    width:100%;
+}
+.big .img{
+    width: 50%;
+    border-radius: 10px;
+}
+.big{
+    display: flex;
+    gap: 20px;
 }

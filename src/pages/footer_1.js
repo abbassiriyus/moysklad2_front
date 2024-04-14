@@ -20,7 +20,7 @@ export default function footer_1() {
 <Image src={img1} alt="" />
   </div>
 </div> */}
-<div className={s.footer_big}>
+
 <div className={s.footer1}>
   <ul className={s.black1}>
     <li>Магазины и оптовые отделы</li>
@@ -79,14 +79,20 @@ export default function footer_1() {
   <div className={s.chipdip_mobil}>
     <p>Мобильная версия</p>
 <div className={s.sayt}>
-  
+      <p>chipdip.by</p>
+      <p>chipdip.kz</p>
+      <p>chipdip.am</p>
 </div>
   </div>
+  <p>Политика конфиденциальности <br />
+Пользовательское Соглашение</p>
+<div className={s.big}>
+<div className={s.appl}>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Yandex-market.svg/1280px-Yandex-market.svg.png" alt="" />
+</div>
+<img className={s.img} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDs2ZG0yN1SXdnX_knP9h9xx2BK4aL__IaNNfFZm38&s" alt="" />
 </div>
 </div>
-
-
-
-    </div>
+</div>
   )
 }
