@@ -1,7 +1,6 @@
 import React from 'react'
 import s from "../styles/Home.module.css"
-import Carousel from 'react-bootstrap/Carousel';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import headerCarousel from "../pages/header_carousel"
 import Footer_1 from './footer_1';
 import Navbar from './Navbar';
 import Image from 'next/image';
@@ -15,18 +14,8 @@ export default function index() {
         <div className={s.page_road}>
     
         </div>
-      <Carousel prevIcon={<span className="carousel-control-prev-icon " />} nextIcon={<span className="carousel-control-next-icon" />}>
-      <Carousel.Item>
-       <div className={s.carousel_img3}></div>
-      </Carousel.Item>
-      <Carousel.Item>
-   <div className={s.carousel_img}></div>
-      </Carousel.Item>
-      <Carousel.Item>
-       <div className={s.carousel_img2}></div>
-      </Carousel.Item>
-    </Carousel>
-
+  
+<headerCarousel/>
      <div className={s.pair_big}>
      <div className={s.pair}>
       <h1>СТАТЬ ПАРТНЕРОМ</h1>

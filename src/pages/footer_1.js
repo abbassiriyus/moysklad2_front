@@ -57,25 +57,17 @@ export default function footer_1() {
     <h4 style={{fontSize:'17px'}}>e-mail: sales@chipdip.ru</h4>
     <p style={{marginTop:'40px',marginBottom:'10px'}}>Скачайте мобильное приложение</p>
     <div className={s.app}>
-    <FaApple style={{fontSize:'30px'}} />
-      <div className={s.app1}>
-        <p>Загрузите в</p>  <span>APP Store</span>
-  
-      </div>
+   <img src="https://static.chipdip.ru/images/layout/apps/appstore.svg" alt="" />
     </div>
     <div className={s.app}>
-    <FaApple style={{fontSize:'30px'}} />
-      <div className={s.app1}>
+   <img src="	https://static.chipdip.ru/images/layout/apps/googleplay.svg" alt="" />
+      {/* <div className={s.app1}>
         <p>Загрузите в</p>  <span>APP Store</span>
   
-      </div>
+      </div> */}
     </div>
     <div className={s.app}>
-    <FaApple style={{fontSize:'30px'}} />
-      <div className={s.app1}>
-        <p>Загрузите в</p>  <span>APP Store</span>
-  
-      </div>
+   <img src="	https://static.chipdip.ru/images/layout/apps/appgallery.svg" alt="" />
     </div>
   </ul>
 </div>
