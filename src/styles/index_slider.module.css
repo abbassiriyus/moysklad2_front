@@ -1,0 +1,128 @@
+.top_slider{
+    width: 90%;
+    max-width: 1400px;
+    background-color: #ecf7ff;
+    min-height: 300px;
+    margin: auto;
+    display: flex;
+    margin-top: 30px;
+padding-top: 30px;
+padding-bottom: 30px;   
+padding-left: 20px;
+align-items: stretch;
+padding-right: 20px;
+    
+}
+.top_slider .main_1{
+    width: 75%;
+}
+.top_slider .header_carousel{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+.top_slider .header_carousel img{
+    width: 150px;
+}
+.top_slider .main_2{
+    /* background-color: green; */
+    width: 25%;
+}
+.top_slider .button_roll{
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-right: 20px;
+    font-size: 23px;
+    
+}
+.top_slider .main_1 h1{
+margin-bottom: 20px;
+}
+.top_slider .main_1 .card{
+    padding: 20px;
+    padding-top: 10px;
+    background-color: white;
+    border-left: 1px solid rgba(128, 128, 128, 0.493);
+}
+.top_slider .header_carousel .card h5{
+    text-align: left;
+}
+.top_slider .header_carousel .card p{
+    text-align: left;
+    font-weight: 500;
+    margin-top: 10px;
+    color: rgb(44, 44, 44);
+    margin-bottom: 20px;
+}
+.top_slider .header_carousel .card h2{
+    text-align: left;
+}
+.top_slider .main_2 .section2{
+border: 1px solid #1c2d38;
+width: 250px;
+height: 290px;
+margin: auto;
+/* height: 100%; */
+margin-top: 40px;
+padding: 20px;
+display: flex;
+justify-content: space-around;
+flex-direction: column;
+}
+
+.top_slider .main_2 .section2 button{
+font-family: "Open Sans",Arial,"Helvetica CY",Helvetica,Roboto,"Nimbus Sans L",sans-serif;
+outline: 0;
+display: inline-block;
+color: #fff;
+font-weight: bold;
+border-radius: 3px;
+cursor: pointer;
+white-space: nowrap;
+text-decoration: none;
+background-color: #1c2d38;
+border: solid 1px #1c2d38;
+line-height: normal;
+text-align: center;
+box-sizing: border-box;
+font-size: 16px;
+width: calc(100% + 20px);
+margin: 0 -10px;
+width: 90%;
+margin-left: 5%;
+padding-top: 14px;
+padding-bottom: 14px;
+justify-self: flex-end;
+margin-top: auto;
+}
+.top_slider .main_2 .section2 h2{
+    margin-bottom: 16px;
+    font: normal bold 21px/24px "Open Sans",Arial,"Helvetica CY",Helvetica,Roboto,"Nimbus Sans L",sans-serif;
+    color: #1c2d38;
+    box-sizing: border-box;
+}
+.top_slider .main_2 .section2 p{
+    margin-bottom: 16px;
+    font: normal normal 16px/20px "Open Sans",Arial,"Helvetica CY",Helvetica,Roboto,"Nimbus Sans L",sans-serif;
+    color: #1c2d38;
+    box-sizing: border-box;
+}
+@media (max-width:1200px){
+.top_slider{
+    display: block;
+}
+.top_slider .main_1{
+    width: 100%;
+}
+.top_slider .main_2 {
+width: 100%;
+margin-top: 20px;
+}
+.top_slider .main_2 .section2{
+width: 90%;
+padding: 10px;
+height: 150px;
+}
+}

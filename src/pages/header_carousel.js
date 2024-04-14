@@ -41,7 +41,9 @@ ref={swiperRef}
       <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
       <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
       <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
-
+      <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
+      <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
+      <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
       {/* Add more slides as needed */}
     </Swiper>
     <FaArrowLeftLong onClick={handlePrevSlide}/>
