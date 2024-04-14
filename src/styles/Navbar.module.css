@@ -5,11 +5,12 @@
     align-items: center;
     font-family: "Open Sans", sans-serif;
 }
-.navbar span{
-    transition: 3s;
+
+.navbar .border{
+    transition: 1s;
     border-bottom: 1px solid white;
 }
-.navbar span:hover{
+.navbar .border:hover{
     border-bottom: 1px solid grey;
 }
 .chipdip{
@@ -38,7 +39,7 @@
 }
 .logo{
     display: flex;
-    align-items: end;
+    align-items: center;
     gap: 20px; 
 }
 .loc p{

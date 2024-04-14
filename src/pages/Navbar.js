@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <div>
 <div className={s.navbar}>
-    <span>+7 495 544-00-08</span>
+    <span className={s.border}>+7 495 544-00-08</span>
     <div  className={s.chipdip}>
 <span>CHIPDIP организациям</span>
     </div>

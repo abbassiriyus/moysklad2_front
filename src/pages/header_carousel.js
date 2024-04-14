@@ -46,8 +46,15 @@ ref={swiperRef}
       <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
       {/* Add more slides as needed */}
     </Swiper>
-    <FaArrowLeftLong onClick={handlePrevSlide}/>
-    <FaArrowRightLong onClick={handleNextSlide} />  
+   <div className={s.arrow_lr}>
+ <div className={s.left_rig}>  <FaArrowLeftLong onClick={handlePrevSlide}/>
+    <FaArrowRightLong onClick={handleNextSlide} /></div>
+    <span>Доставка в ЕАЭС</span> 
+    <span>Элементы подвески</span> 
+    <span>Система зажигания</span>
+    <span>Электролитические конденсаторы jb</span>
+    <span>Измерительные приборы FNIRSI</span>
+   </div>
     </div>
   )
 }

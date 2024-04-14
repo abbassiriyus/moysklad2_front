@@ -2,11 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import img1 from "../images/robot1.png"
 import { FaApple } from "react-icons/fa";
+import { RiVisaLine } from "react-icons/ri";
 import s from "../styles/footer_1.module.css"
 export default function footer_1() {
   return (
     <div>
-<div className={s.footer}>
+{/* <div className={s.footer}>
   <div className={s.footer_text}>
     <h4><strong>«ЧИП и ДИП»</strong> — уникальный и самый узнаваемый бренд на рынке микроэлектроники.
 Мы поставляем электронные компоненты, измерительные приборы, паяльное оборудование, инструменты, компоненты Arduino, электротехнические изделия, комплектующие для бытовой электроники и многое другое.</h4>
@@ -18,7 +19,8 @@ export default function footer_1() {
   <div className={s.footer_robo}>
 <Image src={img1} alt="" />
   </div>
-</div>
+</div> */}
+<div className={s.footer_big}>
 <div className={s.footer1}>
   <ul className={s.black1}>
     <li>Магазины и оптовые отделы</li>
@@ -71,6 +73,20 @@ export default function footer_1() {
     </div>
   </ul>
 </div>
+<div className={s.versiya_black}>
+  <p>© 2006—2024, АО «ЧИП и ДИП» — <br />приборы, радиодетали и электронные компоненты</p>
+
+  <div className={s.chipdip_mobil}>
+    <p>Мобильная версия</p>
+<div className={s.sayt}>
+  
+</div>
+  </div>
+</div>
+</div>
+
+
+
     </div>
   )
 }

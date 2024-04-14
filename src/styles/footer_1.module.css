@@ -62,12 +62,13 @@
     } */
 }
 
-
-.footer1{
-    display: grid;
+.footer_big{
     background-color: #00415a;
     padding: 48px 40px 15px;
     color: white;
+}
+.footer1{
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .footer1 h4{

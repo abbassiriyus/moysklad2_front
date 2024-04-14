@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function index_slider() {
+export default function index_slider({color,data}) {
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const swiperRef = useRef(null);
 
@@ -28,9 +28,9 @@ export default function index_slider() {
 
   return (
     <div>
-<main className={s.top_slider}>
+<main  style={{backgroundColor:`${color}`}} className={s.top_slider}>
     <div className={s.main_1}>
-        <h1>Хиты продаж</h1>
+        <h1>{data.title}</h1>
     <Swiper
 className={s.header_carousel}
 ref={swiperRef}
@@ -127,14 +127,15 @@ ref={swiperRef}
     <FaArrowRightLong onClick={handleNextSlide} /> </div>
     <div className={s.section2}>
        <div style={{width:'90%',margin:'auto'}}>
-       <h2>Самые популярные товары</h2>
-<p>Выбор наших покупателей</p>
+       <h2>{data.h1}</h2>
+<p>{data.p}</p>
        </div>
 <button>Перейти к выбору</button>
     </div>
 
        </div>
 </main>
+
     </div>
   )
 }
