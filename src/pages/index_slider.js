@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function index_slider({color,data}) {
+export default function index_slider({color,data,mapdata}) {
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const swiperRef = useRef(null);
 
@@ -53,72 +53,21 @@ ref={swiperRef}
         disableOnInteraction: false,
       }}
     >
-      <SwiperSlide>
+        {mapdata.map((item,key)=>{
+            return  <SwiperSlide>
         <div className={s.card}>
             <div className={s.card_img}>
-                <img src="https://static.chipdip.ru/lib/010/DOC004010007.jpg" alt="" />
+                <img src={item.images.rows[0].miniature.downloadHref} alt="" />
             </div>
             <h5>Aimtec</h5>
-            <p>AM4T-2424SZ, DC/DC преобразователь, 4Вт, вход 18…36В ...</p>
-            <h2>120 руб.</h2>
+            <p>{item.name}</p>
+            <h2>{item.buyPrice.value} руб.</h2>
 
         </div>
       </SwiperSlide>
-      <SwiperSlide>
-        <div className={s.card}>
-            <div className={s.card_img}>
-                <img src="https://static.chipdip.ru/lib/010/DOC004010007.jpg" alt="" />
-            </div>
-            <h5>Aimtec</h5>
-            <p>AM4T-2424SZ, DC/DC преобразователь, 4Вт, вход 18…36В ...</p>
-            <h2>120 руб.</h2>
-
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className={s.card}>
-            <div className={s.card_img}>
-                <img src="https://static.chipdip.ru/lib/010/DOC004010007.jpg" alt="" />
-            </div>
-            <h5>Aimtec</h5>
-            <p>AM4T-2424SZ, DC/DC преобразователь, 4Вт, вход 18…36В ...</p>
-            <h2>120 руб.</h2>
-
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className={s.card}>
-            <div className={s.card_img}>
-                <img src="https://static.chipdip.ru/lib/010/DOC004010007.jpg" alt="" />
-            </div>
-            <h5>Aimtec</h5>
-            <p>AM4T-2424SZ, DC/DC преобразователь, 4Вт, вход 18…36В ...</p>
-            <h2>120 руб.</h2>
-
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className={s.card}>
-            <div className={s.card_img}>
-                <img src="https://static.chipdip.ru/lib/010/DOC004010007.jpg" alt="" />
-            </div>
-            <h5>Aimtec</h5>
-            <p>AM4T-2424SZ, DC/DC преобразователь, 4Вт, вход 18…36В ...</p>
-            <h2>120 руб.</h2>
-
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className={s.card}>
-            <div className={s.card_img}>
-                <img src="https://static.chipdip.ru/lib/010/DOC004010007.jpg" alt="" />
-            </div>
-            <h5>Aimtec</h5>
-            <p>AM4T-2424SZ, DC/DC преобразователь, 4Вт, вход 18…36В ...</p>
-            <h2>120 руб.</h2>
-
-        </div>
-      </SwiperSlide>
+        })}
+    
+  
       {/* Add more slides as needed */}
     </Swiper>
     </div>
