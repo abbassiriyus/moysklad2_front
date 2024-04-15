@@ -61,6 +61,9 @@ padding-bottom: 2px;
     text-align: center;
     gap: 30px;
 }
+#search1 {
+    width: 73%;
+}
 .order span{
     font-size: 14px;
 }
@@ -69,7 +72,9 @@ padding-bottom: 2px;
     grid-template-columns: 220px auto;
     margin-bottom: 30px;
     margin-top: 20px;
+    align-items: center;
 }
+
 .red{
     background-color: red;
     align-items: center;
