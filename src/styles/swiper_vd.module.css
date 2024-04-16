@@ -1,0 +1,27 @@
+.header_carousel img{
+    width: 60%;
+    margin: auto;
+    height: 320px;
+}
+.swip_vd{
+    width: 60%;
+    background-color: red;
+}
+.div_vd{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 30px;
+}
+.vd2 img{
+    width: 85%;
+    height: 140px;
+}
+.vd2 img{
+    width: 85%;
+    height: 140px;
+}
+.arrow{
+    text-align: end;
+    margin-right: 40px;
+}
