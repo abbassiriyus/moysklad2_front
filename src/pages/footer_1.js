@@ -84,7 +84,7 @@ export default function footer_1() {
       <p>chipdip.am</p>
 </div>
   </div>
-  <p>Политика конфиденциальности <br />
+  <p className={s.pasga}>Политика конфиденциальности <br />
 Пользовательское Соглашение</p>
 <div className={s.big}>
 <div className={s.appl}>

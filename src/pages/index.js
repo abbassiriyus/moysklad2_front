@@ -153,9 +153,6 @@ gettopTovar(5)
     <div>
       <div className={s.body}>
         <Navbar/>
-        <div className={s.page_road}>
-    
-        </div>
   
 <Header_Carousel/>
      <div className={s.pair_big}>
@@ -173,6 +170,56 @@ gettopTovar(5)
 <button>ПОДАТЬ ЗАЯВКУ</button>
      </div>
      </div>
+
+<div style={{overflowX:"auto",overflowY:'visble',paddingTop:'20px',paddingBottom:'10px',overflowY: 'hidden',scrollbarVolor: 'white white  ',
+  scrollbarWidth: 'thin'
+}}>
+<div className={s.famous}>
+  <div className={s.popular1}>
+    <div className={s.img1}>
+     <center> <img className={s.birr} src="https://static.chipdip.ru/images/popularcategories/auto-vykl-motor.png" alt="" /></center>
+      <h3>Автоматические
+выключатели
+для защиты
+двигателя</h3>
+    </div>
+    <div className={s.img_2}>
+      <div className={s.rasm1}>
+<h3>Диоды</h3>
+        <img src="	https://static.chipdip.ru/images/popularcategories/diodes.png" alt="" />
+      </div>
+      <div className={s.rasm2}>
+<h3>Разъемы</h3>
+        <img src="https://static.chipdip.ru/images/popularcategories/connectors.png" alt="" />
+      </div>
+    </div>
+  </div>
+<div className={s.popular2}>
+  <h3>Мультиметры</h3>
+  <img src="	https://static.chipdip.ru/images/popularcategories/multimeters.png" alt="" />
+</div>
+<div className={s.popular3}>
+  <div className={s.avto}>
+<h3>Автоматические
+выключатели
+силовые
+</h3>
+<img src="https://static.chipdip.ru/images/popularcategories/auto-vykl-silovye.png" alt="" />
+  </div>
+  <div className={s.ato2}>
+  <div className={s.avto1}>
+    <h3>Автозапчасти</h3>
+    <img src="https://static.chipdip.ru/images/popularcategories/autoparts.png" alt="" />
+  </div>
+  <div className={s.avto2}>
+    <h3>Оптопары
+</h3>
+<img src="https://static.chipdip.ru/images/popularcategories/optocoupler-v2.png" alt="" />
+  </div>
+  </div>
+</div>
+</div></div>
+
      <Index_slider mapdata={topTovar} data={{title:'Хиты продаж',
       h1:'Самые популярные товары',
       p:'Выбор наших покупателей'
@@ -183,7 +230,6 @@ gettopTovar(5)
     }} color={'#e6faff'}/>
      <Index_slider mapdata={data} data={{title:'Набирают популярность',h1:'Успейте купить первым',
     p:'Новинки, которые пользуются повышенным спросом'}} color={'#e7fcf9'}/>
-   
 <Footer_1/>
       </div>
     </div>
