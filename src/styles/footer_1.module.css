@@ -128,13 +128,6 @@
         color: white;
         grid-template-columns: 1fr 1fr 1fr ;
     }
-    .versiya_black{
-        display: grid;
-        background-color: black;
-        color: white;
-        padding: 20px 30px;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
 }
 @media (max-width:960px) {
     .footer1{
@@ -144,19 +137,13 @@
         color: white;
         grid-template-columns: 1fr 1fr ;
     }
-    .versiya_black{
-        display: grid;
-        background-color: black;
-        color: white;
-        padding: 20px 30px;
-        grid-template-columns: 1fr 1fr ;
-    }
+   
 }
 @media (max-width:640px) {
     .footer1{
         display: grid;
         background-color: #00415a;
-        padding: 0px;
+        padding: 0px 20px;
         color: white;
         grid-template-columns:  1fr ;
     }
@@ -167,7 +154,7 @@
         min-width: 100px;
         background-color: rgba(0, 0, 0, 0.729);
         color: white;
-        width: 35%;
+        width: 25%;
         height: 50px;
         padding-left: 10px;
         margin-bottom: 10px;
@@ -220,6 +207,7 @@
 }
 .sayt{
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 .appl{
@@ -237,4 +225,32 @@
 .big{
     display: flex;
     gap: 20px;
+}
+
+@media (max-width:1160px) {
+    .versiya_black{
+        display: grid;
+        background-color: black;
+        color: white;
+        padding: 20px 30px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (max-width:960px){
+    .versiya_black{
+        display: grid;
+        background-color: black;
+        color: white;
+        padding: 20px 30px;
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+}
+@media (max-width:640px){
+    .versiya_black{
+        display: grid;
+        background-color: black;
+        color: white;
+        padding: 20px 30px;
+        grid-template-columns:  1fr 1fr ;
+    }
 }

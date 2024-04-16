@@ -38,7 +38,9 @@ ref={swiperRef}
       loop={true}
       breakpoints={{
         // Breakpoints
-        320: {
+        220: {
+          slidesPerView: 1,
+        },   400: {
           slidesPerView: 2,
         },
         768: {
@@ -61,7 +63,7 @@ ref={swiperRef}
             </div>
             <h5>Aimtec</h5>
             <p>{item.name}</p>
-            <h2>{item.buyPrice.value} руб.</h2>
+            <h2>{item.buyPrice.value/100} руб.</h2>
 
         </div>
       </SwiperSlide>
@@ -75,7 +77,7 @@ ref={swiperRef}
       <div className={s.button_roll}>  <FaArrowLeftLong onClick={handlePrevSlide}/>
     <FaArrowRightLong onClick={handleNextSlide} /> </div>
     <div className={s.section2}>
-       <div style={{width:'90%',margin:'auto'}}>
+       <div style={{width:'98%',margin:'auto'}}>
        <h2>{data.h1}</h2>
 <p>{data.p}</p>
        </div>

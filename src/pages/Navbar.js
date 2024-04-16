@@ -49,7 +49,9 @@ export default function Navbar() {
     <input  type="text" placeholder='Поиск среди 8 637 350 компонентов, электроники, приборов, электрики, автозапчастей, инструментов, сантехники…' />
 </div>
 </div></>):(<div className={s.logo}>
+<div className={s.img_logo}>
 <Image src={img1} alt="" />
+</div>
 <div className={s.loc}>
 <IoLocationSharp style={{marginTop:'5px'}} />
         <p><strong>Россия</strong> <br /> Магазины и оптовые отделы</p>
