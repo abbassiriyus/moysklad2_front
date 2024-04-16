@@ -25,7 +25,7 @@ export default function about() {
 
 <p>магазин входит в <strong>ТОП-100</strong><br />
 крупнейших интернет-магазинов России</p>
-<div id={s.block} className={s.company}>
+{/* <div id={s.block} className={s.company}>
     <ul>
         <li>История компании</li>
         <li>«ЧИП и ДИП» сегодня</li>
@@ -38,7 +38,7 @@ export default function about() {
         <li>Политика конфиденциальности</li>
         <li>Пользовательское Соглашение</li>
     </ul>
-</div>
+</div> */}
 <div  className={s.customer}>
     <div className={s.order1}>
     <img src="https://static.chipdip.ru/images/news/test-chipdip-partner/3.png" alt="" /><br />
