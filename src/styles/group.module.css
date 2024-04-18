@@ -1,11 +1,13 @@
 .texnika{
     background:url('https://static.chipdip.ru/images/bnr/productbnrgroup/356/3899_spare-parts-for-office-equipment.jpg')no-repeat;
     width: 100%;
+    min-width: 300px;
     height: 100px;
     background-size: cover;
     margin-top: 30px;
     margin-bottom: 20px;
 }
+   
 .body{
     width: 98%;
     max-width: 1400px;
@@ -23,19 +25,45 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    align-items: center;
   }
+  
+@media (max-width:610px) {
+    .prip h1{
+        font-size: 25px;
+    }
+}
+   @media (max-width:480px) {
+       .prip h1{
+           font-size: 22px;
+       }
+   }
+   @media (max-width:430px) {
+       .prip h1{
+           font-size: 18px;
+       }
+   }
+   
+   @media (max-width:360px) {
+       .prip h1{
+           font-size: 15px;
+       }
+   }
   .dobkar{
     display: grid;
     grid-template-columns: auto 400px;
     margin-top: 30px;
+    margin-bottom: 40px;
   }
   .imgkar{
     background: url("https://static.chipdip.ru/lib/968/DOC000968749.jpg") no-repeat;
-    width: 70%;
+    width: 80%;
     /* background-position: center; */
-    height: 200px;
+    height: 250px;
+    min-width: 300px;
+    margin-bottom: 20px;
     text-align: center;
-    background-size: cover;
+    background-size: 100% 100%;
   }
   .doc_img p{
     text-align: center;
@@ -50,15 +78,371 @@ font-size: 13px;
   }
   .btn1{
     display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
     gap: 20px;
+    border-radius: 10px;
+  }
+  @media (max-width:1100px) {
+    .img_text{
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr;
+    
+      }
+      .imgkar{
+        background: url("https://static.chipdip.ru/lib/968/DOC000968749.jpg") no-repeat;
+        width: 50%;
+        /* background-position: center; */
+        height: 280px;
+        min-width: 300px;
+        margin-bottom: 20px;
+        text-align: center;
+        background-size: 100% 100%;
+      }
+      /* .doc_img p{
+        text-align: center;
+        color: grey;
+    font-size: 13px;
+    width: 80%;
+    margin: auto;
+      } */
+  }
+  @media (max-width:800px) {
+    .dobkar{
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: auto;
+        width: 90%;
+        margin-bottom: 40px;
+      }
+      .imgkar{
+        background: url("https://static.chipdip.ru/lib/968/DOC000968749.jpg") no-repeat;
+        width: 40%;
+        /* background-position: center; */
+        height: 250px;
+        margin: auto;
+        min-width: 300px;
+        margin-bottom: 20px;
+        text-align: center;
+        background-size: 100% 100%;
+      }
+      .doc_img p{
+        text-align: center;
+        color: grey;
+    font-size: 13px;
+    width: 80%;
+    margin: auto;
+      }
+      .number{
+        margin-top: 30px;
+        padding-left: 0px;
+        border: none;
+    }
+    .doc_img{
+        margin-top: 40px;
+    }
+    
+  }
+  @media (max-width:600px) {
+    .doc_img p{
+        text-align: center;
+        color: grey;
+    font-size: 13px;
+    width: 80%;
+      }
+    
+  }
+  @media (max-width:430px) {
+    .imgkar{
+        background: url("https://static.chipdip.ru/lib/968/DOC000968749.jpg") no-repeat;
+        width: 30%;
+        /* background-position: center; */
+        height: 250px;
+        margin: auto;
+        min-width: 300px;
+        margin-bottom: 20px;
+        text-align: center;
+        background-size: 100% 100%;
+      }
   }
   .buttons{
     gap: 20px;
     display: flex;
     align-items: center;
+    border-radius: 5px;
+
     border: 1px solid black;
+  }
+  .btn1 p{
+    font-size: 13px;
   }
   .buttons button{
     width: 20px;
     height: 40px;
+    border: none;
+    font-weight: 600;
+    color: white;
+    background-color: grey;
+}
+.buttons button:hover{
+    background-color: rgb(114, 112, 112);
+}
+.buttons span{
+    font-weight: 700;
+}
+.red1{
+  
+        background-color: red;
+        border-color: #e30613;
+        color: #fff;
+        padding: 9px 14px;
+        font-weight: 700;
+        border-radius: 4px;
+    }
+.red1:hover{
+    background-color: #e30613;
+
+}
+  .tick{
+    display: flex;
+    color: green;
+
   }
+  .tick span{
+    margin-bottom: 20px;
+}
+
+.number{
+    padding-left: 30px;
+    border-left: 1px solid rgba(128, 128, 128, 0.274);
+}
+.number span{
+    color: grey;
+    font-size: 13px;
+}
+.number span p{
+    font-size: 16px;
+    color: black;
+    margin-bottom: 30px;
+
+}
+
+.grey{
+    display: grid;
+    background-color: #f3f4f6;
+    padding: 25px 0 25px 25px;
+    width: 98%;
+    margin: auto;
+    min-height: 300px;
+    gap: 30px;
+    margin-bottom: 20px;
+    grid-template-columns: auto 500px;
+}
+.order_white{
+    background-color: white;
+    padding: 10px 20px;
+}
+.order_white1{
+    background-color: white;
+    padding: 10px 20px;
+    height: 100px;
+    margin-right: 30px;
+}
+.order_white1 h3{
+    margin-bottom: 10px;
+}
+.order_white1 span a{
+    text-decoration: none;
+}
+.order_white h3{
+    margin-bottom: 20px;
+}
+.order_white ul{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.order_white ul li{
+    list-style: none;
+    margin-top: 10px;
+}
+.check{
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+}
+.order_white button{
+    padding:5px 10px ;
+    border: 2px solid black;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    background-color: rgba(245, 222, 179, 0);
+}
+.order_white button:hover{
+    border: 2px solid red;
+    color: red;
+}
+
+.cards1{
+    display: grid;
+    margin-top: 30px;
+    margin-bottom: 10%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .cards2{
+    display: grid;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .hrr{
+    color:rgba(128, 128, 128, 0.271);
+    margin-bottom: 30px;
+    margin-top: 20px;
+    
+  }
+  .card1{
+    width: 90%;
+    margin-bottom: 30px;
+    margin: auto;
+
+  }
+  .card1_body a{
+    text-decoration: none;
+    font-size: 15px;
+  }
+.card1_body{
+  margin-top: 20px;
+}
+  .card1_body a:hover{
+    text-decoration: underline;
+  }
+  .card1_body p{
+    margin-top: 10px;
+    font-weight: 900;
+  }
+  .card1 img{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    
+  }
+
+@media (max-width:1200px) {
+  .cards1{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+  }
+  .cards2{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+  }
+  .card1{
+    margin-top: 30px;
+  }
+}
+
+@media (max-width:990px) {
+  .cards1{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr 1fr ;
+  }
+  .cards2{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr 1fr ;
+  }
+  .card1{
+    margin-top: 30px;
+  }
+}
+
+@media (max-width:780px) {
+  .cards1{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cards2{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .card1{
+    margin-top: 30px;
+  }
+}
+@media (max-width:500px) {
+  .cards1{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns:1fr;
+  }
+  .cards2{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns:1fr;
+  }
+  .card1{
+    margin-top: 30px;
+    display: flex; 
+    margin: auto;
+    margin-bottom: 40px;
+    gap: 20px;
+  }
+}
+@media (max-width:430px) {
+  .cards1{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns:1fr;
+  }
+  .cards2{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns:1fr;
+  }
+  .card1{
+    margin-top: 30px;
+    display: flex; 
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 20px;
+  }
+}
+/* cards */
+.tovar{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.tovar1 img{
+margin-bottom: 20px;
+margin: auto;
+}
+.tov1{
+    background: url("https://static.chipdip.ru/lib/966/DOC000966852.jpg")no-repeat;
+    width: 100px;
+    height: 100px;
+}
+.tovar1{
+    display: block;
+}
+.tovar1 a{
+    text-decoration: none;
+
+}
+.tovar1 a:hover{
+    text-decoration: underline;
+}
