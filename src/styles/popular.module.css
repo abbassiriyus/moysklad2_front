@@ -76,3 +76,145 @@
   .span1{
     display: none;
   }
+
+  .hrr{
+    color:rgba(128, 128, 128, 0.271);
+    margin-bottom: 30px;
+    margin-top: 20px;
+    
+  }
+
+
+  /* cards */
+
+  .cards1{
+    display: grid;
+    margin-top: 30px;
+    margin-bottom: 10%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .cards2{
+    display: grid;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .card1{
+    width: 90%;
+    margin-bottom: 30px;
+    margin: auto;
+
+  }
+  .card1_body a{
+    text-decoration: none;
+    font-size: 15px;
+  }
+.card1_body{
+  margin-top: 20px;
+}
+  .card1_body a:hover{
+    text-decoration: underline;
+  }
+  .card1_body p{
+    margin-top: 10px;
+    font-weight: 900;
+  }
+  .card1 img{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    
+  }
+
+@media (max-width:1200px) {
+  .cards1{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+  }
+  .cards2{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+  }
+  .card1{
+    margin-top: 30px;
+  }
+}
+
+@media (max-width:990px) {
+  .cards1{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr 1fr ;
+  }
+  .cards2{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr 1fr ;
+  }
+  .card1{
+    margin-top: 30px;
+  }
+}
+
+@media (max-width:780px) {
+  .cards1{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cards2{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .card1{
+    margin-top: 30px;
+  }
+}
+@media (max-width:500px) {
+  .cards1{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns:1fr;
+  }
+  .cards2{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns:1fr;
+  }
+  .card1{
+    margin-top: 30px;
+    display: flex; 
+    margin: auto;
+    margin-bottom: 40px;
+    gap: 20px;
+  }
+}
+@media (max-width:430px) {
+  .cards1{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns:1fr;
+  }
+  .cards2{
+    display: grid;
+    justify-content: space-between;
+    margin-top: 30px;
+    grid-template-columns:1fr;
+  }
+  .card1{
+    margin-top: 30px;
+    display: flex; 
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 20px;
+  }
+}
+/* cards */

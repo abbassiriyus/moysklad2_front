@@ -14,6 +14,7 @@ export default function popular() {
     document.querySelector("#hide0").style="display:none"
   }
   function closemodal(){
+    document.querySelector("#hide0").style="display:block"
     document.querySelector("#span2").style="display:none"
     document.querySelector("#span3").style="display:block"
     document.querySelector("#accor1").style='height:400px'
@@ -88,6 +89,89 @@ export default function popular() {
     <span id='span2' onClick={()=> closemodal()} className={s.span1}>скрыть текст<IoIosArrowUp  /></span>
     <span id='span3' onClick={()=> openmodal()} className={s.span0}>показать весь текст<IoIosArrowDown  /></span>
 </div>
+
+<hr  className={s.hrr}/>
+<h3>Мы рекомендуем</h3>
+
+<div className={s.cards2}>
+  <div className={s.card1}>
+   <img src="https://static.chipdip.ru/lib/968/DOC000968750.jpg" alt="" />
+
+    <div className={s.card1_body}>
+      <h5>Россия</h5>
+      <a href=""><span>ПОС 40 прв d=1.0мм 1м спираль, Припой</span></a>
+      <p>230 руб.</p>
+    </div>
+  </div>
+
+  <div className={s.card1}>
+   <img src="https://static.chipdip.ru/lib/975/DOC002975843.jpg" alt="" />
+
+    <div className={s.card1_body}>
+      <h5>Solins</h5>
+      <a href=""><span>СКФ (ФКСп, ФКЭт) с кисточкой 20мл, Флюс</span></a>
+      <p>170 руб.
+</p>
+    </div>
+  </div>
+
+  <div className={s.card1}>
+   <img src="https://static.chipdip.ru/lib/803/DOC004803586.jpg" alt="" />
+
+    <div className={s.card1_body}>
+      <h5>Zhongdi</h5>
+      <a href=""><span>ZD-181-1 2MM, Оплетка для выпайки 2мм х 1,5м</span></a>
+      <p>270 руб.</p>
+    </div>
+  </div>
+
+  <div className={s.card1}>
+   <img src="https://static.chipdip.ru/lib/075/DOC025075417.jpg" alt="" />
+
+    <div className={s.card1_body}>
+      <h5>Россия</h5>
+      <a href=""><span>Припой трубка с канифолью, 10 г, 0,8 мм, ПОС-61, колба</span></a>
+      <p>100 руб.</p>
+    </div>
+  </div>
+
+  <div className={s.card1}>
+   <img src="https://static.chipdip.ru/lib/639/DOC005639891.jpg" alt="" />
+
+    <div className={s.card1_body}>
+      <h5>Китай</h5>
+      <a href=""><span>ПYT-822, Паяльная флюс паста, 100-400С,безотмывочная 5гр</span></a>
+      <p>280 руб.</p>
+    </div>
+  </div>
+</div>
+
+<hr  className={s.hrr}/>
+<h3>Ранее просмотренные товары</h3>
+<div className={s.cards1}>
+  
+<div className={s.card1}>
+   <img src="https://static.chipdip.ru/lib/968/DOC000968750.jpg" alt="" />
+
+    <div className={s.card1_body}>
+      <h5>Россия</h5>
+      <a href=""><span>ПОС 40 прв d=1.0мм 1м спираль, Припой</span></a>
+      <p>230 руб.</p>
+    </div>
+  </div>
+
+  <div className={s.card1}>
+   <img src="https://static.chipdip.ru/lib/975/DOC002975843.jpg" alt="" />
+
+    <div className={s.card1_body}>
+      <h5>Solins</h5>
+      <a href=""><span>СКФ (ФКСп, ФКЭт) с кисточкой 20мл, Флюс</span></a>
+      <p>170 руб.
+</p>
+    </div>
+  </div>
+</div>
+<Footer_1/>
      </div>
     </div>
   )
