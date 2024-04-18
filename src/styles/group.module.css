@@ -1,0 +1,64 @@
+.texnika{
+    background:url('https://static.chipdip.ru/images/bnr/productbnrgroup/356/3899_spare-parts-for-office-equipment.jpg')no-repeat;
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.body{
+    width: 98%;
+    max-width: 1400px;
+    padding-top: 6px;
+    margin: auto;
+    /* background-color: red; */
+  }
+  .page_road{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+  }
+  .prip{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .dobkar{
+    display: grid;
+    grid-template-columns: auto 400px;
+    margin-top: 30px;
+  }
+  .imgkar{
+    background: url("https://static.chipdip.ru/lib/968/DOC000968749.jpg") no-repeat;
+    width: 70%;
+    /* background-position: center; */
+    height: 200px;
+    text-align: center;
+    background-size: cover;
+  }
+  .doc_img p{
+    text-align: center;
+    color: grey;
+font-size: 13px;
+  }
+  .img_text{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 0.5fr 1fr;
+
+  }
+  .btn1{
+    display: flex;
+    gap: 20px;
+  }
+  .buttons{
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+  }
+  .buttons button{
+    width: 20px;
+    height: 40px;
+  }
