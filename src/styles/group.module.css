@@ -1,6 +1,7 @@
 .texnika{
     background:url('https://static.chipdip.ru/images/bnr/productbnrgroup/356/3899_spare-parts-for-office-equipment.jpg')no-repeat;
     width: 100%;
+    background-position: center;
     min-width: 300px;
     height: 100px;
     background-size: cover;
@@ -394,6 +395,27 @@ font-size: 13px;
   .card1{
     margin-top: 30px;
   }
+  .texnika{
+    background:url('https://static.chipdip.ru/images/bnr/productbnrgroup/356/3899_spare-parts-for-office-equipment.jpg')no-repeat;
+    width: 100%;
+    min-width: 300px;
+    height: 80px;
+    background-size: 100% 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+  
+}
+@media (max-width:585px) {
+  .texnika{
+    background:url('https://static.chipdip.ru/images/bnr/productbnrgroup/356/3899_spare-parts-for-office-equipment.jpg')no-repeat;
+    width: 100%;
+    min-width: 300px;
+    height: 60px;
+    background-size: 100% 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
 }
 @media (max-width:500px) {
   .cards1{
@@ -436,6 +458,15 @@ font-size: 13px;
     margin: auto;
     gap: 20px;
   }
+  .texnika{
+    background:url('https://static.chipdip.ru/images/bnr/productbnrgroup/356/3899_spare-parts-for-office-equipment.jpg')no-repeat;
+    width: 100%;
+    min-width: 300px;
+    height:50px;
+    background-size: 100% 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
 }
 /* cards */
 .tovar{
@@ -443,14 +474,14 @@ font-size: 13px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.tovar1 img{
-margin-bottom: 20px;
-margin: auto;
-}
+
 .tov1{
     background: url("https://static.chipdip.ru/lib/966/DOC000966852.jpg")no-repeat;
     width: 100px;
+    background-position: center;
+    background-size: 100% 100%;
     height: 100px;
+    margin-bottom: 20px;
 }
 .tovar1{
     display: block;
@@ -461,4 +492,35 @@ margin: auto;
 }
 .tovar1 a:hover{
     text-decoration: underline;
+}
+@media (max-width:1000px) {
+  .tovar{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+}
+@media (max-width:750px) {
+  .tovar{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+}
+}
+@media (max-width:535px) {
+  .tovar{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr ;
+    text-align: center;
+    align-items: center;
+
+}
+
+.tov1{
+    background: url("https://static.chipdip.ru/lib/966/DOC000966852.jpg")no-repeat;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
 }
