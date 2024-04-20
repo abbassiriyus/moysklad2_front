@@ -147,6 +147,9 @@
         grid-template-columns: 1fr;
         gap: 30px;
     }
+    .summary1{
+        display: none;
+    }
 }
 .page{
     margin-top: 30px;
@@ -184,4 +187,98 @@
     .p_num{
         margin-bottom: 30px;
     }
+}
+.big{
+    display: none;
+}
+.smart{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 1fr 1fr;
+    width: 100%;
+    box-shadow: 1px 1px rgba(128, 128, 128, 0.144);
+    align-items: start;
+    padding: 10px;
+}
+.smart:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.smarttext{
+    width: 100%;
+    /* margin-bottom: 20px; */
+}
+.smartimg{
+    background: url("https://static.chipdip.ru/lib/839/DOC003839162.jpg");
+    width: 80px;
+    height: 80px;
+    position: relative;
+    background-size: 100% 100%;
+}
+.smartimg:hover{
+    .fast{
+        display: block;
+    }
+}
+.smartimg span{
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.288);
+    color: white;
+    font-size: 10px;
+    padding: 4px 1px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: none;
+}
+.tikk{
+    color: green;
+}
+.btn2{
+    border: 1px solid grey;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 22%;
+    justify-content: space-between;
+}
+.butn{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.btn2 button{
+    width: 50px;
+    height: 30px;
+}
+.red{
+    /* width: 20%; */
+    /* height: 40px; */
+    border: 2px solid #e30613;
+    color: white;
+    font-weight: 700;
+    background-color: red;
+}
+.red:hover{
+    background-color: #e30613;
+}
+.red:active{
+    background-color: white;
+    border: 2px solid #e30613;
+    color: #e30613;
+}
+.price p{
+    color: grey;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 5px;
+}
+.smarttext a{
+    text-decoration: none;
+}
+.smarttext p{
+    margin-top: 10px;
+    font-size: 14px;
+}
+.smarttext p span{
+    color: grey;
 }

@@ -559,6 +559,105 @@ export default function kraft() {
         </div>
     </div>
 </div>
+
+<div id='sort1' className={s.change}>
+  <div className={s.smart}>
+    <div className={s.smarttext}>
+      <a href="">Arduino Breakout for LinkIt Smart 7688 Duo, Интерфейсная плата расширения для платформы LinkIt Smart 7688 Duo</a>
+   
+    <p><span>Бренд:</span>Seeed Studio</p>
+    <p><span>Тип платы/модуля расширения:</span>переходник</p>
+    <p><span>Функциональное назначение платы/модуля:</span> arduino, grove, ethernet интерфейс</p>
+    <p><span>Совместимость:</span>linkit smart 7688 duo</p>
+    </div>
+
+    <div className={s.smartimg}>
+      <span className={s.fast}>быстрый просмотр</span>
+    </div>
+
+<div className={s.tikk}>
+<FaCheck />
+  <span>6 шт.</span>
+</div>
+<div className={s.price}>
+<div className={s.butn}>
+  <span>1 600 руб. ×</span>
+  <div className={s.btn2}>
+    <button>-</button>
+    <span>1</span>
+    <button>+</button>
+  </div>
+  <button className={s.red}>В корзине</button>
+</div>
+<p>от 3 шт. — 1 500 руб.</p>
+</div>
+  </div>
+  <div className={s.smart}>
+    <div className={s.smarttext}>
+      <a href="">Arduino Breakout for LinkIt Smart 7688 Duo, Интерфейсная плата расширения для платформы LinkIt Smart 7688 Duo</a>
+   
+    <p><span>Бренд:</span>Seeed Studio</p>
+    <p><span>Тип платы/модуля расширения:</span>переходник</p>
+    <p><span>Функциональное назначение платы/модуля:</span> arduino, grove, ethernet интерфейс</p>
+    <p><span>Совместимость:</span>linkit smart 7688 duo</p>
+    </div>
+
+    <div className={s.smartimg}>
+      <span className={s.fast}>быстрый просмотр</span>
+    </div>
+
+<div className={s.tikk}>
+<FaCheck />
+  <span>6 шт.</span>
+</div>
+<div className={s.price}>
+<div className={s.butn}>
+  <span>1 600 руб. ×</span>
+  <div className={s.btn2}>
+    <button>-</button>
+    <span>1</span>
+    <button>+</button>
+  </div>
+  <button className={s.red}>В корзине</button>
+</div>
+<p>от 3 шт. — 1 500 руб.</p>
+</div>
+  </div>
+
+  <div className={s.smart}>
+    <div className={s.smarttext}>
+      <a href="">Arduino Breakout for LinkIt Smart 7688 Duo, Интерфейсная плата расширения для платформы LinkIt Smart 7688 Duo</a>
+   
+    <p><span>Бренд:</span>Seeed Studio</p>
+    <p><span>Тип платы/модуля расширения:</span>переходник</p>
+    <p><span>Функциональное назначение платы/модуля:</span> arduino, grove, ethernet интерфейс</p>
+    <p><span>Совместимость:</span>linkit smart 7688 duo</p>
+    </div>
+
+    <div className={s.smartimg}>
+      <span className={s.fast}>быстрый просмотр</span>
+    </div>
+
+<div className={s.tikk}>
+<FaCheck />
+  <span>6 шт.</span>
+</div>
+<div className={s.price}>
+<div className={s.butn}>
+  <span>1 600 руб. ×</span>
+  <div className={s.btn2}>
+    <button>-</button>
+    <span>1</span>
+    <button>+</button>
+  </div>
+  <button className={s.red}>В корзине</button>
+</div>
+<p>от 3 шт. — 1 500 руб.</p>
+</div>
+  </div>
+</div>
+
+
 <div className={s.page}>
     <div className={s.p_num}>
         <h5>Страница</h5>
