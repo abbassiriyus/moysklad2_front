@@ -43,6 +43,15 @@ export default function Navbar() {
 <div className={s.red}>
 <CgMenuGridR style={{fontSize:'30px'}} />
 <span>Каталог товаров</span>
+
+<div className={s.catalog_menu}>
+  <div className={s.catalog_toolbar}>
+    <div className={s.accor}></div>
+    <div className={s.sub_category}>
+      
+    </div>
+  </div>
+</div>
 </div>
 <div className={s.search_inp}>
 <LiaSearchSolid style={{marginLeft:'20px',color:'red',fontSize:'20px'}} />
@@ -86,6 +95,7 @@ export default function Navbar() {
 <LiaSearchSolid style={{marginLeft:'20px',color:'red',fontSize:'20px'}} />
     <input type="text" placeholder='Поиск среди 8 637 350 компонентов, электроники, приборов, электрики, автозапчастей, инструментов, сантехники…' />
 </div>
+
 </div>
 
     </>

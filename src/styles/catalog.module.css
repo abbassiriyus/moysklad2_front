@@ -394,9 +394,7 @@
       grid-template-columns: 1fr;
       gap: 0px;
   }
-  .summary1{
-      display: none;
-  }
+ 
   .pad{
     width: 90%;
     margin: auto;
@@ -487,6 +485,7 @@
 .change{
   width: 98%;
   margin: auto;
+  display: none;
 }
 .tikk{
   color: green;
