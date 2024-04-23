@@ -140,8 +140,18 @@ setLoading(false)
 
   })
 }
+
+var [header_top,setHeaderTop]=useState([])
+
+function getCategory_top() {
+  axios.get(`${url()}/api/header_category`).then(res=>{
+setHeaderTop(res.data)
+  })
+}
+
 var [loading,setLoading]=useState(true)
 useEffect(()=>{
+  getCategory_top()
   getImage()
 getData(5)
 getCategory()
@@ -174,51 +184,50 @@ gettopTovar(5)
 <div style={{overflowX:"auto",overflowY:'visble',paddingTop:'20px',paddingBottom:'10px',overflowY: 'hidden',scrollbarVolor: 'white white  ',
   scrollbarWidth: 'thin'
 }}>
-<div className={s.famous}>
+  {header_top.length>6?(<>
+  <div className={s.famous}>
   <div className={s.popular1}>
     <div className={s.img1}>
-     <center> <img className={s.birr} src="https://static.chipdip.ru/images/popularcategories/auto-vykl-motor.png" alt="" /></center>
-      <h3>Автоматические
-выключатели
-для защиты
-двигателя</h3>
+      <center> <img className={s.birr} style={{height:'70%'}} src={header_top[0].image} alt="" /></center>
+      <h3>{header_top[0].category_title}</h3>
     </div>
     <div className={s.img_2}>
-      <div className={s.rasm1}>
-<h3>Диоды</h3>
-        <img src="	https://static.chipdip.ru/images/popularcategories/diodes.png" alt="" />
+      <div className={s.rasm1} style={{display:'grid'}}>
+<h3>{header_top[1].category_title}</h3><br />
+        <img style={{height:'70%'}} src={header_top[1].image} alt="" />
       </div>
       <div className={s.rasm2}>
-<h3>Разъемы</h3>
-        <img src="https://static.chipdip.ru/images/popularcategories/connectors.png" alt="" />
+<h3>{header_top[2].category_title}</h3>
+        <img style={{height:'60%'}} src={header_top[2].image} alt="" />
       </div>
     </div>
   </div>
 <div className={s.popular2}>
-  <h3>Мультиметры</h3>
-  <img src="	https://static.chipdip.ru/images/popularcategories/multimeters.png" alt="" />
+  <h3>{header_top[3].category_title}</h3>
+  <img style={{width:'100%'}} src={header_top[3].image} alt="" />
 </div>
 <div className={s.popular3}>
   <div className={s.avto}>
-<h3>Автоматические
-выключатели
-силовые
+<h3>{header_top[4].category_title}
 </h3>
-<img src="https://static.chipdip.ru/images/popularcategories/auto-vykl-silovye.png" alt="" />
+<img style={{width:'100%'}} src={header_top[4].image} alt="" />
   </div>
   <div className={s.ato2}>
   <div className={s.avto1}>
-    <h3>Автозапчасти</h3>
-    <img src="https://static.chipdip.ru/images/popularcategories/autoparts.png" alt="" />
+    <h3>{header_top[5].category_title}</h3>
+    <img style={{width:'100%'}} src={header_top[5].image} alt="" />
   </div>
   <div className={s.avto2}>
-    <h3>Оптопары
+    <h3>{header_top[6].category_title}
 </h3>
-<img src="https://static.chipdip.ru/images/popularcategories/optocoupler-v2.png" alt="" />
+<img style={{height:'70%'}} src={header_top[6].image} alt="" />
   </div>
   </div>
 </div>
-</div></div>
+</div>
+  </>):(<></>)}
+</div>
+  
 
      <Index_slider mapdata={topTovar} data={{title:'Хиты продаж',
       h1:'Самые популярные товары',
