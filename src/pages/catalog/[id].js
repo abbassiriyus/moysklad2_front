@@ -1,5 +1,5 @@
 import React from 'react'
-import s from "../styles/catalog.module.css"
+import s from "../../styles/catalog.module.css"
 import { IoIosArrowForward } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 import { IoIosArrowUp } from "react-icons/io";
