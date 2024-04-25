@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar'
 import Footer_1 from '../footer_1'
 import s from "../../styles/popular.module.css"
@@ -7,9 +7,12 @@ import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
 import { useRouter } from 'next/router';
+import url from "../host.js"
+import axios from 'axios';
 export default function popular() {
 var router=useRouter()
-
+var [title,setTitle]=useState("")
+var [category,setCategory]=useState([])
   function openmodal(){
     document.querySelector("#accor1").style='height:auto'
     document.querySelector("#span2").style="display:block"
@@ -22,8 +25,18 @@ var router=useRouter()
     document.querySelector("#span3").style="display:block"
     document.querySelector("#accor1").style='height:400px'
   }
+  function getCategory(id) {
+axios.get(`${url()}/api/category`).then(res=>{
+setCategory(res.data.filter(item=>(item.subcategory==id)))
+}).catch(err=>{
+
+})}
   useEffect(()=>{
-console.log(router);
+    if(router.query.id){
+      setTitle(router.query.title)
+      getCategory(router.query.id)
+    }
+
   },[router])
   return (
     <div>
@@ -35,42 +48,18 @@ console.log(router);
             <span style={{color:'grey'}}>Аккумуляторы</span>
             </div>
             <div className={s.sub}>
-                <h1>Аккумуляторы <sub>3705</sub></h1>
+                <h1>{title} </h1>
             </div>
-         <div className={s.aks}>
+      
          <div className={s.aksessuar}>
-                <div className={s.akses1}>
-                <img src="https://static.chipdip.ru/lib/967/DOC000967681.jpg" alt="" />
-                <a href=""><span>	Аккумуляторы Li (литиевые) <sub>1518</sub>  </span></a>
-                </div>
-                <div className={s.akses1}>
-                <img src="https://static.chipdip.ru/lib/335/DOC004335732.jpg" alt="" />
-                <a href=""><span>	Аккумуляторы Li (литиевые) <sub>1518</sub>  </span></a>
-                </div>
-                <div className={s.akses1}>
-                <img src="https://static.chipdip.ru/lib/346/DOC011346555.jpg" alt="" />
-                <a href=""><span>	Аккумуляторы Li (литиевые) <sub>1518</sub>  </span></a>
-                </div>
+            {category.map(item=>{
+          return  <div className={s.akses1}>
+                <img src={item.image} alt="" />
+                <a href=""><span>	{item.category_title} </span></a>
+                </div> 
+            })}  
             </div>
-
-
-
-            <div className={s.aksessuar}>
-            <div className={s.akses1}>
-                <img src="https://static.chipdip.ru/lib/966/DOC000966884.jpg" alt="" />
-                <a href=""><span>	Аккумуляторы Li (литиевые) <sub>1518</sub>  </span></a>
-                </div>
-                  <div className={s.akses1}>
-                <img src="https://static.chipdip.ru/lib/966/DOC000966885.jpg" alt="" />
-                <a href=""><span>	Аккумуляторы Li (литиевые) <sub>1518</sub>  </span></a>
-                </div>
-                <div className={s.akses1}>
-                <img src="https://static.chipdip.ru/lib/321/DOC014321157.jpg" alt="" />
-                <a href=""><span>	Аккумуляторы Li (литиевые) <sub>1518</sub>  </span></a>
-                </div>
-            </div>
-         </div>
-
+         
 
          <div id='accor1' className={s.accor}>
             <p><strong>Аккумуляторы</strong> представляют собой источники постоянного тока, отличительной особенностью которых является возможность многократной перезарядки. Материал электродов и тип используемого электролита определяет область применения и характеристики аккумулятора. <br /><br />
