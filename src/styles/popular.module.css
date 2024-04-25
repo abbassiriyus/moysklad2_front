@@ -10,9 +10,13 @@
     align-items: center;
     gap: 10px;
     font-size: 13px;
+    flex-wrap: wrap;
   }
   .aksessuar{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    max-width: 1400px;
     flex-wrap: wrap;
     justify-content: space-around;
   }
@@ -24,28 +28,15 @@
   .sub{
     margin-top: 20px;
   }
-  .aks{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 30px;
-    width: 90%;
-  }
-  
-  @media (max-width:780px) {
-    .aks{
-        display: grid;
-        grid-template-columns: 1fr;
-        margin-top: 30px;
-        width: 98%;
-        margin: auto;
-    }
-  }
   .akses1{
     display: flex;
     gap: 20px;
+    /* flex-wrap: wrap; */
     align-items: center;
     margin-bottom: 20px;
-    width: 50%;
+    width: 98%;
+    margin: auto;
+    margin-top: 20px;
   }
   .akses1 a{
     text-decoration: none;
@@ -54,7 +45,22 @@
   .akses1 a:hover{
     text-decoration: underline;
   }
-  
+  .akses1 img{
+    width: 20%;
+    /* height: 150px; */
+    
+  }
+  @media (max-width:580px) {
+    .aksessuar{
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 90%;
+      max-width: 1400px;
+      align-items: center;
+      justify-content: center;
+    }
+    
+  }
   .accor{
     margin-top: 30px;
     height: 400px;
@@ -70,6 +76,13 @@
   }
   .hide span{
     color:darkblue;
+  }
+  @media (max-width:425px) {
+    .sub sub{
+      font-size: 10px;
+      color: grey;
+      font-weight: 400;
+    }
   }
 .line{
   box-shadow:  0px -20px 30px 30px white;
