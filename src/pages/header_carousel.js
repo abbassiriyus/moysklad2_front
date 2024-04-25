@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import s from '../styles/header_carousel.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
@@ -10,6 +10,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export default function header_carousel() {
+  var [images,setImages]=useState([])
+  function getData(){
+    
+  }
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const swiperRef = useRef(null);
 
