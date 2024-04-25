@@ -15,6 +15,7 @@ import { CiSaveUp2 } from "react-icons/ci";
 import { IoColorFilterOutline } from "react-icons/io5";
 import Kraft from './kraft';
 import Footer_1 from './footer_1';
+import { IoClose } from "react-icons/io5";
 export default function catalog() {
     function openmodal(){
         document.querySelector("#accor1").style='height:auto'
@@ -670,7 +671,7 @@ export default function catalog() {
 </div>
 <div className={s.price}>
 <div className={s.butn}>
-  <span>1 600 руб. ×</span>
+  <span><IoClose /> 1 600 руб. </span>
   <div className={s.btn2}>
     <button>-</button>
     <span>1</span>
@@ -705,7 +706,7 @@ export default function catalog() {
 </div>
 <div className={s.price}>
 <div className={s.butn}>
-  <span>1 600 руб. ×</span>
+  <span><IoClose /> 1 600 руб. </span>
   <div className={s.btn2}>
     <button>-</button>
     <span>1</span>
@@ -739,7 +740,7 @@ export default function catalog() {
 </div>
 <div className={s.price}>
 <div className={s.butn}>
-  <span>1 600 руб. ×</span>
+  <span><IoClose /> 1 600 руб. </span>
   <div className={s.btn2}>
     <button>-</button>
     <span>1</span>
