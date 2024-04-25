@@ -25,9 +25,17 @@ var [category,setCategory]=useState([])
     document.querySelector("#span3").style="display:block"
     document.querySelector("#accor1").style='height:400px'
   }
-  function getCategory(id) {
+function getCategory(id) {
 axios.get(`${url()}/api/category`).then(res=>{
-setCategory(res.data.filter(item=>(item.subcategory==id)))
+for (let i = 0; i < res.data.length; i++) {
+if(id==res.data[i].id){
+axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`).then(res=>{
+  console.log(res.data,"daya");
+})
+}}
+  setCategory(res.data.filter(item=>(item.subcategory==id)))
+
+
 }).catch(err=>{
 
 })}
