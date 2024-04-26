@@ -8,12 +8,23 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import axios from 'axios';
+import url from "./host.js"
 export default function header_carousel() {
-  var [images,setImages]=useState([])
-  function getData(){
+
+
+  var[carousel,setCarousel]=useState([])
+
+
+function getData() {
+  axios.get(`${url()}/api/`).then(res=>{
+
+  }).catch(err=>{
     
-  }
+  })
+}
+
+
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const swiperRef = useRef(null);
 
