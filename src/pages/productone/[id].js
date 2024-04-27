@@ -14,6 +14,7 @@ export default function group() {
 var [data,setData]=useState({})
     function getData(params) {
     axios.get(`${url()}/api/oneproduct/${params}`).then(res=>{
+        console.log(res.data);
 setData(res.data)
     })    
     }
@@ -53,7 +54,7 @@ setData(res.data)
                         <div className={s.tick}>
                             <span><strong><FaCheck />123 шт</strong>. со склада г.Москва</span>
                      </div>
-       <h1>230 руб.
+       <h1>{ data.minPrice && data.minPrice.value/100} руб.
 </h1> 
 <div className={s.btn1}>
     <div className={s.buttons}>
@@ -61,9 +62,9 @@ setData(res.data)
         <span>1</span>
         <button>+</button>
     </div>
-    <p>от <strong>3 шт</strong>. — 195 руб.</p>
+    {/* <p>от <strong>3 шт</strong>. — 195 руб.</p> */}
 </div>
-<p style={{marginBottom:'20px'}}>Добавить в корзину 1 шт. на сумму 230 руб.
+<p style={{marginBottom:'20px'}}>Добавить в корзину 1 шт. на сумму { data.minPrice && data.minPrice.value/100}  руб.
 </p>
 <button className={s.red1}>Добавить в корзину</button>
                        
@@ -76,7 +77,7 @@ setData(res.data)
                 <div className={s.number}>
                     <span>Номенклатурный номер:
 
-                        <p>9000195024</p>
+                        <p>{data.code}</p>
                     </span>
 
                     <span>Артикул: <p>ПОС 40 прв d=1.0мм 1м спираль</p></span>
