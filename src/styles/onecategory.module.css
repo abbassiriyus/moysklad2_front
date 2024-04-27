@@ -1,0 +1,93 @@
+.body{
+    background-color: black;
+    width: 100%;
+
+    display: flex;
+justify-content: center;
+align-items: center;
+    height: 100vh;
+}
+.white{
+    width: 80%;
+    min-height: 500px;
+    border-radius: 5px;
+    background-color: white;
+}
+.white_ich{
+    padding: 20px;
+}
+.claos{
+    display: flex;
+    justify-content: space-between  ;
+}
+.display_white_i{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.img_clock{
+    margin-top: 30px;
+}
+.car_img{
+    align-items: center;
+    width: 98%;
+    display: flex;
+    justify-content: space-between  ;
+}
+.car{
+    background:url("https://static.chipdip.ru/lib/798/DOC000798578.jpg") no-repeat;
+    width: 90%;
+    margin: auto;
+    background-size:cover !important;
+    background-position: center !important;
+    min-height:400px;
+    margin-top: 30px;
+}
+.im1{
+    border:1px dashed grey;
+    width: 90%;
+}
+.im1 img{
+    width: 90%;
+    height: 120px;
+}
+.im2{
+    border:1px dashed grey;
+    width: 90%;
+}
+.im2 img{
+    width: 90%;
+    height: 120px;
+}
+.im3{
+    border:1px dashed grey;
+    width: 90%;
+}
+.im3 img{
+    width: 90%;
+    height: 120px;
+}
+.prc{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.butn{
+    display: flex;
+    border: 1px solid grey;
+    width: 70%;
+    align-items: center;
+    justify-content: space-between;
+}
+.butn button{
+    width: 20px;
+    height: 25px;
+}
+.bton{
+    margin-top: 10px;
+}
+.bton p{
+    color: grey;
+    text-align: center;
+    font-size: 12px;
+}
