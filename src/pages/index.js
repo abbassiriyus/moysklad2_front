@@ -178,7 +178,7 @@ gettopTovar(5)
 
      </div>
      <div className={s.button}>
-<button>ПОДАТЬ ЗАЯВКУ</button>
+<button onClick={()=>{window.location="/about/"}}> ПОДАТЬ ЗАЯВКУ</button>
      </div>
      </div>
 

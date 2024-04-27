@@ -25,12 +25,13 @@ var [category,setCategory]=useState([])
     document.querySelector("#span3").style="display:block"
     document.querySelector("#accor1").style='height:400px'
   }
+  var [drData,setDrdata]=useState([])
 function getCategory(id) {
 axios.get(`${url()}/api/category`).then(res=>{
 for (let i = 0; i < res.data.length; i++) {
 if(id==res.data[i].id){
 axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`).then(res=>{
-  console.log(res.data,"daya");
+  setDrdata(res.data)
 })
 }}
   setCategory(res.data.filter(item=>(item.subcategory==id)))
@@ -97,59 +98,26 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
 <h3>Мы рекомендуем</h3>
 
 <div className={s.cards2}>
-  <div className={s.card1}>
-   <img src="https://static.chipdip.ru/lib/968/DOC000968750.jpg" alt="" />
+  {drData.map((item,key)=>{
+    if(key<10){
+        return    <div className={s.card1}>
+   <img style={{height:'160px',width:'auto',margin:"auto"}} src={item.images.rows.length>0 && item.images.rows[0].miniature.downloadHref} alt="" />
 
     <div className={s.card1_body}>
       <h5>Россия</h5>
-      <a href=""><span>ПОС 40 прв d=1.0мм 1м спираль, Припой</span></a>
-      <p>230 руб.</p>
+      <a href=""><span>{item.name}</span></a>
+      <p>{item.minPrice.value/100} руб.</p>
     </div>
   </div>
+    }
 
-  <div className={s.card1}>
-   <img src="https://static.chipdip.ru/lib/975/DOC002975843.jpg" alt="" />
+  })}
 
-    <div className={s.card1_body}>
-      <h5>Solins</h5>
-      <a href=""><span>СКФ (ФКСп, ФКЭт) с кисточкой 20мл, Флюс</span></a>
-      <p>170 руб.
-</p>
-    </div>
-  </div>
 
-  <div className={s.card1}>
-   <img src="https://static.chipdip.ru/lib/803/DOC004803586.jpg" alt="" />
 
-    <div className={s.card1_body}>
-      <h5>Zhongdi</h5>
-      <a href=""><span>ZD-181-1 2MM, Оплетка для выпайки 2мм х 1,5м</span></a>
-      <p>270 руб.</p>
-    </div>
-  </div>
-
-  <div className={s.card1}>
-   <img src="https://static.chipdip.ru/lib/075/DOC025075417.jpg" alt="" />
-
-    <div className={s.card1_body}>
-      <h5>Россия</h5>
-      <a href=""><span>Припой трубка с канифолью, 10 г, 0,8 мм, ПОС-61, колба</span></a>
-      <p>100 руб.</p>
-    </div>
-  </div>
-
-  <div className={s.card1}>
-   <img src="https://static.chipdip.ru/lib/639/DOC005639891.jpg" alt="" />
-
-    <div className={s.card1_body}>
-      <h5>Китай</h5>
-      <a href=""><span>ПYT-822, Паяльная флюс паста, 100-400С,безотмывочная 5гр</span></a>
-      <p>280 руб.</p>
-    </div>
-  </div>
 </div>
 
-<hr  className={s.hrr}/>
+{/* <hr  className={s.hrr}/>
 <h3>Ранее просмотренные товары</h3>
 <div className={s.cards1}>
   
@@ -173,7 +141,7 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
 </p>
     </div>
   </div>
-</div>
+</div> */}
 <Footer_1/>
      </div>
     </div>
