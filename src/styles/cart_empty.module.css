@@ -78,3 +78,68 @@
         margin: auto;
     }
 }
+.basket{
+  margin-top: 30px;
+  background-color: #f3f4f6;
+}
+.basketich{
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  width: 96%;
+  margin: auto;
+  background-color: white;
+  align-items: center;
+  /* padding: 15px; */
+}
+.basketdg{
+  width: 96%;
+  padding-top: 20px;
+  margin: auto;
+
+}
+.chtitpdb:hover{
+  background-color:#f3f4f6 ;
+}
+.chtitpdb{
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  margin-top: 20px;
+}
+.basket2{
+  width: 96%;
+  padding-top: 20px;
+margin: auto;
+  background-color: red;
+}
+.df{
+  display: flex;
+  gap: 40px;
+  margin-top: 10px;
+width: 96%;
+margin: auto;
+  margin-bottom: 20px;
+}
+.check{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.yop{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.price{
+  display: flex;
+  gap: 15px;
+}
+.yop:hover{
+  .cls{
+    color: red;
+  }
+}
+.data{
+  display: flex;
+  justify-content: space-between;
+}
