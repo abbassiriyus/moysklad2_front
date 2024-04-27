@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import s from '../styles/header_carousel.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
@@ -17,13 +17,16 @@ export default function header_carousel() {
 
 
 function getData() {
-  axios.get(`${url()}/api/`).then(res=>{
-
+  axios.get(`${url()}/api/carousel`).then(res=>{
+setCarousel(res.data)
   }).catch(err=>{
-    
+
   })
 }
 
+useEffect(()=>{
+  getData()
+},[])
 
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const swiperRef = useRef(null);
@@ -53,22 +56,20 @@ ref={swiperRef}
         disableOnInteraction: false,
       }}
     >
-      <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
-      <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
-      <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
-      <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
-      <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
-      <SwiperSlide><img src="https://static.chipdip.ru/images/sliderbanner/41/eaes.jpg" alt="" /></SwiperSlide>
+     {carousel.map(item=>{
+    return  <SwiperSlide><img src={item.image} alt="" /></SwiperSlide>
+  
+     })} 
       {/* Add more slides as needed */}
     </Swiper>
    <div className={s.arrow_lr}>
- <div className={s.left_rig}>  <FaArrowLeftLong onClick={handlePrevSlide}/>
-    <FaArrowRightLong onClick={handleNextSlide} /></div>
-    <span>Доставка в ЕАЭС</span> 
-    <span>Элементы подвески</span> 
-    <span>Система зажигания</span>
-    <span>Электролитические конденсаторы jb</span>
-    <span>Измерительные приборы FNIRSI</span>
+ 
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+ <div className={s.left_rig}> <FaArrowLeftLong  className={s.arrow1} onClick={handlePrevSlide}/>
+    <FaArrowRightLong className={s.arrow1}  onClick={handleNextSlide} /></div>
    </div>
     </div>
   )
