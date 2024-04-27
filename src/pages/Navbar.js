@@ -18,7 +18,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.pageYOffset >= 100) {
-        console.log(window.pageYOffset);
         setShowNavbar(false);
       } else {
         setShowNavbar(true);

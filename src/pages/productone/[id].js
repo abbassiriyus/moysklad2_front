@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar'
 import Footer_1 from '../footer_1'
 import { IoIosArrowForward } from "react-icons/io";
@@ -6,7 +6,24 @@ import { FaCheck } from "react-icons/fa6";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
 
 import s from "../../styles/group.module.css"
+import { useRouter } from 'next/router';
+import axios from 'axios';
+import url from "../host.js"
 export default function group() {
+    var router=useRouter()
+var [data,setData]=useState({})
+    function getData(params) {
+    axios.get(`${url()}/api/oneproduct/${params}`).then(res=>{
+setData(res.data)
+    })    
+    }
+
+    useEffect(()=>{
+        if(router.query.id){
+          getData(router.query.id)
+        }
+      },[router])
+
   return (
     <div>
         <div className={s.body}>
@@ -14,19 +31,10 @@ export default function group() {
         <div className={s.texnika}>
             
         </div>
-        {/* <div className={s.page_road}>
-            <span>Главная</span><IoIosArrowForward />
-            <span>Расходные материалы</span><IoIosArrowForward />
-            <span>Материалы для пайки</span><IoIosArrowForward />
-            <span>Припои без канифоли</span><IoIosArrowForward />
-
-            <span>Россия</span><IoIosArrowForward />
-
-            <span style={{color:'grey'}}>ПОС 40 прв d=1.0мм 1м спираль, Припой</span><IoIosArrowForward />
-            </div> */}
+      
 
             <div className={s.prip}>
-            <h1>ПОС 40 прв d=1.0мм 1м спираль, Припой</h1>
+            <h1>{data.name}</h1>
             <FaArrowUpFromBracket  style={{fontSize:'25px'}} />
             </div>
 
@@ -81,7 +89,7 @@ export default function group() {
             <div className={s.grey}>
                 <div className={s.order_white}>
                     <h3>Описание</h3>
-                    <span>Припой оловянно-свинцовый ПОС 40 спираль</span><br />
+                    <span>{data.description}</span><br />
                     <span>Соответствует ГОСТ 21931-76</span>
                    <ul>
                    <h4>Технические характеристики:</h4>
