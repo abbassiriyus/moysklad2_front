@@ -118,8 +118,8 @@ export default function Navbar() {
     <input  type="text" placeholder='Поиск среди 8 637 350 компонентов, электроники, приборов, электрики, автозапчастей, инструментов, сантехники…' />
 </div>
 </div></>):(<div className={s.logo}>
-<div className={s.img_logo}>
-<Image src={img1} alt="" />
+<div onClick={()=>window.location="/"} className={s.img_logo}>
+<Image  src={img1} alt="" />
 </div>
 <div className={s.loc}>
 <IoLocationSharp style={{marginTop:'5px'}} />
@@ -140,7 +140,7 @@ export default function Navbar() {
 <HiOutlineClipboardDocumentList style={{fontSize:'30px'}} /><br />
 <span>BOM</span>
 </div>
-<div className={s.order}>
+<div onClick={()=>window.location="/cart_empty"} className={s.order}>
 <IoCartOutline style={{fontSize:'30px'}} /><br />
 <span>Корзина</span>
 </div>
