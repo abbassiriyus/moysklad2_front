@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function new() {
+export default function new1() {
   return (
     <div>
         <div className={s.body}>

@@ -62,9 +62,9 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
       
          <div className={s.aksessuar}>
             {category.map(item=>{
-          return  <div className={s.akses1}>
+          return  <div onClick={()=>window.location="/kraft/"} className={s.akses1}>
                 <img src={item.image} alt="" />
-                <a href=""><span>	{item.category_title} </span></a>
+                <a href="/kraft/"><span>	{item.category_title} </span></a>
                 </div> 
             })}  
             </div>
@@ -100,11 +100,11 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
 <div className={s.cards2}>
   {drData.map((item,key)=>{
     if(key<10){
-        return    <div className={s.card1}>
-   <img style={{height:'160px',width:'auto',margin:"auto"}} src={item.images.rows.length>0 && item.images.rows[0].miniature.downloadHref} alt="" />
+        return    <div onClick={()=>window.location=`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`}  className={s.card1}>
+   <img style={{height:'150px',width:'auto',margin:"auto"}} src={item.images.rows.length>0 && item.images.rows[0].miniature.downloadHref} alt="" />
 
     <div className={s.card1_body}>
-      <h5>Россия</h5>
+      <h5>{item.pathName}</h5>
       <a href=""><span>{item.name}</span></a>
       <p>{item.minPrice.value/100} руб.</p>
     </div>

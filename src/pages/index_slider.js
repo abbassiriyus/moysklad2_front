@@ -57,11 +57,11 @@ ref={swiperRef}
     >
         {mapdata.map((item,key)=>{
             return  <SwiperSlide>
-        <div className={s.card}>
+        <div onClick={()=>window.location=`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`} className={s.card}>
             <div className={s.card_img}>
                 <img src={item.images.rows[0].miniature.downloadHref} alt="" />
             </div>
-            <h5>Aimtec</h5>
+            <h5>{item.pathName}</h5>
             <p>{item.name}</p>
             <h2>{item.buyPrice.value/100} руб.</h2>
 
@@ -81,7 +81,7 @@ ref={swiperRef}
        <h2>{data.h1}</h2>
 <p>{data.p}</p>
        </div>
-<button>Перейти к выбору</button>
+<button onClick={()=>{window.location="/kraft/"}}>Перейти к выбору</button>
     </div>
 
        </div>

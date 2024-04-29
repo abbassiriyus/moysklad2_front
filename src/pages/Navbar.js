@@ -122,7 +122,7 @@ export default function Navbar() {
 </div>
 <div className={s.loc}>
 <IoLocationSharp style={{marginTop:'5px'}} />
-        <p><strong>Россия</strong> <br /> Магазины и оптовые отделы</p>
+        <p><strong>Узбекистан</strong> <br /> Магазины и оптовые отделы</p>
 </div>
 </div>)}
 
@@ -140,7 +140,8 @@ export default function Navbar() {
 <span>BOM</span>
 </div>
 <div onClick={()=>window.location="/cart_empty"} className={s.order}>
-<IoCartOutline style={{fontSize:'30px'}} /><br />
+<IoCartOutline style={{fontSize:'30px'}} /><sup>1</sup><br />
+
 <span>Корзина</span>
 </div>
 </div>

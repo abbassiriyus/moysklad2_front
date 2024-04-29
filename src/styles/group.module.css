@@ -60,6 +60,8 @@
     background: url("https://static.chipdip.ru/lib/968/DOC000968749.jpg") no-repeat;
     width: 80%;
     /* background-position: center; */
+    background-size: cover !important;
+    background-position: center;
     height: 250px;
     min-width: 300px;
     margin-bottom: 20px;
@@ -341,7 +343,7 @@ font-size: 13px;
     font-weight: 900;
   }
   .card1 img{
-    width: 150px;
+    /* width: 150px; */
     height: 150px;
     margin: auto;
     
