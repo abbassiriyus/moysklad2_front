@@ -61,7 +61,7 @@
     width: 80%;
     /* background-position: center; */
     background-size: cover !important;
-    background-position: center;
+    background-position: center !important;
     height: 250px;
     min-width: 300px;
     margin-bottom: 20px;

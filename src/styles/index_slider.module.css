@@ -42,7 +42,8 @@ margin-bottom: 20px;
     margin: auto;
     margin-right: 20px;
     font-size: 23px;
-    
+    margin-top: 20px;
+    margin-bottom: -20px;
 }
 .top_slider .main_1 h1{
 margin-bottom: 20px;
@@ -137,5 +138,9 @@ width: 90%;
 margin: auto;
 padding: 10px;
 height: 200px;
+}
+.top_slider .button_roll{
+    margin-bottom: 30px;
+    margin-top: 10px;
 }
 }
