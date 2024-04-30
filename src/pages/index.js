@@ -4,11 +4,19 @@ import Header_Carousel from "../pages/header_carousel"
 import Footer_1 from './footer_1';
 import Index_slider from './index_slider';
 import Navbar from './Navbar';
-import Image from 'next/image';
 import url from "./host"
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+
+
 // import img from "../images/electromagenetic-relays.jpg"
 import { BsController } from 'react-icons/bs';
 import axios from 'axios';
+import { SwiperSlide,Swiper } from 'swiper/react';
 export default function index() {
   var [data,setData]=useState([])
   var [bestSeller,setBestSeller]=useState([])
@@ -193,13 +201,13 @@ gettopTovar(5)
       <h3>{header_top[0].category_title}</h3>
     </div>
     <div  className={s.img_2}>
-      <div onClick={()=>window.location=`/popular/${header_top[1].category_id}?title=${header_top[1].category_title}`} className={s.rasm1} style={{display:'grid'}}>
+      <div   onClick={()=>window.location=`/popular/${header_top[1].category_id}?title=${header_top[1].category_title}`} className={s.rasm1} style={{display:'grid',position:'relative'}}>
       <h3>{header_top[1].category_title}</h3><br />
-        <img style={{height:'70%'}} src={header_top[1].image} alt="" />
+        <img style={{height:'70%',position:'absolute',bottom:'0px'}} src={header_top[1].image} alt="" />
       </div>
-      <div onClick={()=>window.location=`/popular/${header_top[2].category_id}?title=${header_top[2].category_title}`} className={s.rasm2}>
-<h3>{header_top[2].category_title}</h3>
-        <img style={{height:'60%'}} src={header_top[2].image} alt="" />
+      <div style={{position:'relative'}} onClick={()=>window.location=`/popular/${header_top[2].category_id}?title=${header_top[2].category_title}`} className={s.rasm2}>
+      <h3>{header_top[2].category_title}</h3>
+        <img style={{height:'60%',position:'absolute',bottom:'0px'}} src={header_top[2].image} alt="" />
       </div>
     </div>
   </div>
@@ -240,6 +248,49 @@ gettopTovar(5)
     }} color={'#e6faff'}/>
      <Index_slider mapdata={data} data={{title:'Набирают популярность',h1:'Успейте купить первым',
     p:'Новинки, которые пользуются повышенным спросом'}} color={'#e7fcf9'}/>
+
+<main>
+  <h3>Дистрибьюция</h3>
+  <Swiper
+        cssMode={true}
+        navigation={true}
+        // pagination={true}
+        mousewheel={true}
+        keyboard={true}
+        slidesPerView={6}
+        id={s.swipper12}
+        breakpoints={{
+          106: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          968: {
+            slidesPerView: 4,
+          },
+          1100: {
+            slidesPerView: 5,
+          },
+          1400: {
+            slidesPerView: 6,
+          },
+        }}
+        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        className="mySwiper"
+      >
+        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
+      </Swiper>
+</main>
+
 <Footer_1/>
       </div>
     </div>

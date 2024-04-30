@@ -23,6 +23,11 @@
   background: url("../images/eaes.jpg") no-repeat;
   margin: auto;
 }
+#swipper12{
+  margin-top: 20px;
+  margin-bottom: 30px; 
+   text-align: center;
+}
 
 .pair_big{
   display: flex;

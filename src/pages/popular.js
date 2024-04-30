@@ -5,7 +5,7 @@ import s from "../styles/popular.module.css"
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
-import { FaArrowUpFromBracket } from "react-icons/fa6";
+// import { FaArrowUpFromBracket } from "react-icons/fa6";
 export default function popular() {
   function openmodal(){
     document.querySelector("#accor1").style='height:auto'

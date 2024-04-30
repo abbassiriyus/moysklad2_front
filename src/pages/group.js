@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import Footer_1 from './footer_1'
 import { IoIosArrowForward } from "react-icons/io";
 import { FaCheck } from "react-icons/fa6";
-import { FaArrowUpFromBracket } from "react-icons/fa6";
+// import { FaArrowUpFromBracket } from "react-icons/fa6";
 
 import s from "../styles/group.module.css"
 export default function group() {
@@ -27,7 +27,7 @@ export default function group() {
 
             <div className={s.prip}>
             <h1>ПОС 40 прв d=1.0мм 1м спираль, Припой</h1>
-            <FaArrowUpFromBracket  style={{fontSize:'25px'}} />
+            {/* <FaArrowUpFromBracket  style={{fontSize:'25px'}} /> */}
             </div>
 
             <div className={s.dobkar}>

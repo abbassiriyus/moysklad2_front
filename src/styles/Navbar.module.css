@@ -30,7 +30,7 @@
     background-color: white;
     position: sticky !important;
     top: 0px;
-    z-index: 4333334;
+    z-index: 4334;
 padding-top: 2px;
 padding-bottom: 2px;
 }
@@ -63,10 +63,11 @@ padding-bottom: 2px;
     top: -7px ;
     left: 35px;
     background-color: #e30613;
-    padding:1px 4px;
+    padding:0px 4px;
     border-radius: 50%;
     user-select: none;
     color: white;
+    min-width: 10px;
 }
 .kirish{
     display: flex;
@@ -211,6 +212,7 @@ padding-bottom: 2px;
 .accor{
     /* background-color: rgb(, 10, 10); */
     width: 100%;
+    /* opacity: 0; */
     padding-top: 20px;
     background-color: white ;
     min-width:300px;
@@ -221,6 +223,7 @@ padding-bottom: 2px;
     display: flex;
     width: 90%;
     margin: auto;
+    
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;

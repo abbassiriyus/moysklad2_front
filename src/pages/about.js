@@ -3,7 +3,7 @@ import s from "../styles/about.module.css"
 import Navbar from './Navbar'
 import Footer_1 from './footer_1';
 import { IoIosArrowForward } from "react-icons/io";
-import { FaArrowUpFromBracket } from "react-icons/fa6";
+// import { FaArrowUpFromBracket } from "react-icons/fa6";
 import { MdOutlinePresentToAll } from "react-icons/md";
 export default function about() {
   return (
@@ -16,7 +16,7 @@ export default function about() {
             </div>
     <div className={s.plan}>
         <h1>Планируете стать поставщиком?</h1>
-        <FaArrowUpFromBracket  style={{fontSize:'30px'}} />
+        {/* <FaArrowUpFromBracket  style={{fontSize:'30px'}} /> */}
     </div>
  <div className={s.history}>
 <div className={s.chip}>

@@ -5,7 +5,7 @@ import s from "../../styles/popular.module.css"
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
-import { FaArrowUpFromBracket } from "react-icons/fa6";
+// import { FaArrowUpFromBracket } from "react-icons/fa6";
 import { useRouter } from 'next/router';
 import url from "../host.js"
 import axios from 'axios';
