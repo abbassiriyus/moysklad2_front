@@ -62,9 +62,9 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
       
          <div className={s.aksessuar}>
             {category.map(item=>{
-          return  <div onClick={()=>window.location="/kraft/"} className={s.akses1}>
+          return  <div onClick={()=>window.location="/catalog/"} className={s.akses1}>
                 <img src={item.image} alt="" />
-                <a href="/kraft/"><span>	{item.category_title} </span></a>
+                <a href="/catalog/"><span>	{item.category_title} </span></a>
                 </div> 
             })}  
             </div>

@@ -81,7 +81,7 @@ ref={swiperRef}
        <h2>{data.h1}</h2>
 <p>{data.p}</p>
        </div>
-<button onClick={()=>{window.location="/kraft/"}}>Перейти к выбору</button>
+<button onClick={()=>{window.location="/catalog/"}}>Перейти к выбору</button>
     </div>
 
        </div>

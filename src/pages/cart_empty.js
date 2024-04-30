@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Footer_1 from './footer_1'
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,11 +11,57 @@ import { IoMdClose } from "react-icons/io";
 export default function cart_empty() {
     var [page,setPage]=useState(1)
     const [show, setShow] = useState(false);
-
+  var [product,setProduct]=useState([])
     const handleClose = () => setShow(false);
     const handleShow = () => {
         document.querySelector("#modalgl").style="display:flex"
     };
+useEffect(()=>{
+var a=localStorage.getItem('buy')?JSON.parse(localStorage.getItem('buy')):[]
+setPage(a.length)
+setProduct(a)
+var price=0
+for (let i = 0; i < a.length; i++) {
+    price=price+(a[i].count*a[i].price)
+}
+setAllPrice(price)
+})
+
+var [allprice, setAllPrice]=useState(0)
+
+function allcalculator(){
+    var price=0
+    for (let i = 0; i < product.length; i++) {
+        price=price+(product[i].count*product[i].price)
+    }
+    setAllPrice(price)
+}
+
+function plus(key){
+    var a=[...product]
+    a[key].count++
+localStorage.setItem('buy',JSON.stringify(a))
+setProduct(a)
+allcalculator()
+}
+
+function minus(key){
+    var a=[...product]
+    if(a[key].count>1){
+a[key].count--
+    }
+    allcalculator()
+localStorage.setItem('buy',JSON.stringify(a))
+setProduct(a)
+}
+
+function cutdata(key){
+    var a=[...product]
+   a.splice(key,1)
+    allcalculator()
+localStorage.setItem('buy',JSON.stringify(a))
+setProduct(a)
+}
   return (
     <div>
         {/* <Navbar/> */}
@@ -41,15 +87,18 @@ export default function cart_empty() {
     <>
     <div className={s.basket}>
    <>
-   <div className={s.table2}>
-   <IoMdClose className={s.close_button} />
-        <h5>ProsKit, Мини-дрели и граверы</h5>
-        <p>ном. номер: 9000842323</p>
-        <img width={'100px'} src="https://static.chipdip.ru/lib/604/DOC039604080.jpg" alt="" />
-        <h4>3000 руб.</h4>
-        <div className={s.count_button} ><button>-</button><div className={s.count}>1</div><button>+</button></div>
-            <p style={{fontSize:'13px',color:'grey'}}>от 3  шт. — 1232 руб.</p>
+   {product.map((item,key)=>{
+    return   <div className={s.table2}>
+   <IoMdClose className={s.close_button} onClick={()=>cutdata(key)} />
+        <h5>{item.name}</h5>
+        <p>ном. номер: {item.code}</p>
+        <img width={'100px'} src={item.image} alt="" />
+        <h4>{item.price} руб.</h4>
+        <div className={s.count_button} ><button onClick={()=>{minus(key)}} >-</button><div className={s.count}>{item.count}</div><button onClick={()=>{plus(key)}} >+</button></div>
+            <p style={{fontSize:'13px',color:'grey'}}>от {item.count}  шт. — {item.price*item.count} руб.</p>
         </div>
+   })}
+ 
         </>
 
      <table style={{width:'90%',margin:'auto'}}>
@@ -61,32 +110,26 @@ export default function cart_empty() {
             <th>Цена</th>
             <th>Кол-во</th>
         </tr>
-        <tr className={s.tr}>
-            <td>1</td>
-            <td><h5>ProsKit, Мини-дрели и граверы</h5>
-            <p>ном. номер: 9000842323</p></td>
-            <td><img width={'50px'} src="https://static.chipdip.ru/lib/604/DOC039604080.jpg" alt="" /></td>
-            <td>3000 руб.</td>
-            <td style={{position:'relative'}}><IoMdClose className={s.close_button} /><div className={s.count_button} ><button>-</button><div className={s.count}>1</div><button>+</button></div>
-            <p style={{fontSize:'13px',color:'grey'}}>от 3  шт. — 1232 руб.</p> 
+        {product.map((item,key)=>{
+            return   <tr className={s.tr}>
+            <td>{key+1}</td>
+            <td><h5>{item.name}</h5>
+            <p>ном. номер: {item.code}</p></td>
+            <td><img width={'50px'} src={item.image} alt="" /></td>
+            <td>{item.price} руб.</td>
+            <td style={{position:'relative'}}><IoMdClose onClick={()=>cutdata(key)} className={s.close_button} /><div className={s.count_button} ><button onClick={()=>{minus(key)}} >-</button><div className={s.count}>{item.count}</div><button onClick={()=>{plus(key)}} > +</button></div>
+            <p style={{fontSize:'13px',color:'grey'}}>от {item.count}  шт. — {item.price*item.count} руб.</p> 
             </td>
         </tr>
-        <tr className={s.tr}>
-            <td>2</td>
-            <td><h5>ProsKit, Мини-дрели и граверы</h5>
-            <p>ном. номер: 9000842323</p></td>
-            <td><img width={'50px'} src="https://static.chipdip.ru/lib/604/DOC039604080.jpg" alt="" /></td>
-            <td>3000 руб.</td>
-            <td style={{position:'relative'}}><IoMdClose className={s.close_button} /><div className={s.count_button} ><button>-</button><div className={s.count}>1</div><button>+</button></div>
-            <p style={{fontSize:'13px',color:'grey'}}>от 3  шт. — 1232 руб.</p> 
-            </td>
-        </tr>
+        })}
+     
+       
         </tbody>
      </table>
    
      <div className={s.calculator}>
         <p>Всего 2 товара на сумму: </p>
-        <h1>105 200 руб.</h1>
+        <h1>{allprice} руб.</h1>
         <button onClick={handleShow}>К оформлению</button>
      </div>
     </div>

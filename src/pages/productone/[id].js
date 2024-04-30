@@ -14,12 +14,36 @@ export default function group() {
     var router=useRouter()
 var [data,setData]=useState({})
 var [dr_data,setDrdata]=useState([])
+var [buy,setBuy]=useState([])
 function getData(params) {
     axios.get(`${url()}/api/oneproduct/${params}`).then(res=>{
         console.log(res.data);
 setData(res.data)
     })    
     }
+function buyOne() {
+  var data_test=[...buy]
+  var buy_one={
+    id:data.id,
+    image:data.images.rows.length>0?data.images.rows[0].miniature.downloadHref:'',
+    name:data.name,
+    code:data.code,
+    count:count,
+    price:data.minPrice.value/100
+  }
+  var push=true
+for (let i = 0; i < data_test.length; i++) {
+if(data_test[i].id==data.id){
+push=false
+data_test[i].count=data_test[i].count+count
+}
+}
+if(push){
+data_test.push(buy_one)
+}
+setBuy(data_test)
+localStorage.setItem('buy',JSON.stringify(data_test))
+}
 
     function getbestSeller(id) {
   axios.get(`${url()}/api/category/product/${id}?limit=5`).then(res=>{
@@ -33,13 +57,14 @@ setData(res.data)
         // setBestSeller(res.data)
       }).catch(err=>{
     console.log(err);
-      }) 
-     
-    
-    }
+      }) }
+
+
 
 useEffect(()=>{
-        if(router.query.id){
+  var a=localStorage.getItem('buy')?JSON.parse(localStorage.getItem('buy')):[]
+  setBuy(a)      
+  if(router.query.id){
           getData(router.query.id)
           getbestSeller(router.query.dr)
           console.log(router.query);
@@ -85,7 +110,7 @@ useEffect(()=>{
 </div>
 <p style={{marginBottom:'20px'}}>Добавить в корзину {count} шт. на сумму { data.minPrice && (data.minPrice.value/100)*count}  руб.
 </p>
-<button className={s.red1}>Добавить в корзину</button>
+<button className={s.red1} onClick={()=>{buyOne()}}>Добавить в корзину</button>
                        
                     </div>
                 </div>

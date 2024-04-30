@@ -9,15 +9,52 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { BsFillBoxSeamFill } from "react-icons/bs";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import img1 from "../images/logo1.png"
-
+// import GlobalStore from './GlobalStore';
 import { IoLocationSharp } from "react-icons/io5";
+import axios from 'axios';
+import url from "./host.js"
 export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
+  var [category,setCategory]=useState([])
+  var [allSubcategory,setAllSubCategory]=useState([])
+var [subId,setSubId]=useState(0)
+function getCategory() {
+  axios.get(`${url()}/api/category`).then(res=>{
+    var a=[]
+    var b=[]
+    for (let i = 0; i < res.data.length; i++) {
+      if(res.data[i].subcategory==0){
+       a.push(res.data[i])
+      }else{
+        b.push(res.data[i])
+      }
+    }
+    for (let i = 0; i < a.length; i++) {
+      a[i].big=false
+     for (let j = 0; j < b.length; j++) {
+  if(a[i].id==b[j].subcategory){
+    a[i].big=true
+  }
+     }
+    }
+  
+setAllSubCategory(b)
+setCategory(a)
+  }).catch(err=>{
+
+  })
+}
+
+var [count,setCount]=useState(0)
  
+useEffect(()=>{
+  setCount((JSON.parse(localStorage.getItem('buy'))).length)
+})
 
   useEffect(() => {
+    getCategory() 
     const handleScroll = () => {
-      if (window.pageYOffset >= 100) {
+      if (window.pageYOffset >= 130) {
         setShowNavbar(false);
       } else {
         setShowNavbar(true);
@@ -53,37 +90,26 @@ export default function Navbar() {
   <div className={s.catalog_toolbar}>
    <div className={s.bigac}>
    <div className={s.accor}>
-      <div  onMouseEnter={()=>{
-        document.querySelector("#nom").style='display:grid'
+    {category.map((item,key)=>{
+      if(item.big){
+          return <div style={{cursor:'pointer'}}  onClick={()=>{window.location=`/popular/${item.id}?title=${item.category_title}`}} onMouseEnter={()=>{
+        document.querySelector("#nom").style='display:grid'; setSubId(item.id)
       }} className={s.accordf}>
-        <h3>Электронные компоненты</h3>
+        <h3 style={{textAlign:'left'}}>{item.category_title}</h3>
         <MdArrowForwardIos className={s.forward} />
       </div>
+      }else{
+        return <div onClick={()=>{window.location="/catalog/"}}  style={{cursor:'pointer'}}  onMouseEnter={()=>{
+          document.querySelector("#nom").style='display:none'
+        }}  className={s.accordf}>
+          <h3 style={{textAlign:'left'}}>{item.category_title}</h3>
+        </div>
+      }
+     
 
-      <div  onMouseEnter={()=>{
-        document.querySelector("#nom").style='display:grid'
-      }} className={s.accordf}>
-        <h3>Электронные компоненты</h3>
-        <MdArrowForwardIos className={s.forward} />
-      </div>
-      <div  onMouseEnter={()=>{
-        document.querySelector("#nom").style='display:grid'
-      }} className={s.accordf}>
-        <h3>Электронные компоненты</h3>
-        <MdArrowForwardIos className={s.forward} />
-      </div>
-      <div  onMouseEnter={()=>{
-        document.querySelector("#nom").style='display:grid'
-      }} className={s.accordf}>
-        <h3 >Электронные компоненты</h3>
-        <MdArrowForwardIos className={s.forward} />
-      </div>
-      <div  onMouseEnter={()=>{
-        document.querySelector("#nom").style='opacity:1;'
-      }} className={s.accordf}>
-        <h3>Электронные компоненты</h3>
-        <MdArrowForwardIos className={s.forward} />
-      </div>
+    })}
+     
+      
     </div>
    </div>
    <div className={s.yoq}>
@@ -93,16 +119,15 @@ export default function Navbar() {
 
 }} className={s.modul}>
         <ul>
-          <li >Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-        
+          {allSubcategory.map((item,key)=>{
+            if(item.subcategory==subId){
+               return  <li onClick={()=>{window.location="/catalog/"}}  style={{cursor:'pointer'}}  >{item.category_title}</li> 
+            }
+         
+          })
+
+          }
+  
         </ul>
       </div>
     </div>
@@ -140,7 +165,7 @@ export default function Navbar() {
 <span>BOM</span>
 </div>
 <div onClick={()=>window.location="/cart_empty"} className={s.order}>
-<IoCartOutline style={{fontSize:'30px'}} /><sup>1</sup><br />
+<IoCartOutline style={{fontSize:'30px'}} /><sup>{count}</sup><br />
 
 <span>Корзина</span>
 </div>
@@ -164,37 +189,25 @@ export default function Navbar() {
   <div className={s.catalog_toolbar}>
    <div className={s.bigac}>
    <div className={s.accor}>
-      <div  onMouseEnter={()=>{
-        document.querySelector("#nom1").style='display:grid'
+   {category.map((item,key)=>{
+      if(item.big){
+          return <div style={{cursor:'pointer'}}  onClick={()=>{window.location=`/popular/${item.id}?title=${item.category_title}`}} onMouseEnter={()=>{
+        document.querySelector("#nom1").style='display:grid'; setSubId(item.id)
       }} className={s.accordf}>
-        <h3>Электронные компоненты</h3>
+        <h3 style={{textAlign:'left'}}>{item.category_title}</h3>
         <MdArrowForwardIos className={s.forward} />
       </div>
+      }else{
+        return <div onClick={()=>{window.location="/catalog/"}} style={{cursor:'pointer'}}  onMouseEnter={()=>{
+          document.querySelector("#nom1").style='display:none'
+        }}  className={s.accordf}>
+          <h3 style={{textAlign:'left'}}>{item.category_title}</h3>
+        </div>
+      }
+     
 
-      <div  onMouseEnter={()=>{
-        document.querySelector("#nom1").style='display:grid'
-      }} className={s.accordf}>
-        <h3>Электронные компоненты</h3>
-        <MdArrowForwardIos className={s.forward} />
-      </div>
-      <div  onMouseEnter={()=>{
-        document.querySelector("#nom1").style='display:grid'
-      }} className={s.accordf}>
-        <h3>Электронные компоненты</h3>
-        <MdArrowForwardIos className={s.forward} />
-      </div>
-      <div  onMouseEnter={()=>{
-        document.querySelector("#nom1").style='display:grid'
-      }} className={s.accordf}>
-        <h3 >Электронные компоненты</h3>
-        <MdArrowForwardIos className={s.forward} />
-      </div>
-      <div  onMouseEnter={()=>{
-        document.querySelector("#nom1").style='display:grid'
-      }} className={s.accordf}>
-        <h3>Электронные компоненты</h3>
-        <MdArrowForwardIos className={s.forward} />
-      </div>
+    })}
+      
     </div>
    </div>
    <div className={s.yoq}>
@@ -204,16 +217,14 @@ export default function Navbar() {
 
 }} className={s.modul}>
         <ul>
-          <li >Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-          <li>Промышленные разъёмы круглые <sub>91302</sub></li>
-        
+        {allSubcategory.map((item,key)=>{
+            if(item.subcategory==subId){
+               return  <li onClick={()=>{window.location="/catalog/"}}  style={{cursor:'pointer'}}  >{item.category_title}</li> 
+            }
+         
+          })
+
+          }
         </ul>
       </div>
     </div>
