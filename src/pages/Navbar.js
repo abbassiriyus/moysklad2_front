@@ -48,7 +48,10 @@ setCategory(a)
 var [count,setCount]=useState(0)
  
 useEffect(()=>{
-  setCount((JSON.parse(localStorage.getItem('buy'))).length)
+  if(localStorage.getItem('buy')){
+     setCount((JSON.parse(localStorage.getItem('buy'))).length)
+  }
+ 
 })
 
   useEffect(() => {
@@ -99,7 +102,7 @@ useEffect(()=>{
         <MdArrowForwardIos className={s.forward} />
       </div>
       }else{
-        return <div onClick={()=>{window.location="/catalog/"}}  style={{cursor:'pointer'}}  onMouseEnter={()=>{
+        return <div onClick={()=>{window.location=`/catalog/${item.category_id}?title=${item.category_title}`}}  style={{cursor:'pointer'}}  onMouseEnter={()=>{
           document.querySelector("#nom").style='display:none'
         }}  className={s.accordf}>
           <h3 style={{textAlign:'left'}}>{item.category_title}</h3>
@@ -121,7 +124,7 @@ useEffect(()=>{
         <ul>
           {allSubcategory.map((item,key)=>{
             if(item.subcategory==subId){
-               return  <li onClick={()=>{window.location="/catalog/"}}  style={{cursor:'pointer'}}  >{item.category_title}</li> 
+               return  <li onClick={()=>{window.location=`/catalog/${item.category_id}?title=${item.category_title}`}}  style={{cursor:'pointer'}}  >{item.category_title}</li> 
             }
          
           })
@@ -198,7 +201,7 @@ useEffect(()=>{
         <MdArrowForwardIos className={s.forward} />
       </div>
       }else{
-        return <div onClick={()=>{window.location="/catalog/"}} style={{cursor:'pointer'}}  onMouseEnter={()=>{
+        return <div onClick={()=>{window.location=`/catalog/${item.category_id}?title=${item.category_title}`}} style={{cursor:'pointer'}}  onMouseEnter={()=>{
           document.querySelector("#nom1").style='display:none'
         }}  className={s.accordf}>
           <h3 style={{textAlign:'left'}}>{item.category_title}</h3>
@@ -219,7 +222,7 @@ useEffect(()=>{
         <ul>
         {allSubcategory.map((item,key)=>{
             if(item.subcategory==subId){
-               return  <li onClick={()=>{window.location="/catalog/"}}  style={{cursor:'pointer'}}  >{item.category_title}</li> 
+               return  <li onClick={()=>{window.location=`/catalog/${item.category_id}?title=${item.category_title}`}}  style={{cursor:'pointer'}}  >{item.category_title}</li> 
             }
          
           })

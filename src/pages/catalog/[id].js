@@ -1,49 +1,143 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import s from "../../styles/catalog.module.css"
 import { IoIosArrowForward } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 import { IoIosArrowUp } from "react-icons/io";
-import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
-import { IoCloseOutline } from "react-icons/io5";
 import { MdArrowForwardIos } from "react-icons/md";
 import { FaCheck } from "react-icons/fa6";
 import { GrSort } from "react-icons/gr";
-import Navbar from './Navbar';
+import Navbar from '../Navbar';
 import { AiOutlineAppstore } from "react-icons/ai";
 import { CiSaveUp2 } from "react-icons/ci";
-import { IoColorFilterOutline } from "react-icons/io5";
-import Kraft from './kraft';
-import Footer_1 from './footer_1';
+import Footer_1 from '../footer_1';
+import { IoClose } from "react-icons/io5";
+import { useRouter } from 'next/router';
+import axios from 'axios';
+import url from '../host.js'
 export default function catalog() {
-    function openmodal(){
+  var [category,setCategory]=useState([])
+  var [allSubcategory,setAllSubCategory]=useState([])
+  function getCategory() {
+    axios.get(`${url()}/api/category`).then(res=>{
+      var a=[]
+      var b=[]
+      for (let i = 0; i < res.data.length; i++) {
+        if(res.data[i].subcategory==0){
+         a.push(res.data[i])
+        }else{
+          b.push(res.data[i])
+        }
+      }
+      for (let i = 0; i < a.length; i++) {
+        a[i].big=false
+       for (let j = 0; j < b.length; j++) {
+    if(a[i].id==b[j].subcategory){
+      a[i].big=true
+    }
+       }
+      }
+    
+  setAllSubCategory(b)
+  setCategory(a)
+    }).catch(err=>{
+  
+    })
+  }
+  useEffect(()=>{
+    getCategory()
+  },[])
+  var [title,setTitle]=useState('')
+  function openmodal(){
         document.querySelector("#accor1").style='height:auto'
         document.querySelector("#span2").style="display:block"
         document.querySelector("#span3").style="display:none"
         document.querySelector("#hide0").style="display:none"
       }
-      function closemodal(){
+  function closemodal(){
         document.querySelector("#hide0").style="display:block"
         document.querySelector("#span2").style="display:none"
         document.querySelector("#span3").style="display:block"
         document.querySelector("#accor1").style='height:400px'
       }
+var router=useRouter()
+
+var [pageCount,setPageCount]=useState(0)
+var [page_select,setPageSelect]=useState(1)
+var [card,setCard]=useState([])
+function getProduct(categoryid) {
+  var searchdata=""
+  axios.get(`${url()}/api/category/product/${categoryid}?limit=12&offset=${(page_select-1)*12}&search=${searchdata}`).then(res=>{
+for (let i = 0; i < res.data.length; i++) {
+res.data[i].count=1
+}
+if(res.data.length==0){
+  setCard([]) 
+
+}else{
+ setCard(res.data) 
+}
+
+  })
+}
+var [buy,setBuy]=useState([])
+      useEffect(()=>{
+        var a=localStorage.getItem('buy')?JSON.parse(localStorage.getItem('buy')):[]
+        setBuy(a)
+if (router.query.id) {
+  setTitle(router.query.title)
+  getProduct(router.query.id) 
+}
+      },[router])
+      function buyOne(item) {
+        var data_test=[...buy]
+        var buy_one={
+          id:item.id,
+          image:item.images.rows.length>0?item.images.rows[0].miniature.downloadHref:'',
+          name:item.name,
+          code:item.code,
+          count:item.count,
+          price:item.minPrice.value/100
+        }
+        var push=true
+      for (let i = 0; i < data_test.length; i++) {
+      if(data_test[i].id==item.id){
+      push=false
+      data_test[i].count=data_test[i].count+item.count
+      }
+      }
+      if(push){
+      data_test.push(buy_one)
+      }
+      setBuy(data_test)
+      localStorage.setItem('buy',JSON.stringify(data_test))
+      }
+function minusCount(key) {
+  var d=[...card]
+if(d[key].count>2){
+   d[key].count--
+}
+  setCard(d)
+}
+function plusCount(key) {
+  var d=[...card]
+  d[key].count++
+  setCard(d)
+}
+
+
   return (
     <div>
         <div className={s.body}>
             <Navbar/>
 <div className={s.page_road}>
-  <span>Главная</span>
-  <IoIosArrowForward/>
- 
-  <span>Средства разработки, конструкторы, модули</span> <IoIosArrowForward/>
-  <span>Arduino совместимые платы и робототехника</span>
+  <span onClick={()=>{window.location="/"}} >Главная</span>
 <IoIosArrowForward/>
 
-  <span style={{color:'grey'}}>Платы расширения (Shields)</span>
+  <span style={{color:'grey'}}>{title}</span>
 </div>
 <div className={s.prip}>
-    <h1>Платы расширения (Shields) <sub>478 из 549</sub></h1>
+    <h1>{title} <sub> 549</sub></h1>
 
     <div className={s.se}>
  
@@ -64,693 +158,98 @@ export default function catalog() {
     </div>
 </div>
 
-<div className={s.grove}>
-  <div className={s.grove_border}>
-    <span>Спецпредложения</span>
-  </div>
-  <div className={s.grove_border}>
-    <span>Спецпредложения</span>
-  </div>
-  <div className={s.grove_border}>
-    <span>Спецпредложения</span>
-  </div>
-  <div className={s.grove_border}>
-    <span>Спецпредложения</span>
-  </div>
-  <div className={s.grove_border}>
-    <span>Спецпредложения</span>
-  </div>
-  <div className={s.grove_border}>
-    <span>Спецпредложения</span>
-  </div>
-  <div className={s.grove_border}>
-    <span>Спецпредложения</span>
-  </div>
-  <div className={s.grove_border}>
-    <span>Спецпредложения</span>
-  </div>
-  <div className={s.grove_border}>
-    <span>Спецпредложения</span>
-  </div>
- 
-</div>
 
 <div className={s.display_grid}>
     <div className={s.summary1}>
-    <details className={s.detail1}>
-  <summary className={s.sum}>Бренд</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
+
+      {category.map((item,key)=>{
+        if(item.big){
+   return <details style={{cursor:'pointer'}} className={s.detail1}>
+  <summary className={s.sum}>{item.category_title}</summary>
   <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
+  {allSubcategory.map((sitem,skey)=>{
+    if(item.id==sitem.subcategory){
+    return  <div className={s.inp_sub}>
+    <span style={{cursor:'pointer'}} onClick={()=>{window.location=`/catalog/${sitem.category_id}?title=${sitem.category_title}`}}>{sitem.category_title}</span>
   </div>
+    }
 
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
+  })}
+  
 
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
+  
 </details>
+        }else{
+return <button onClick={()=>{window.location=`/catalog/${item.category_id}?title=${item.category_title}`}} className={s.detail1} style={{width:'100%',paddingTop:'10px',paddingBottom:'10px',textAlign:'left',paddingLeft:'20px',fontSize:'16px',fontWeight:700,cursor:'pointer'}} > <span >{item.category_title}</span></button>
+        }
+      })}
+  
 
 
-
-<details className={s.detail1}>
-  <summary className={s.sum}>Номинальный ток, А</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
-
-
-<details className={s.detail1}>
-  <summary className={s.sum}>Количество полюсов</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
-
-
-
-
-<details className={s.detail1}>
-  <summary className={s.sum}>Тип расцепления</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
-
-
-
-<details className={s.detail1}>
-  <summary className={s.sum}>Отключающая способность, кА</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
-
-
-<details className={s.detail1}>
-  <summary className={s.sum}>Номинальное Напряжение, В</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
-
-
-
-<details className={s.detail1}>
-  <summary className={s.sum}>Номинальное импульсное напряжение, кВ</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
-
-<details className={s.detail1}>
-  <summary className={s.sum}>Род тока</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
-
-
-
-
-
-<details className={s.detail1}>
-  <summary className={s.sum}>Механизм расцепления</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
-
-
-<details className={s.detail1}>
-  <summary className={s.sum}>НСтепень защиты</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
-
-
-
-<details className={s.detail1}>
-  <summary className={s.sum}>Товары в наличии</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
-
-<details className={s.detail1}>
-  <summary className={s.sum}>Цена,  руб.</summary>
-  <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
-  <hr  style={{color:'grey'}}/>
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-
-  <div className={s.inp_sub}>
-    <input type="checkbox" name="" id="" />
-    <span>BTM<sub>543</sub></span>
-  </div>
-</details>
 
 
     </div>
-<div className={s.kraftdg}>
+    {card.length==0?(<img style={{width:'80%',marginLeft:'10%'}} src='https://eonbazar.com/images/npf.jpg' alt='' /> ):(<div className={s.kraftdg}>
 <div id='sort2' className={s.big}>
 <div className={s.kraft}>
-        <div className={s.dekraft}>
+      {card.map((item,key)=>{
+        return <div className={s.dekraft}>
             <div className={s.img_kraft}>
-            <div className={s.sp}>
-
-                <span>быстрый просмотр</span>
-                </div>                
+          <img src={item.images.rows[0].miniature.downloadHref} alt="" />             
             </div>
             <div className={s.body_kraft}>
-                {/* <span></span> */}
-                <h5>DEKraft</h5>
-                <a href="">DEKraft Автоматический выключатель 2Р 25А х-ка B ВА-103 6кА  </a>
+                <h5>{item.pathName}</h5>
+                <div style={{height:"60px"}}>
+                <a href={`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`} >{item.name}</a></div>
                 <div className={s.check_pl}>
-                <FaCheck />
-                <span>4 шт.</span>
-                <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>{item.buyPrice.value/100} руб.</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
+                        <button onClick={()=>{minusCount(key)}}>-</button>
+                        <span>{item.count}</span>
+                        <button onClick={()=>{plusCount(key)}}> +</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn} onClick={()=>{buyOne(item)}} >В корзину</button>
                 </div>
             </div>
         </div>
-
-        <div className={s.dekraft}>
-            <div className={s.img_kraft}>
-            <div className={s.sp}>
-
-                <span>быстрый просмотр</span>
-                </div>                
-            </div>
-            <div className={s.body_kraft}>
-                {/* <span></span> */}
-                <h5>DEKraft</h5>
-                <a href="">DEKraft Автоматический выключатель 2Р 25А х-ка B ВА-103 6кА  </a>
-                <div className={s.check_pl}>
-                <FaCheck />
-                <span>4 шт.</span>
-                <FaPlus />
-                </div>
-                <h3>490 руб.</h3>
-                <div className={s.button_pm}>
-                    <div className={s.pm}>
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <button className={s.redbtn}>В корзину</button>
-                </div>
-            </div>
-        </div>
-
-        <div className={s.dekraft}>
-            <div className={s.img_kraft}>
-            <div className={s.sp}>
-
-                <span>быстрый просмотр</span>
-                </div>                
-            </div>
-            <div className={s.body_kraft}>
-                {/* <span></span> */}
-                <h5>DEKraft</h5>
-                <a href="">DEKraft Автоматический выключатель 2Р 25А х-ка B ВА-103 6кА  </a>
-                <div className={s.check_pl}>
-                <FaCheck />
-                <span>4 шт.</span>
-                <FaPlus />
-                </div>
-                <h3>490 руб.</h3>
-                <div className={s.button_pm}>
-                    <div className={s.pm}>
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <button className={s.redbtn}>В корзину</button>
-                </div>
-            </div>
-        </div>
-
-        <div className={s.dekraft}>
-            <div className={s.img_kraft}>
-            <div className={s.sp}>
-
-                <span>быстрый просмотр</span>
-                </div>                
-            </div>
-            <div className={s.body_kraft}>
-                {/* <span></span> */}
-                <h5>DEKraft</h5>
-                <a href="">DEKraft Автоматический выключатель 2Р 25А х-ка B ВА-103 6кА  </a>
-                <div className={s.check_pl}>
-                <FaCheck />
-                <span>4 шт.</span>
-                <FaPlus />
-                </div>
-                <h3>490 руб.</h3>
-                <div className={s.button_pm}>
-                    <div className={s.pm}>
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <button className={s.redbtn}>В корзину</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div className={s.kraft}>
-        <div className={s.dekraft}>
-            <div className={s.img_kraft}>
-            <div className={s.sp}>
-
-                <span>быстрый просмотр</span>
-                </div>                
-            </div>
-            <div className={s.body_kraft}>
-                {/* <span></span> */}
-                <h5>DEKraft</h5>
-                <a href="">DEKraft Автоматический выключатель 2Р 25А х-ка B ВА-103 6кА  </a>
-                <div className={s.check_pl}>
-                <FaCheck />
-                <span>4 шт.</span>
-                <FaPlus />
-                </div>
-                <h3>490 руб.</h3>
-                <div className={s.button_pm}>
-                    <div className={s.pm}>
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <button className={s.redbtn}>В корзину</button>
-                </div>
-            </div>
-        </div>
-
-        <div className={s.dekraft}>
-            <div className={s.img_kraft}>
-            <div className={s.sp}>
-
-                <span>быстрый просмотр</span>
-                </div>                
-            </div>
-            <div className={s.body_kraft}>
-                {/* <span></span> */}
-                <h5>DEKraft</h5>
-                <a href="">DEKraft Автоматический выключатель 2Р 25А х-ка B ВА-103 6кА  </a>
-                <div className={s.check_pl}>
-                <FaCheck />
-                <span>4 шт.</span>
-                <FaPlus />
-                </div>
-                <h3>490 руб.</h3>
-                <div className={s.button_pm}>
-                    <div className={s.pm}>
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <button className={s.redbtn}>В корзину</button>
-                </div>
-            </div>
-        </div>
-
-        <div className={s.dekraft}>
-            <div className={s.img_kraft}>
-            <div className={s.sp}>
-
-                <span>быстрый просмотр</span>
-                </div>                
-            </div>
-            <div className={s.body_kraft}>
-                {/* <span></span> */}
-                <h5>DEKraft</h5>
-                <a href="">DEKraft Автоматический выключатель 2Р 25А х-ка B ВА-103 6кА  </a>
-                <div className={s.check_pl}>
-                <FaCheck />
-                <span>4 шт.</span>
-                <FaPlus />
-                </div>
-                <h3>490 руб.</h3>
-                <div className={s.button_pm}>
-                    <div className={s.pm}>
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <button className={s.redbtn}>В корзину</button>
-                </div>
-            </div>
-        </div>
-
-        <div className={s.dekraft}>
-            <div className={s.img_kraft}>
-            <div className={s.sp}>
-
-                <span>быстрый просмотр</span>
-                </div>                
-            </div>
-            <div className={s.body_kraft}>
-                {/* <span></span> */}
-                <h5>DEKraft</h5>
-                <a href="">DEKraft Автоматический выключатель 2Р 25А х-ка B ВА-103 6кА  </a>
-                <div className={s.check_pl}>
-                <FaCheck />
-                <span>4 шт.</span>
-                <FaPlus />
-                </div>
-                <h3>490 руб.</h3>
-                <div className={s.button_pm}>
-                    <div className={s.pm}>
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <button className={s.redbtn}>В корзину</button>
-                </div>
-            </div>
-        </div>
+      })} 
     </div>
 </div>
 
 <div id='sort1' className={s.change}>
-<div className={s.pad}>
+
+  {card.map((item,key)=>{
+   return <div className={s.pad}>
 <div className={s.smart}>
     <div className={s.smarttext}>
-      <a href="">Arduino Breakout for LinkIt Smart 7688 Duo, Интерфейсная плата расширения для платформы LinkIt Smart 7688 Duo</a>
+      <a href="">{item.name}</a>
    
-    <p><span>Бренд:</span>Seeed Studio</p>
-    <p><span>Тип платы/модуля расширения:</span>переходник</p>
-    <p><span>Функциональное назначение платы/модуля:</span> arduino, grove, ethernet интерфейс</p>
-    <p><span>Совместимость:</span>linkit smart 7688 duo</p>
+    <p><span>Бренд:</span>{item.pathName}</p>
+    <p><span>Номенклатурный номер:</span>{item.code}</p>
+    
     </div>
-
-    <div className={s.smartimg}>
-      <span className={s.fast}>быстрый просмотр</span>
-    </div>
-
-<div className={s.tikk}>
-<FaCheck />
-  <span>6 шт.</span>
-</div>
+<img src={item.images.rows[0].miniature.downloadHref} alt="" />
+<div><h4>{item.buyPrice.value/100} руб. </h4></div>
 <div className={s.price}>
 <div className={s.butn}>
-  <span>1 600 руб. ×</span>
+  
   <div className={s.btn2}>
-    <button>-</button>
-    <span>1</span>
-    <button>+</button>
+    <button onClick={()=>{minusCount(key)}}>-</button>
+    <span>{item.count}</span>
+    <button onClick={()=>{plusCount(key)}}>+</button>
   </div>
-  <button className={s.red}>В корзине</button>
+  <button className={s.red} onClick={()=>{buyOne(item)}}>В корзине</button>
 </div>
-<p>от 3 шт. — 1 500 руб.</p>
-</div>
-  </div>
-
-</div>
-
-<div className={s.pad}>
-<div className={s.smart}>
-    <div className={s.smarttext}>
-      <a href="">Arduino Breakout for LinkIt Smart 7688 Duo, Интерфейсная плата расширения для платформы LinkIt Smart 7688 Duo</a>
-   
-    <p><span>Бренд:</span>Seeed Studio</p>
-    <p><span>Тип платы/модуля расширения:</span>переходник</p>
-    <p><span>Функциональное назначение платы/модуля:</span> arduino, grove, ethernet интерфейс</p>
-    <p><span>Совместимость:</span>linkit smart 7688 duo</p>
-    </div>
-
-    <div className={s.smartimg}>
-      <span className={s.fast}>быстрый просмотр</span>
-    </div>
-
-<div className={s.tikk}>
-<FaCheck />
-  <span>6 шт.</span>
-</div>
-<div className={s.price}>
-<div className={s.butn}>
-  <span>1 600 руб. ×</span>
-  <div className={s.btn2}>
-    <button>-</button>
-    <span>1</span>
-    <button>+</button>
-  </div>
-  <button className={s.red}>В корзине</button>
-</div>
-<p>от 3 шт. — 1 500 руб.</p>
+<p>от {item.count} шт. — {(item.buyPrice.value/100)*item.count} руб.</p>
 </div>
   </div>
 
 </div>
-<div className={s.pad}>
-<div className={s.smart}>
-    <div className={s.smarttext}>
-      <a href="">Arduino Breakout for LinkIt Smart 7688 Duo, Интерфейсная плата расширения для платформы LinkIt Smart 7688 Duo</a>
-   
-    <p><span>Бренд:</span>Seeed Studio</p>
-    <p><span>Тип платы/модуля расширения:</span>переходник</p>
-    <p><span>Функциональное назначение платы/модуля:</span> arduino, grove, ethernet интерфейс</p>
-    <p><span>Совместимость:</span>linkit smart 7688 duo</p>
-    </div>
+  })}
 
-    <div className={s.smartimg}>
-      <span className={s.fast}>быстрый просмотр</span>
-    </div>
 
-<div className={s.tikk}>
-<FaCheck />
-  <span>6 шт.</span>
-</div>
-<div className={s.price}>
-<div className={s.butn}>
-  <span>1 600 руб. ×</span>
-  <div className={s.btn2}>
-    <button>-</button>
-    <span>1</span>
-    <button>+</button>
-  </div>
-  <button className={s.red}>В корзине</button>
-</div>
-<p>от 3 шт. — 1 500 руб.</p>
-</div>
-  </div>
-</div>
 </div>
 
 
@@ -789,53 +288,16 @@ export default function catalog() {
         </div>
     </div>
 </div>
+</div>)}
+
 </div>
-</div>
 
-<div id='accor1' className={s.accor}>
-          <p>Универсальные автомобильные сканеры – устройства, предназначенные для диагностики автомобилей с помощью ПК или мобильного телефона. Обмен данными осуществляется по беспроводным сетям Bluetooth.
-<br /> <br />
-Автомобильные стоп-сигналы – устройство для повышения безопасности водителя во время движения, а также для снижения риска возникновения аварийной ситуации.
-<br /><br />
-Универсальные автомобильные адаптеры KL линий – устройства для подключения ПК к диагностическому каналу электронных блоков управления автомобилей. Применяются они для диагностики и управления функциями ЭБУ. Данные адаптеры представляют собой преобразователи уровней логических сигналов и стандартного порта USB.
-<br /><br />
-Посмотреть и купить товар вы можете в наших магазинах в городах: Москва, Санкт-Петербург, Архангельск, Астрахань, Барнаул, Брянск, Владимир, Волгоград, Вологда, Воронеж, Екатеринбург, Иваново, Ижевск, Иркутск, Йошкар‑Ола, Казань, Калуга, Кемерово, Киров, Кострома, Краснодар, Красноярск, Курган, Курск, Липецк, Набережные Челны, Нижний Новгород, Новосибирск, Омск, Орёл, Оренбург, Пенза, Пермь, Псков, Ростов-на-Дону, Рязань, Самара, Саранск, Саратов, Смоленск, Ставрополь, Сургут, Тамбов, Тверь, Томск, Тула, Тюмень, Ульяновск, Уфа, Хабаровск, Чебоксары, Челябинск, Ярославль.
-Доставка в пункты выдачи заказов Яндекс Доставка, СДЭК, Л-Пост, Boxberry, 5Post, транспортными компаниями DPD и «Деловые Линии», а также Почтой России в Тольятти, Владивосток, Махачкала, Новокузнецк, Калининград, Улан-Удэ, Сочи, Нижний Тагил, Чита, Владикавказ, Грозный, Мурманск, Петрозаводск, Нижневартовск, Новороссийск и еще в более чем 1000 городов и населенных пунктов по всей России.
-<br /><br />
-Товары из группы «Автомобильная электроника» вы можете купить оптом и в розницу.</p>
 
-         </div>
-         <div id='hide0' className={s.line}></div>
-<div className={s.hide}>
-    <span id='span2' onClick={()=> closemodal()} className={s.span1}>скрыть текст<IoIosArrowUp  /></span>
-    <span id='span3' onClick={()=> openmodal()} className={s.span0}>показать весь текст<IoIosArrowDown  /></span>
-</div>
-<hr  className={s.hrr}/>
+    {/* <div id='hide0' className={s.line}></div> */}
+{/* <hr  className={s.hrr}/> */}
 
-<h3>Ранее просмотренные товары</h3>
-<div className={s.cards1}>
-  
-<div className={s.card1}>
-   <img src="https://static.chipdip.ru/lib/968/DOC000968750.jpg" alt="" />
 
-    <div className={s.card1_body}>
-      <h5>Россия</h5>
-      <a href=""><span>ПОС 40 прв d=1.0мм 1м спираль, Припой</span></a>
-      <p>230 руб.</p>
-    </div>
-  </div>
-
-  <div className={s.card1}>
-   <img src="https://static.chipdip.ru/lib/975/DOC002975843.jpg" alt="" />
-
-    <div className={s.card1_body}>
-      <h5>Solins</h5>
-      <a href=""><span>СКФ (ФКСп, ФКЭт) с кисточкой 20мл, Флюс</span></a>
-      <p>170 руб.
-</p>
-    </div>
-  </div>
-</div>
+<div style={{height:'30px'}}></div>
 <Footer_1/>
         </div>
     </div>

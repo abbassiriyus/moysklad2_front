@@ -62,9 +62,9 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
       
          <div className={s.aksessuar}>
             {category.map(item=>{
-          return  <div onClick={()=>window.location="/catalog/"} className={s.akses1}>
+          return  <div onClick={()=>window.location=`/catalog/${item.id}?title=${item.category_title}`} className={s.akses1}>
                 <img src={item.image} alt="" />
-                <a href="/catalog/"><span>	{item.category_title} </span></a>
+                <a href={`/catalog/${item.id}?title=${item.category_title}`}><span>	{item.category_title} </span></a>
                 </div> 
             })}  
             </div>
@@ -105,7 +105,7 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
 
     <div className={s.card1_body}>
       <h5>{item.pathName}</h5>
-      <a href=""><span>{item.name}</span></a>
+      <a href={`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`}><span>{item.name}</span></a>
       <p>{item.minPrice.value/100} руб.</p>
     </div>
   </div>
