@@ -63,6 +63,7 @@ export default function catalog() {
 var router=useRouter()
 
 var [pageCount,setPageCount]=useState(0)
+var [stansiya,setStansiya]=useState(0)
 var [page_select,setPageSelect]=useState(1)
 var [card,setCard]=useState([])
 function getProduct(categoryid) {
