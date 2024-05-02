@@ -3,17 +3,13 @@ import s from "../styles/catalog.module.css"
 import { IoIosArrowForward } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 import { IoIosArrowUp } from "react-icons/io";
-import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
-import { IoCloseOutline } from "react-icons/io5";
 import { MdArrowForwardIos } from "react-icons/md";
 import { FaCheck } from "react-icons/fa6";
 import { GrSort } from "react-icons/gr";
 import Navbar from './Navbar';
 import { AiOutlineAppstore } from "react-icons/ai";
 import { CiSaveUp2 } from "react-icons/ci";
-import { IoColorFilterOutline } from "react-icons/io5";
-import Kraft from './kraft';
 import Footer_1 from './footer_1';
 import { IoClose } from "react-icons/io5";
 export default function catalog() {

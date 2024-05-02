@@ -48,22 +48,11 @@ export default function catalog() {
     getCategory()
   },[])
   var [title,setTitle]=useState('')
-  function openmodal(){
-        document.querySelector("#accor1").style='height:auto'
-        document.querySelector("#span2").style="display:block"
-        document.querySelector("#span3").style="display:none"
-        document.querySelector("#hide0").style="display:none"
-      }
-  function closemodal(){
-        document.querySelector("#hide0").style="display:block"
-        document.querySelector("#span2").style="display:none"
-        document.querySelector("#span3").style="display:block"
-        document.querySelector("#accor1").style='height:400px'
-      }
+
 var router=useRouter()
 
-var [pageCount,setPageCount]=useState(0)
-var [stansiya,setStansiya]=useState(0)
+var [pageCount,setPageCount]=useState([])
+var [stansiya,setStansiya]=useState([])
 var [page_select,setPageSelect]=useState(1)
 var [card,setCard]=useState([])
 function getProduct(categoryid) {
@@ -79,11 +68,24 @@ function getProduct(categoryid) {
         res.data[i].count=1
         }
       setCard(res.data)
+      setPageCount(res.data.length)
     }).catch(err=>{
   console.log(err);
     })
   }else{
 axios.get(`${url()}/api/category/product/${categoryid}?limit=20&offset=${(page_select-1)*20}&search=${searchdata}`).then(res=>{
+
+axios.get(`${url()}/api/category/count/${categoryid}`).then(res=>{
+var r=[]
+setPageCount(res.data.count)
+console.log(res.data.count/20);
+ for (let i = 0; i < (res.data.count/20); i++) {
+  r.push(i+1)
+ } 
+ setStansiya(r)
+
+})
+
 for (let i = 0; i < res.data.length; i++) {
 res.data[i].count=1
 }
@@ -156,7 +158,7 @@ function plusCount(key) {
   <span style={{color:'grey'}}>{title}</span>
 </div>
 <div className={s.prip}>
-    <h1>{title} <sub> 549</sub></h1>
+    <h1>{title} <sub> {pageCount}</sub></h1>
 
     <div className={s.se}>
  
@@ -273,47 +275,30 @@ return <button onClick={()=>{window.location=`/catalog/${item.category_id}?title
 
 
 <div className={s.page}>
+  {stansiya.length>=2?(
     <div className={s.p_num}>
         <h5>Страница</h5>
         <div className={s.num1}>
-        <div className={s.number}>
-            <span>1</span>
+      {stansiya.map((item,key)=>{
+        return <div onClick={()=>{setPageSelect(item);window.location="#";setTimeout(()=>{
+          getProduct(router.query.id)
+        }),1000}} style={page_select==item?{cursor:'pointer',border:'1px solid grey'}:{cursor:'pointer',border:'1px solid white'}} className={s.number}>
+            <span>{item}</span>
         </div>
-        <div className={s.number}>
-            <span>2</span>
-        </div>
+      })}  
 
-         <div className={s.number}>
-            <span>3</span>
-        </div>
-        <div className={s.number}>
+        <div onClick={()=>{if(page_select<stansiya.length){setPageSelect(page_select+1)}}} style={{cursor:'pointer',border:'1px solid white'}}  className={s.number}>
         <MdArrowForwardIos  className={s.rarrow} />
         </div>
         </div>
-    </div>
+    </div>):(<></>)}
 
-    <div className={s.p_num}>
-        <h5>Товаров на странице</h5>
-        <div className={s.num1}>
-        <div className={s.number}>
-            <span>20</span>
-        </div>
-        <div className={s.number}>
-            <span>40</span>
-        </div>
-        <div className={s.number}>
-            <span>60</span>
-        </div>
-        </div>
-    </div>
+    
 </div>
 </div>)}
 
 </div>
 
-
-    {/* <div id='hide0' className={s.line}></div> */}
-{/* <hr  className={s.hrr}/> */}
 
 
 <div style={{height:'30px'}}></div>

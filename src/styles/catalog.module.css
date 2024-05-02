@@ -425,6 +425,7 @@
   width: 10px;
   height: 10px;
   transition: 1s;
+  user-select: none;
 }
 .number:hover{
   border: 1px solid black;
@@ -432,6 +433,8 @@
 }
 .number:active{
   background-color: rgba(128, 128, 128, 0.425);
+  border: 1px solid black;
+
 }
 .number .rarrow{
   font-size: 30px;
