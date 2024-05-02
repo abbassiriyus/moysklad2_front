@@ -4,6 +4,9 @@
     margin-bottom: -60px;
     margin-top: 60px;
 }
+.footer1 li{
+    cursor: pointer;
+}
 .footer_text{
     color: rgba(0, 0, 0, 0.589);
     width: 90%;

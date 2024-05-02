@@ -7,6 +7,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import s from "../styles/cart_empty.module.css"
 // import { MdOutlineClose } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
+import axios from 'axios';
 // import { Button, Modal } from 'react-bootstrap';
 export default function cart_empty() {
     var [page,setPage]=useState(1)
@@ -62,6 +63,30 @@ function cutdata(key){
 localStorage.setItem('buy',JSON.stringify(a))
 setProduct(a)
 }
+
+
+
+function sendMessage() {
+    var send="Yangi buyurtma" +`%0A`
+     send+="Buyurtmachi:"+document.querySelector('.ism').value+`%0A`+"phone:"+document.querySelector('.nomer1').value+`%0A`
+  for (let i = 0; i < product.length; i++) {
+   send+=`${i+1})`+"id:"+product[i].id+'%0A' 
+   send+="soni:"+product[i].count+' ta'+'%0A' 
+   send+="nomi:"+product[i].name+'%0A' 
+   send+="price:"+product[i].price+' so`m'+'%0A' 
+   send+="jami:"+product[i].price*product[i].count+' so`m'+'%0A' 
+  }
+  send+="hammasi:"+allprice+" so`m"
+  axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=-1002089485609&text=${send}`).then(res=>{
+    ocument.querySelector("#modalgl").style="display:none"
+     document.querySelector('.ism').value=""
+    document.querySelector('.nomer1').value="" 
+    axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=1520593027&text=${send}`)
+      alert("Информация отправлена. Мы скоро свяжемся с вами")
+    }).catch(err=>{
+      alert('Пожалуйста, позвоните по номеру. Ваше сообщение не было отправлено')
+    })
+  }
   return (
     <div>
         {/* <Navbar/> */}
@@ -128,7 +153,7 @@ setProduct(a)
      </table>
    
      <div className={s.calculator}>
-        <p>Всего 2 товара на сумму: </p>
+        <p>Всего {product.length} товара на сумму: </p>
         <h1>{allprice} руб.</h1>
         <button onClick={handleShow}>К оформлению</button>
      </div>
@@ -140,13 +165,13 @@ setProduct(a)
     <form style={{position:'relative'}} >
     <IoMdClose style={{display:'block',fontSize:'20px',right:'20px'}} onClick={()=>{document.querySelector("#modalgl").style="display:none"}} className={s.close_button} />
     <label for="fname">Ф. И.О.</label>
-    <input type="text" id="fname" name="firstname" placeholder="Ф. И.О." />
+    <input type="text" id="fname" className='ism' name="firstname" placeholder="Ф. И.О." />
 
     <label for="lname">Ваш номер телефона</label>
-    <input type="phone" id="lname" name="lastname" placeholder="Ваш номер телефона" />
+    <input type="phone" id="lname" className='nomer1' name="lastname" placeholder="Ваш номер телефона" />
 
   
-    <input type="button" value="Сделать заказ" />
+    <input type="button" onClick={()=>{sendMessage()}} value="Сделать заказ" />
   </form>
     </div>
             <Footer_1/>

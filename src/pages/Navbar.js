@@ -17,6 +17,7 @@ export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
   var [category,setCategory]=useState([])
   var [allSubcategory,setAllSubCategory]=useState([])
+  var [company,setCompany]=useState([{}])
 var [subId,setSubId]=useState(0)
 function getCategory() {
   axios.get(`${url()}/api/category`).then(res=>{
@@ -44,7 +45,14 @@ setCategory(a)
 
   })
 }
-
+function getCompany1(){
+  axios.get(`${url()}/api/company`).then(res=>{
+    console.log(res.data);
+    if(res.data.length>0){
+      setCompany(res.data)
+    }
+  })
+}
 var [count,setCount]=useState(0)
  
 useEffect(()=>{
@@ -56,6 +64,7 @@ useEffect(()=>{
 
   useEffect(() => {
     getCategory() 
+    getCompany1()
     const handleScroll = () => {
       if (window.pageYOffset >= 130) {
         setShowNavbar(false);
@@ -73,7 +82,7 @@ useEffect(()=>{
   return (
     <>
 <div className={s.navbar}>
-    <span className={s.border}>+7 495 544-00-08</span>
+    <a style={{textDecoration:'none',color:'black'}} href={`tel:+${company[0].phone}`} className={s.border}>+{company[0].phone}</a>
     <div  className={s.chipdip}>
 <span>CHIPDIP организациям</span>
     </div>
@@ -146,7 +155,7 @@ useEffect(()=>{
 </div>
 </div></>):(<div className={s.logo}>
 <div onClick={()=>window.location="/"} className={s.img_logo}>
-<Image  src={img1} alt="" />
+<img  src={company[0].image} alt="" />
 </div>
 <div className={s.loc}>
 <IoLocationSharp style={{marginTop:'5px'}} />
@@ -159,14 +168,14 @@ useEffect(()=>{
 <FaRegUserCircle style={{fontSize:'30px'}}  /><br />
 <span>Вход</span>
 </div>
-<div className={s.order}>
+{/* <div className={s.order}>
 <BsFillBoxSeamFill style={{fontSize:'30px'}} /><br />
 <span>Статус заказа</span>
 </div>
 <div className={s.order}>
 <HiOutlineClipboardDocumentList style={{fontSize:'30px'}} /><br />
 <span>BOM</span>
-</div>
+</div> */}
 <div onClick={()=>window.location="/cart_empty"} className={s.order}>
 <IoCartOutline style={{fontSize:'30px'}} /><sup>{count}</sup><br />
 

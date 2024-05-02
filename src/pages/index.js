@@ -11,10 +11,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
-
-
-// import img from "../images/electromagenetic-relays.jpg"
-import { BsController } from 'react-icons/bs';
 import axios from 'axios';
 import { SwiperSlide,Swiper } from 'swiper/react';
 export default function index() {
@@ -161,10 +157,16 @@ setHeaderTop(res.data)
 console.log(res.data);
   })
 }
-
+var [homiy,setHomiy]=useState([])
+function getHomiy(params) {
+  axios.get(`${url()}/api/homiy`).then(res=>{
+    setHomiy(res.data)
+   })
+}
 var [loading,setLoading]=useState(true)
 useEffect(()=>{
   getCategory_top()
+  getHomiy()
   getImage()
 getData(5)
 getCategory()
@@ -241,20 +243,22 @@ gettopTovar(5)
   </>):(<></>)}
 </div>
   
-
-     <Index_slider mapdata={topTovar} id={topTovarId} data={{title:'Хиты продаж',
+<div id="xit">
+     <Index_slider  mapdata={topTovar} id={topTovarId} data={{title:'Хиты продаж',
       h1:'Самые популярные товары',
       p:'Выбор наших покупателей'
-      }}/>
+      }}/></div>
+      <div id="lut">
      <Index_slider mapdata={bestSeller} id={bestSellerId} data={{title:'Лучшие предложения',
     h1:'Выгодное предложение',
     p:'Узнайте о выгодных предложениях и специальных ценах. Только в этом месяце!'
-    }} color={'#e6faff'}/>
+    }} color={'#e6faff'}/></div>
+    <div id="new1">
      <Index_slider mapdata={data} id={1} data={{title:'Набирают популярность',h1:'Успейте купить первым',
     p:'Новинки, которые пользуются повышенным спросом'}} color={'#e7fcf9'}/>
-
+</div>
 <main>
-  <h3>Дистрибьюция</h3>
+  <h3 id='dic'>Дистрибьюция</h3>
   <Swiper
         cssMode={true}
         navigation={true}
@@ -283,15 +287,18 @@ gettopTovar(5)
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
-        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="https://static.chipdip.ru/images/distributor/cem/cem-logo.png" alt="" /></SwiperSlide>
+     {homiy.map(item=>{
+      return <SwiperSlide><img src={item.image} alt="" style={{height:'60px'}} /></SwiperSlide>
+     })}   
+       {homiy.map(item=>{
+      return <SwiperSlide><img src={item.image} alt="" style={{height:'60px'}} /></SwiperSlide>
+     })}   
+       {homiy.map(item=>{
+      return <SwiperSlide><img src={item.image} alt="" style={{height:'60px'}} /></SwiperSlide>
+     })}   
+       {homiy.map(item=>{
+      return <SwiperSlide><img src={item.image} alt="" style={{height:'60px'}} /></SwiperSlide>
+     })}  
       </Swiper>
 </main>
 
