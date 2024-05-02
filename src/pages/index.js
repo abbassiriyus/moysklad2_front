@@ -84,9 +84,11 @@ else{
 }
 },[])
 
+var [bestSellerId,setBestSellerId]=useState('')
 function getbestSeller(id) {
   axios.get(`${url()}/api/best_seller`).then(res1=>{
     if(res1.data.length>0){
+      setBestSellerId(res1.data[0].category_id)
        axios.get(`${url()}/api/category/product/${res1.data[0].category_id}?limit=${id}`).then(res=>{
     res.data.sort((a, b) => {
       const timestampA = new Date(a.updated);
@@ -102,9 +104,11 @@ console.log(err);
 
 }
 
+var [topTovarId,settopTovarId]=useState("")
 function gettopTovar(id) {
   axios.get(`${url()}/api/top_tovar`).then(res1=>{
     if(res1.data.length>0){
+      settopTovarId(res1.data[0].category_id)
        axios.get(`${url()}/api/category/product/${res1.data[0].category_id}?limit=${id}`).then(res=>{
     res.data.sort((a, b) => {
       const timestampA = new Date(a.updated);
@@ -238,15 +242,15 @@ gettopTovar(5)
 </div>
   
 
-     <Index_slider mapdata={topTovar} data={{title:'Хиты продаж',
+     <Index_slider mapdata={topTovar} id={topTovarId} data={{title:'Хиты продаж',
       h1:'Самые популярные товары',
       p:'Выбор наших покупателей'
       }}/>
-     <Index_slider mapdata={bestSeller} data={{title:'Лучшие предложения',
+     <Index_slider mapdata={bestSeller} id={bestSellerId} data={{title:'Лучшие предложения',
     h1:'Выгодное предложение',
     p:'Узнайте о выгодных предложениях и специальных ценах. Только в этом месяце!'
     }} color={'#e6faff'}/>
-     <Index_slider mapdata={data} data={{title:'Набирают популярность',h1:'Успейте купить первым',
+     <Index_slider mapdata={data} id={1} data={{title:'Набирают популярность',h1:'Успейте купить первым',
     p:'Новинки, которые пользуются повышенным спросом'}} color={'#e7fcf9'}/>
 
 <main>

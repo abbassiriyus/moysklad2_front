@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function index_slider({color,data,mapdata}) {
+export default function index_slider({color,data,mapdata,id}) {
     SwiperCore.use([Navigation, Pagination, Autoplay]);
     const swiperRef = useRef(null);
 
@@ -81,7 +81,7 @@ ref={swiperRef}
        <h2>{data.h1}</h2>
 <p>{data.p}</p>
        </div>
-<button onClick={()=>{window.location="/catalog/"}}>Перейти к выбору</button>
+<button onClick={()=>{window.location=`/catalog/${id}?title=${data.title}`}}>Перейти к выбору</button>
     </div>
 
        </div>

@@ -67,7 +67,22 @@ var [page_select,setPageSelect]=useState(1)
 var [card,setCard]=useState([])
 function getProduct(categoryid) {
   var searchdata=""
-  axios.get(`${url()}/api/category/product/${categoryid}?limit=12&offset=${(page_select-1)*12}&search=${searchdata}`).then(res=>{
+  if(categoryid==1){
+    axios.get(`${url()}/api/product?limit=20`).then(res=>{
+      res.data.sort((a, b) => {
+        const timestampA = new Date(a.updated);
+        const timestampB = new Date(b.updated);
+        return timestampB - timestampA;
+      });
+      for (let i = 0; i < res.data.length; i++) {
+        res.data[i].count=1
+        }
+      setCard(res.data)
+    }).catch(err=>{
+  console.log(err);
+    })
+  }else{
+axios.get(`${url()}/api/category/product/${categoryid}?limit=20&offset=${(page_select-1)*20}&search=${searchdata}`).then(res=>{
 for (let i = 0; i < res.data.length; i++) {
 res.data[i].count=1
 }
@@ -79,6 +94,9 @@ if(res.data.length==0){
 }
 
   })
+  }
+
+
 }
 var [buy,setBuy]=useState([])
       useEffect(()=>{
@@ -89,7 +107,7 @@ if (router.query.id) {
   getProduct(router.query.id) 
 }
       },[router])
-      function buyOne(item) {
+   function buyOne(item) {
         var data_test=[...buy]
         var buy_one={
           id:item.id,
