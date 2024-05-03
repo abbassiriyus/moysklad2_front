@@ -29,7 +29,7 @@ align-items: center;
 }
 .car_img{
     align-items: center;
-    width: 98%;
+    width: 100%;
     display: flex;
     justify-content: space-between  ;
 }

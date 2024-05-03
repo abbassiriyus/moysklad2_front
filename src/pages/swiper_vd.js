@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import s from '../styles/swiper_vd.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+// import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 // Import Swiper styles
@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export default function header_carousel() {
-    SwiperCore.use([Navigation, Pagination, Autoplay]);
+
     const swiperRef = useRef(null);
 
     const handleNextSlide = () => {

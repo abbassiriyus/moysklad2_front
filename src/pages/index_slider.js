@@ -2,7 +2,7 @@
 import s from "../styles/index_slider.module.css"
 import React, { useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+// import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 // Import Swiper styles
@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export default function index_slider({color,data,mapdata,id}) {
-    SwiperCore.use([Navigation, Pagination, Autoplay]);
+    // SwiperCore.use([Navigation, Pagination, Autoplay]);
     const swiperRef = useRef(null);
 
     const handleNextSlide = () => {
@@ -30,7 +30,7 @@ export default function index_slider({color,data,mapdata,id}) {
     <div>
 <main  style={{backgroundColor:`${color}`}} className={s.top_slider}>
     <div className={s.main_1}>
-        <h1>{data.title}</h1>
+        <h1>{data && data.title}</h1>
     <Swiper
 className={s.header_carousel}
 ref={swiperRef}
@@ -55,7 +55,7 @@ ref={swiperRef}
         disableOnInteraction: false,
       }}
     >
-        {mapdata.map((item,key)=>{
+        {mapdata && mapdata.map((item,key)=>{
             return  <SwiperSlide>
         <div onClick={()=>window.location=`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`} className={s.card}>
             <div className={s.card_img}>
@@ -78,10 +78,10 @@ ref={swiperRef}
     <FaArrowRightLong onClick={handleNextSlide} /> </div>
     <div className={s.section2}>
        <div style={{width:'98%',margin:'auto'}}>
-       <h2>{data.h1}</h2>
-<p>{data.p}</p>
+       <h2>{data && data.h1}</h2>
+<p>{data && data.p}</p>
        </div>
-<button onClick={()=>{window.location=`/catalog/${id}?title=${data.title}`}}>Перейти к выбору</button>
+<button onClick={()=>{window.location=`/catalog/${id}?title=${data && data.title}`}}>Перейти к выбору</button>
     </div>
 
        </div>

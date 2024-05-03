@@ -46,7 +46,7 @@ export default function footer_1() {
     <h4>О компании</h4>
     {category.map((item,key)=>{
       if(key<5){
-        return <li>{item.category_title}</li>
+        return <li  onClick={() => { window.location = `/catalog/${item.category_id}?title=${item.category_title}` }}>{item.category_title}</li>
       }
      
     })}

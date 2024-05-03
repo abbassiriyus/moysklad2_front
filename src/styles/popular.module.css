@@ -1,5 +1,5 @@
 .body{
-    width: 98%;
+    width: 100%;
     max-width: 1400px;
     padding-top: 6px;
     margin: auto;
@@ -34,7 +34,7 @@
     /* flex-wrap: wrap; */
     align-items: center;
     margin-bottom: 20px;
-    width: 98%;
+    width: 100%;
     margin: auto;
     margin-top: 20px;
   }

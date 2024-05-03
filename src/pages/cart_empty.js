@@ -78,12 +78,15 @@ function sendMessage() {
   }
   send+="hammasi:"+allprice+" so`m"
   axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=-1002089485609&text=${send}`).then(res=>{
-    ocument.querySelector("#modalgl").style="display:none"
+    document.querySelector("#modalgl").style="display:none"
      document.querySelector('.ism').value=""
     document.querySelector('.nomer1').value="" 
-    axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=1520593027&text=${send}`)
-      alert("Информация отправлена. Мы скоро свяжемся с вами")
+    axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=1520593027&text=${send}`).then(res=>{
+      document.querySelector("#modalgl").style="display:none"
+      alert("Информация отправлена. Мы скоро свяжемся с вами")  
+    })
     }).catch(err=>{
+        document.querySelector("#modalgl").style="display:none"
       alert('Пожалуйста, позвоните по номеру. Ваше сообщение не было отправлено')
     })
   }
@@ -105,7 +108,7 @@ function sendMessage() {
                 <div className={s.cart1}>
                     <h3>Сейчас в корзине нет товаров</h3>
                     <p>Для выбора используйте каталог товаров или поиск. <br />
-Чтобы добавить товар в корзину, кликните на кнопку <button>В корзину</button>, напротив интересующей вас позиции.</p>
+Чтобы добавить товар в корзину, кликните на кнопку <button onClick={()=>window.location="/"}>В корзину</button>, напротив интересующей вас позиции.</p>
                 </div>
             </div>
 </> ):(

@@ -1,5 +1,5 @@
 .body{
-    width: 98%;
+    width: 100%;
     max-width: 1400px;
     padding-top: 6px;
     margin: auto;
@@ -30,7 +30,7 @@
   @media (max-width:1000px) {
     .empty_cart{
         background-color: #f3f4f6;
-        width: 98%;
+        width: 100%;
         padding-top: 10px;
         padding-bottom: 10px;
         margin: auto;
