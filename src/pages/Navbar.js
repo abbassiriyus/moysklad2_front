@@ -149,9 +149,22 @@ useEffect(()=>{
 
 
 </div>
-<div className={s.search_inp}>
+<div onMouseLeave={()=>{document.querySelector("#search_res").style="display:none"}} className={s.search_inp}>
 <LiaSearchSolid style={{marginLeft:'20px',color:'red',fontSize:'20px'}} />
-    <input  type="text" placeholder='Поиск среди 8 637 350 компонентов, электроники, приборов, электрики, автозапчастей, инструментов, сантехники…' />
+    <input onClick={()=>{document.querySelector("#search_res").style="display:block"}}  type="text" placeholder='Поиск среди 8 637 350 компонентов, электроники, приборов, электрики, автозапчастей, инструментов, сантехники…' />
+<div id='search_res' className={s.search_result}>
+  <h5>товарные группы</h5>
+<ul>
+  <li>Материалы для пайки</li>
+  <li>Материалы для пайки</li>
+  <li>Материалы для пайки</li>
+</ul>
+<h5>быстрый поиск</h5>
+<ul className={s.product_search} >
+<li><img src="https://static.chipdip.ru/lib/410/DOC036410923.jpg" style={{height:'30px'}} alt="" />ESP-PROG, Программатор/отладчик для беспроводных микросхем и модулей Espressif <h6>1000000000 rubl</h6></li>
+  <li><img src="https://static.chipdip.ru/lib/410/DOC036410923.jpg" style={{height:'30px'}} alt="" /> Материалы для пайки <h6>1000 rubl</h6></li>
+  <li><img src="https://static.chipdip.ru/lib/410/DOC036410923.jpg" style={{height:'30px'}} alt="" /> Материалы для пайки <h6>1000 rubl</h6></li></ul>
+</div>
 </div>
 </div></>):(<div className={s.logo}>
 <div onClick={()=>window.location="/"} className={s.img_logo}>

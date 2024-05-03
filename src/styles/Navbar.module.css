@@ -124,6 +124,7 @@ padding-bottom: 2px;
     height: 50px;
     gap: 10px;
     display: flex;
+    position: relative;
     background-color: rgba(128, 128, 128, 0.077);
 }
 .search_inp input{
@@ -133,8 +134,44 @@ padding-bottom: 2px;
     border: none;
     background-color: rgba(128, 128, 128, 0);
 }
+.search_result{
+    background-color: white;
+    box-shadow: 0px 3px 3px rgba(128, 128, 128, 0.5);
+    width: 100%;
+    /* height: 300px; */
+    z-index: 123;
+    position: absolute;
+    left: 0pc;
+    top: 100%;
+    display: none;
+}
 
-
+.search_result ul,.search_result ul li {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+.search_result ul{
+    margin: 10px;
+}
+.search_result h5{
+    margin: 10px;color: grey;
+}
+.search_result ul li{
+    padding: 5px;
+    border: 1px solid grey;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.search_result ul li:hover{
+    scale: 1.01;
+}
+.search_result .product_search li{
+display: grid;
+grid-template-columns: 60px auto 70px;
+align-items: center;
+font-size: 15px;
+}
 @media(max-width:1100px){
     .status{
         display: flex;
