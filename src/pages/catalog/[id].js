@@ -46,6 +46,7 @@ export default function catalog() {
   }
   useEffect(()=>{
     getCategory()
+    setModalPage(true)
   },[])
   var [title,setTitle]=useState('')
 
@@ -145,7 +146,7 @@ function plusCount(key) {
   d[key].count++
   setCard(d)
 }
-
+var [modalPage,setModalPage]=useState(false)
 
   return (
     <div>
@@ -161,8 +162,7 @@ function plusCount(key) {
     <h1>{title} <sub> {pageCount}</sub></h1>
 
     <div className={s.se}>
- 
-    <AiOutlineAppstore id='apps' onClick={()=>{
+    {card.length>0?(<>    <AiOutlineAppstore id='apps' onClick={()=>{
        document.querySelector("#ss").style='display:block'
        document.querySelector('#apps').style='display:none'
       document.querySelector("#sort2").style='display:none'
@@ -174,15 +174,15 @@ function plusCount(key) {
        document.querySelector("#apps").style='display:block'
        document.querySelector("#ss").style='display:none'
 
-    }} className={s.grsort}/>
-    <CiSaveUp2 />
+    }} className={s.grsort}/></>):(<></>)}
+
+    <CiSaveUp2 onClick={()=>setModalPage(!modalPage)} />
     </div>
 </div>
 
 
-<div className={s.display_grid}>
-    <div className={s.summary1}>
-
+<div style={modalPage?{display:'grid',gridTemplateColumns:window.innerWidth <= 991 ? 'auto' : '250px auto'}:{display:'grid',gridTemplateColumns:'auto'}} className={s.display_grid}>
+    <div style={modalPage?{display:"block"}:{display:'none'}} className={s.summary1}>
       {category.map((item,key)=>{
         if(item.big){
    return <details style={{cursor:'pointer'}} className={s.detail1}>
