@@ -159,7 +159,7 @@ var [modalPage,setModalPage]=useState(false)
   <span style={{color:'grey'}}>{title}</span>
 </div>
 <div className={s.prip}>
-    <h1>{title} <sub> {pageCount}</sub></h1>
+    <h1>{title} <sub> {pageCount!=35 && pageCount}</sub></h1>
 
     <div className={s.se}>
     {card.length>0?(<>    <AiOutlineAppstore id='apps' onClick={()=>{
