@@ -1,0 +1,127 @@
+.footer_sayt{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    width: 90%;
+    max-width: 1400px;
+    /* align-items: center; */
+    margin: auto;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+.foot{
+    background-color: #00415a;
+    color: white;
+    padding-bottom: 1px;
+    padding-top: 10px;
+}
+.app{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    min-width: 150px;
+    background-color: rgba(52, 46, 46, 0.729);
+    color: white;
+    width: 40%;
+    height: 50px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: 1s;
+}
+.app:hover{
+    background-color: black;
+}
+/* .apps{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+} */
+.footer_sayt ul {
+  
+    list-style: none;
+    font-family: "Manrope", sans-serif;
+}
+.footer_sayt ul li{
+    margin-top: 30px;
+}
+.footer_sayt ul a{
+    color: white;
+    text-decoration: none;
+    transition: 1s;
+}
+.footer_sayt ul a:hover{
+    border-bottom: 1px solid white !important;
+    text-decoration: underline;
+    /* background-color: red; */
+}
+.social{
+    display: flex;
+    font-size: 24px;
+    margin-top: 30px;
+    gap: 35px;
+}
+@media(max-width:1200px){
+    .footer_sayt{
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr ;
+        width: 90%;
+        max-width: 1400px;
+        /* align-items: center; */
+        margin: auto;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+    .apps{
+        margin-bottom: 50px;
+    }
+}
+@media(max-width:913px){
+    .footer_sayt{
+        display: grid;
+        grid-template-columns: 1.5fr 1fr  ;
+        width: 90%;
+        max-width: 1400px;
+        /* align-items: center; */
+        margin: auto;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+    .apps{
+        margin-bottom: 50px;
+    }
+}
+@media(max-width:660px){
+    .footer_sayt{
+        display: grid;
+        grid-template-columns: 1.5fr ;
+        width: 90%;
+        max-width: 400px;
+        /* align-items: center; */
+        margin: auto;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+    .apps{
+        margin-bottom: 50px;
+    }
+    .footer_sayt ul{
+        margin-bottom: 40px;
+    }
+}
+
+.footer_p{
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .appsdf{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }

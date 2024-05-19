@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar'
-import Footer_1 from '../footer_1'
+import Footer from '../footer'
 import s from "../../styles/popular.module.css"
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
@@ -121,7 +121,7 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
     </div>
   </div>
 </div> */}
-<Footer_1/>
+<Footer/>
      </div>
     </div>
   )

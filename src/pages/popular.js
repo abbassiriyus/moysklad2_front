@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Footer_1 from './footer_1'
+import Footer from './footer';
 import s from "../styles/popular.module.css"
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
@@ -171,7 +171,7 @@ export default function popular() {
     </div>
   </div>
 </div>
-<Footer_1/>
+<Footer/>
      </div>
     </div>
   )

@@ -10,7 +10,7 @@ import { GrSort } from "react-icons/gr";
 import Navbar from './Navbar';
 import { AiOutlineAppstore } from "react-icons/ai";
 import { CiSaveUp2 } from "react-icons/ci";
-import Footer_1 from './footer_1';
+import Footer from './footer';
 import { IoClose } from "react-icons/io5";
 export default function catalog() {
     function openmodal(){
@@ -364,7 +364,7 @@ export default function catalog() {
     </div>
   </div>
 </div>
-<Footer_1/>
+<Footer/>
         </div>
     </div>
   )

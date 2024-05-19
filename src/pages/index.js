@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import s from "../styles/Home.module.css"
 import Header_Carousel from "../pages/header_carousel"
-import Footer_1 from './footer_1';
+import Footer from './footer';
 import Index_slider from './index_slider';
 import Navbar from './Navbar';
 import url from "./host"
@@ -302,7 +302,7 @@ ISHLAB CHIQARISH VA DISTRIBUTORLAR
       </Swiper>
 </main>
 
-<Footer_1/>
+<Footer/>
       </div>
     </div>
   )

@@ -294,6 +294,11 @@ export default function Navbar() {
             </div>
           </div>
         </div>
+
+
+        <div className={s.modalkir}>
+                    
+        </div>
       </div>
 
     </>

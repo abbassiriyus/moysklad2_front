@@ -10,7 +10,7 @@ import { GrSort } from "react-icons/gr";
 import Navbar from '../Navbar';
 import { AiOutlineAppstore } from "react-icons/ai";
 import { CiSaveUp2 } from "react-icons/ci";
-import Footer_1 from '../footer_1';
+import Footer from '../footer';
 import { IoClose } from "react-icons/io5";
 import { useRouter } from 'next/router';
 import axios from 'axios';
@@ -302,7 +302,7 @@ return <button onClick={()=>{window.location=`/catalog/${item.category_id}?title
 
 
 <div style={{height:'30px'}}></div>
-<Footer_1/>
+<Footer/>
         </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import s from "../styles/about.module.css"
 import Navbar from './Navbar'
-import Footer_1 from './footer_1';
+import Footer from './footer';
 import { IoIosArrowForward } from "react-icons/io";
 // import { FaArrowUpFromBracket } from "react-icons/fa6";
 import { MdOutlinePresentToAll } from "react-icons/md";
@@ -100,7 +100,7 @@ export default function about() {
 <iframe className={s.iframe1} width="560" height="315" src="https://www.youtube-nocookie.com/embed/nPoXZl29TwA?si=YC-jWC8MGYwKe0_N&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
-<Footer_1/>
+<Footer/>
         </div>
     </div>
   )

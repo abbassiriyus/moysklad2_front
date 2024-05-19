@@ -180,8 +180,10 @@
   margin-left: 10px;
   margin-top: 10px;
   font-weight: 400;
+  transition: 1s;
+
 }
-.rasm1 h3:hover{
+.rasm1:hover h3{
   font-weight: 700;
 }
 
@@ -202,8 +204,10 @@
   margin-left: 10px;
   margin-top: 10px;
   font-weight: 400;
+  transition: 1s;
+
 }
-.rasm2 h3:hover{
+.rasm2:hover h3{
   font-weight: 700;
 }
 
@@ -217,10 +221,15 @@
   margin-left: 10px;
   color: white;
   font-weight: 400;
+  transition: 1s;
+
 }
-.img1 h3:hover{
+.img1:hover h3{
+  
   font-weight: 700;
-}
+
+  }
+
 .popular2{
   background-color: rgba(129, 179, 197, .533);
   width: 35%;
@@ -231,8 +240,10 @@
   margin-left: 10px;
   margin-top: 10px;
   font-weight: 400;
+  transition: 1s;
+
 }
-.popular2 h3:hover{
+.popular2:hover h3{
   font-weight: 700;
 }
 .popular2 img{
@@ -257,8 +268,10 @@
   margin-left: 10px;
   margin-top: 10px;
   font-weight: 400;
+  transition: 1s;
+
 }
-.avto h3:hover{
+.avto:hover h3{
   font-weight: 700;
 }
 .ato2{
@@ -274,8 +287,10 @@
   margin-left: 10px;
   margin-top: 10px;
   font-weight: 400;
+  transition: 1s;
+
 }
-.avto1 h3:hover{
+.avto1:hover h3{
   font-weight: 700;
 }
 .avto2{
@@ -291,8 +306,9 @@
   margin-left: 10px;
   margin-top: 10px;
   font-weight: 400;
+  transition: 1s;
 }
-.avto2 h3:hover{
+.avto2:hover h3{
   font-weight: 700;
 }
 

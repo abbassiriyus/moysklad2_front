@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
-import Footer_1 from './footer_1'
+import Footer from './footer'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import { FaArrowUpFromBracket } from "react-icons/fa6";
 import { IoIosArrowForward } from "react-icons/io";
@@ -177,7 +177,7 @@ function sendMessage() {
     <input type="button" onClick={()=>{sendMessage()}} value="Сделать заказ" />
   </form>
     </div>
-            <Footer_1/>
+            <Footer/>
         </div>
 
     </div>

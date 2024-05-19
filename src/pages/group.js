@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Footer_1 from './footer_1'
+import Footer from './footer'
 import { IoIosArrowForward } from "react-icons/io";
 import { FaCheck } from "react-icons/fa6";
 // import { FaArrowUpFromBracket } from "react-icons/fa6";
@@ -226,7 +226,7 @@ texnik hujjatlarga qarang</p>
     </div>
   </div>
 </div>
-<Footer_1/>
+<Footer/>
         </div>
     </div>
   )
