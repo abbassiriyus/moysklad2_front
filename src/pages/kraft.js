@@ -303,7 +303,7 @@ export default function kraft() {
 </details>
 
 <details className={s.detail1}>
-  <summary className={s.sum}>Цена,  руб.</summary>
+  <summary className={s.sum}>Цена,  so`m</summary>
   <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
   <hr  style={{color:'grey'}}/>
   <div className={s.inp_sub}>
@@ -348,14 +348,14 @@ export default function kraft() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -376,14 +376,14 @@ export default function kraft() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -404,14 +404,14 @@ export default function kraft() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -432,14 +432,14 @@ export default function kraft() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -462,14 +462,14 @@ export default function kraft() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -490,14 +490,14 @@ export default function kraft() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -518,14 +518,14 @@ export default function kraft() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -546,14 +546,14 @@ export default function kraft() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -581,7 +581,7 @@ export default function kraft() {
 </div>
 <div className={s.price}>
 <div className={s.butn}>
-  <span>1 600 руб. ×</span>
+  <span>1 600 so`m ×</span>
   <div className={s.btn2}>
     <button>-</button>
     <span>1</span>
@@ -589,7 +589,7 @@ export default function kraft() {
   </div>
   <button className={s.red}>В корзине</button>
 </div>
-<p>от 3 шт. — 1 500 руб.</p>
+<p>от 3 шт. — 1 500 so`m</p>
 </div>
   </div>
   <div className={s.smart}>
@@ -612,7 +612,7 @@ export default function kraft() {
 </div>
 <div className={s.price}>
 <div className={s.butn}>
-  <span>1 600 руб. ×</span>
+  <span>1 600 so`m ×</span>
   <div className={s.btn2}>
     <button>-</button>
     <span>1</span>
@@ -620,7 +620,7 @@ export default function kraft() {
   </div>
   <button className={s.red}>В корзине</button>
 </div>
-<p>от 3 шт. — 1 500 руб.</p>
+<p>от 3 шт. — 1 500 so`m</p>
 </div>
   </div>
 
@@ -644,7 +644,7 @@ export default function kraft() {
 </div>
 <div className={s.price}>
 <div className={s.butn}>
-  <span>1 600 руб. ×</span>
+  <span>1 600 so`m ×</span>
   <div className={s.btn2}>
     <button>-</button>
     <span>1</span>
@@ -652,7 +652,7 @@ export default function kraft() {
   </div>
   <button className={s.red}>В корзине</button>
 </div>
-<p>от 3 шт. — 1 500 руб.</p>
+<p>от 3 шт. — 1 500 so`m</p>
 </div>
   </div>
 </div>

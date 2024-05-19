@@ -24,7 +24,7 @@ export default function popular() {
      <div className={s.body}>
      <Navbar/>
         <div className={s.page_road}>
-            <span>Главная</span><IoIosArrowForward />
+            <span>Bosh sahifa</span><IoIosArrowForward />
             <span>Блоки и элементы питания</span><IoIosArrowForward />
             <span style={{color:'grey'}}>Аккумуляторы</span>
             </div>
@@ -100,7 +100,7 @@ export default function popular() {
     <div className={s.card1_body}>
       <h5>Россия</h5>
       <a href=""><span>ПОС 40 прв d=1.0мм 1м спираль, Припой</span></a>
-      <p>230 руб.</p>
+      <p>230 so`m</p>
     </div>
   </div>
 
@@ -110,7 +110,7 @@ export default function popular() {
     <div className={s.card1_body}>
       <h5>Solins</h5>
       <a href=""><span>СКФ (ФКСп, ФКЭт) с кисточкой 20мл, Флюс</span></a>
-      <p>170 руб.
+      <p>170 so`m
 </p>
     </div>
   </div>
@@ -121,7 +121,7 @@ export default function popular() {
     <div className={s.card1_body}>
       <h5>Zhongdi</h5>
       <a href=""><span>ZD-181-1 2MM, Оплетка для выпайки 2мм х 1,5м</span></a>
-      <p>270 руб.</p>
+      <p>270 so`m</p>
     </div>
   </div>
 
@@ -131,7 +131,7 @@ export default function popular() {
     <div className={s.card1_body}>
       <h5>Россия</h5>
       <a href=""><span>Припой трубка с канифолью, 10 г, 0,8 мм, ПОС-61, колба</span></a>
-      <p>100 руб.</p>
+      <p>100 so`m</p>
     </div>
   </div>
 
@@ -141,7 +141,7 @@ export default function popular() {
     <div className={s.card1_body}>
       <h5>Китай</h5>
       <a href=""><span>ПYT-822, Паяльная флюс паста, 100-400С,безотмывочная 5гр</span></a>
-      <p>280 руб.</p>
+      <p>280 so`m</p>
     </div>
   </div>
 </div>
@@ -156,7 +156,7 @@ export default function popular() {
     <div className={s.card1_body}>
       <h5>Россия</h5>
       <a href=""><span>ПОС 40 прв d=1.0мм 1м спираль, Припой</span></a>
-      <p>230 руб.</p>
+      <p>230 so`m</p>
     </div>
   </div>
 
@@ -166,7 +166,7 @@ export default function popular() {
     <div className={s.card1_body}>
       <h5>Solins</h5>
       <a href=""><span>СКФ (ФКСп, ФКЭт) с кисточкой 20мл, Флюс</span></a>
-      <p>170 руб.
+      <p>170 so`m
 </p>
     </div>
   </div>

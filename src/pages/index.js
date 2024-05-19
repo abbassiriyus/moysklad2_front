@@ -182,17 +182,17 @@ gettopTovar(5)
 <Header_Carousel/>
      <div className={s.pair_big}>
      <div className={s.pair}>
-      <h1>СТАТЬ ПАРТНЕРОМ</h1>
+      <h1>HAMKOR BO`LING</h1>
      </div>
      <div className={s.line}></div>
      <div className={s.added}>
-      <h4>ПРИГЛАШАЕМ К СОТРУДНИЧЕСТВУ <br/>
-ПРОИЗВОДИТЕЛЕЙ И ДИСТРИБЬЮТОРОВ
+      <h4>SIZNI HAMKORLIKGA TAKLIF ETAMIZ <br />
+ISHLAB CHIQARISH VA DISTRIBUTORLAR
 </h4>
 
      </div>
      <div className={s.button}>
-<button onClick={()=>{window.location="/about/"}}> ПОДАТЬ ЗАЯВКУ</button>
+<button onClick={()=>{window.location="/about/"}}> Taklif qoldirish</button>
      </div>
      </div>
 
@@ -244,21 +244,21 @@ gettopTovar(5)
 </div>
   
 <div id="xit">
-     <Index_slider  mapdata={topTovar} id={topTovarId} data={{title:'Хиты продаж',
-      h1:'Самые популярные товары',
-      p:'Выбор наших покупателей'
+     <Index_slider  mapdata={topTovar} id={topTovarId} data={{title:'Ko`p sotiladi',
+      h1:'Eng Ko`p sotiladi',
+      p:'Mijozlarimiz tanlovi'
       }}/></div>
       <div id="lut">
-     <Index_slider mapdata={bestSeller} id={bestSellerId} data={{title:'Лучшие предложения',
-    h1:'Выгодное предложение',
-    p:'Узнайте о выгодных предложениях и специальных ценах. Только в этом месяце!'
+     <Index_slider mapdata={bestSeller} id={bestSellerId} data={{title:'Eng yaxshilari',
+    h1:'Foydali taklif',
+    p:'Ajoyib takliflar va maxsus narxlar haqida bilib oling. Faqat shu oyda!'
     }} color={'#e6faff'}/></div>
     <div id="new1">
-     <Index_slider mapdata={data} id={1} data={{title:'Набирают популярность',h1:'Успейте купить первым',
-    p:'Новинки, которые пользуются повышенным спросом'}} color={'#e7fcf9'}/>
+     <Index_slider mapdata={data} id={1} data={{title:'Eng yangilari',h1:'Birinchi bo`lib xarid qiling',
+    p:'Yuqori talabga ega bo`lgan yangi mahsulotlar'}} color={'#e7fcf9'}/>
 </div>
 <main>
-  <h3 id='dic'>Дистрибьюция</h3>
+  <h3 id='dic'>Xomiylarimiz</h3>
   <Swiper
         cssMode={true}
         navigation={true}

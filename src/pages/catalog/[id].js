@@ -153,7 +153,7 @@ var [modalPage,setModalPage]=useState(false)
         <div className={s.body}>
             <Navbar/>
 <div className={s.page_road}>
-  <span onClick={()=>{window.location="/"}} >Главная</span>
+  <span onClick={()=>{window.location="/"}} >Bosh sahifa</span>
 <IoIosArrowForward/>
 
   <span style={{color:'grey'}}>{title}</span>
@@ -224,14 +224,14 @@ return <button onClick={()=>{window.location=`/catalog/${item.category_id}?title
                 <a href={`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`} >{item.name}</a></div>
                 <div className={s.check_pl}>
                 </div>
-                <h3>{item.buyPrice.value/100} руб.</h3>
+                <h3>{item.buyPrice.value/100} so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button onClick={()=>{minusCount(key)}}>-</button>
                         <span>{item.count}</span>
                         <button onClick={()=>{plusCount(key)}}> +</button>
                     </div>
-                    <button className={s.redbtn} onClick={()=>{buyOne(item)}} >В корзину</button>
+                    <button className={s.redbtn} onClick={()=>{buyOne(item)}} >Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -247,12 +247,12 @@ return <button onClick={()=>{window.location=`/catalog/${item.category_id}?title
     <div className={s.smarttext}>
       <a href="">{item.name}</a>
    
-    <p><span>Бренд:</span>{item.pathName}</p>
-    <p><span>Номенклатурный номер:</span>{item.code}</p>
+    <p><span>Turi:</span>{item.pathName}</p>
+    <p><span>Shaxsiy raqami:</span>{item.code}</p>
     
     </div>
 <img src={item.images.rows[0].miniature.downloadHref} alt="" />
-<div><h4>{item.buyPrice.value/100} руб. </h4></div>
+<div><h4>{item.buyPrice.value/100} so`m </h4></div>
 <div className={s.price}>
 <div className={s.butn}>
   
@@ -261,9 +261,9 @@ return <button onClick={()=>{window.location=`/catalog/${item.category_id}?title
     <span>{item.count}</span>
     <button onClick={()=>{plusCount(key)}}>+</button>
   </div>
-  <button className={s.red} onClick={()=>{buyOne(item)}}>В корзине</button>
+  <button className={s.red} onClick={()=>{buyOne(item)}}>Sotib olish</button>
 </div>
-<p>от {item.count} шт. — {(item.buyPrice.value/100)*item.count} руб.</p>
+<p>от {item.count} шт. — {(item.buyPrice.value/100)*item.count} so`m.</p>
 </div>
   </div>
 
@@ -277,7 +277,7 @@ return <button onClick={()=>{window.location=`/catalog/${item.category_id}?title
 <div className={s.page}>
   {stansiya.length>=2?(
     <div className={s.p_num}>
-        <h5>Страница</h5>
+        <h5>Sahifa</h5>
         <div className={s.num1}>
       {stansiya.map((item,key)=>{
         return <div onClick={()=>{setPageSelect(item);window.location="#";setTimeout(()=>{

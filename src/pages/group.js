@@ -15,7 +15,7 @@ export default function group() {
             
         </div>
         {/* <div className={s.page_road}>
-            <span>Главная</span><IoIosArrowForward />
+            <span>Bosh sahifa</span><IoIosArrowForward />
             <span>Расходные материалы</span><IoIosArrowForward />
             <span>Материалы для пайки</span><IoIosArrowForward />
             <span>Припои без канифоли</span><IoIosArrowForward />
@@ -45,7 +45,7 @@ export default function group() {
                         <div className={s.tick}>
                             <span><strong><FaCheck />123 шт</strong>. со склада г.Москва</span>
                      </div>
-       <h1>230 руб.
+       <h1>230 so`m
 </h1> 
 <div className={s.btn1}>
     <div className={s.buttons}>
@@ -53,11 +53,11 @@ export default function group() {
         <span>1</span>
         <button>+</button>
     </div>
-    <p>от <strong>3 шт</strong>. — 195 руб.</p>
+    <p>от <strong>3 шт</strong>. — 195 so`m</p>
 </div>
-<p style={{marginBottom:'20px'}}>Добавить в корзину 1 шт. на сумму 230 руб.
+<p style={{marginBottom:'20px'}}>Добавить Sotib olish 1 шт. на сумму 230 so`m
 </p>
-<button className={s.red1}>Добавить в корзину</button>
+<button className={s.red1}>Добавить Sotib olish</button>
                        
                     </div>
                 </div>
@@ -132,7 +132,7 @@ export default function group() {
     <div className={s.card1_body}>
       <h5>Россия</h5>
       <a href=""><span>ПОС 40 прв d=1.0мм 1м спираль, Припой</span></a>
-      <p>230 руб.</p>
+      <p>230 so`m</p>
     </div>
   </div>
 
@@ -142,7 +142,7 @@ export default function group() {
     <div className={s.card1_body}>
       <h5>Solins</h5>
       <a href=""><span>СКФ (ФКСп, ФКЭт) с кисточкой 20мл, Флюс</span></a>
-      <p>170 руб.
+      <p>170 so`m
 </p>
     </div>
   </div>
@@ -153,7 +153,7 @@ export default function group() {
     <div className={s.card1_body}>
       <h5>Zhongdi</h5>
       <a href=""><span>ZD-181-1 2MM, Оплетка для выпайки 2мм х 1,5м</span></a>
-      <p>270 руб.</p>
+      <p>270 so`m</p>
     </div>
   </div>
 
@@ -163,7 +163,7 @@ export default function group() {
     <div className={s.card1_body}>
       <h5>Россия</h5>
       <a href=""><span>Припой трубка с канифолью, 10 г, 0,8 мм, ПОС-61, колба</span></a>
-      <p>100 руб.</p>
+      <p>100 so`m</p>
     </div>
   </div>
 
@@ -173,7 +173,7 @@ export default function group() {
     <div className={s.card1_body}>
       <h5>Китай</h5>
       <a href=""><span>ПYT-822, Паяльная флюс паста, 100-400С,безотмывочная 5гр</span></a>
-      <p>280 руб.</p>
+      <p>280 so`m</p>
     </div>
   </div>
 </div>
@@ -211,7 +211,7 @@ export default function group() {
     <div className={s.card1_body}>
       <h5>Россия</h5>
       <a href=""><span>ПОС 40 прв d=1.0мм 1м спираль, Припой</span></a>
-      <p>230 руб.</p>
+      <p>230 so`m</p>
     </div>
   </div>
 
@@ -221,7 +221,7 @@ export default function group() {
     <div className={s.card1_body}>
       <h5>Solins</h5>
       <a href=""><span>СКФ (ФКСп, ФКЭт) с кисточкой 20мл, Флюс</span></a>
-      <p>170 руб.
+      <p>170 so`m
 </p>
     </div>
   </div>

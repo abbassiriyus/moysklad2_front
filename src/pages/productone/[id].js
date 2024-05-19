@@ -99,7 +99,7 @@ useEffect(()=>{
 
                     <h3>Описание</h3>
                     <span>{data.description}</span><br />
-       <h1>{ data.minPrice && data.minPrice.value/100} руб.
+       <h1>{ data.minPrice && data.minPrice.value/100} so`m
 </h1> 
 <div className={s.btn1}>
     <div className={s.buttons}>
@@ -108,9 +108,9 @@ useEffect(()=>{
         <button onClick={()=>setCount(count+1)} >+</button>
     </div>
 </div>
-<p style={{marginBottom:'20px'}}>Добавить в корзину {count} шт. на сумму { data.minPrice && (data.minPrice.value/100)*count}  руб.
+<p style={{marginBottom:'20px'}}>Добавить Sotib olish {count} шт. на сумму { data.minPrice && (data.minPrice.value/100)*count}  so`m
 </p>
-<button className={s.red1} onClick={()=>{buyOne()}}>Добавить в корзину</button>
+<button className={s.red1} onClick={()=>{buyOne()}}>Добавить Sotib olish</button>
                        
                     </div>
                 </div>
@@ -141,7 +141,7 @@ useEffect(()=>{
     <div className={s.card1_body}>
       <h5>{item.pathName}</h5>
       <a href={`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`}><span>{item.name}</span></a>
-      <p>{item.buyPrice.value/100} руб.</p>
+      <p>{item.buyPrice.value/100} so`m</p>
     </div>
   </div>
               })}

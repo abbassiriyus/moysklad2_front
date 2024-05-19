@@ -63,7 +63,7 @@ ref={swiperRef}
             </div>
             <h5>{item.pathName}</h5>
             <p>{item.name}</p>
-            <h2>{item.buyPrice.value/100} руб.</h2>
+            <h2>{item.buyPrice.value/100} so`m</h2>
 
         </div>
       </SwiperSlide>
@@ -81,7 +81,7 @@ ref={swiperRef}
        <h2>{data && data.h1}</h2>
 <p>{data && data.p}</p>
        </div>
-<button onClick={()=>{window.location=`/catalog/${id}?title=${data && data.title}`}}>Перейти к выбору</button>
+<button onClick={()=>{window.location=`/catalog/${id}?title=${data && data.title}`}}>Tanlovga o'ting</button>
     </div>
 
        </div>

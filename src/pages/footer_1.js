@@ -35,15 +35,15 @@ export default function footer_1() {
 
 <div className={s.footer1}>
   <ul className={s.black1}>
-    <li onClick={()=>{window.location='/#xit'}}>Хиты продаж</li>
-    <li onClick={()=>{window.location='/#lut'}}>Лучшие предложения</li>
-    <li onClick={()=>{window.location='/#new1'}}>Набирают популярность</li>
-    <li onClick={()=>{window.location='/#dic'}}>Дистрибьюция</li>
-    <li onClick={()=>{window.location=`/catalog/1?title=Набирают популярность`}}>Каталоги</li>
+    <li onClick={()=>{window.location='/#xit'}}>Ko`p sotiladi</li>
+    <li onClick={()=>{window.location='/#lut'}}>Eng yaxshilari</li>
+    <li onClick={()=>{window.location='/#new1'}}>Eng yangilari</li>
+    <li onClick={()=>{window.location='/#dic'}}>Xomiylarimiz</li>
+    <li onClick={()=>{window.location=`/catalog/1?title=Eng yangilari`}}>Каталоги</li>
   </ul>
   <ul className={s.ulh4}>
   
-    <h4>О компании</h4>
+    <h4>Maxsulot turlari</h4>
     {category.map((item,key)=>{
       if(key<5){
         return <li  onClick={() => { window.location = `/catalog/${item.category_id}?title=${item.category_title}` }}>{item.category_title}</li>
@@ -52,7 +52,7 @@ export default function footer_1() {
     })}
   </ul>
   <ul className={s.ulh4}>
-    <h4 >Контакт</h4>
+    <h4 >Bog`lanish</h4>
     <li onClick={()=>{window.location=company[0].telegram}}>Телеграмм</li>
     <li onClick={()=>{window.location=company[0].youtobe}}>YouTube</li>
     <li onClick={()=>{window.location=company[0].instagram}}>Instagram</li>
@@ -62,7 +62,7 @@ export default function footer_1() {
   <ul className={s.ulh4}>
     <a style={{textDecoration:"none",color:'white'}} href={`tel:+${company[0].phone}`}><h3 style={{fontSize:'25px',fontWeight:900}}>+{company[0].phone}</h3></a>
     <h4 style={{fontSize:'17px'}}>e-mail: {company[0].email}</h4>
-    <p style={{marginTop:'40px',marginBottom:'10px'}}>Скачайте мобильное приложение</p>
+    <p style={{marginTop:'40px',marginBottom:'10px'}}>Mobil ilovani yuklab oling</p>
     <div className={s.app}>
    <img src="https://static.chipdip.ru/images/layout/apps/appstore.svg" alt="" />
     </div>
@@ -74,18 +74,18 @@ export default function footer_1() {
   </ul>
 </div>
 <div className={s.versiya_black}>
-  <p>© 2006—2024, АО «ЧИП и ДИП» — <br />приборы, радиодетали и электронные компоненты</p>
+  <p>©2024, АО «RADIO CITY» — <br />Qurilmalar, radio komponentlar va elektron komponentlar</p>
 
   <div className={s.chipdip_mobil}>
-    <p>Мобильная версия</p>
+    {/* <p>Мобильная версия</p> */}
 <div className={s.sayt}>
-      <p>chipdip.by</p>
+      {/* <p>chipdip.by</p>
       <p>chipdip.kz</p>
-      <p>chipdip.am</p>
+      <p>chipdip.am</p> */}
 </div>
   </div>
-  <p className={s.pasga}>Политика конфиденциальности <br />
-Пользовательское Соглашение</p>
+  <p className={s.pasga}>Maxfiylik siyosati <br />
+Foydalanish shartlari</p>
 <div className={s.big}>
 <div className={s.appl}>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Yandex-market.svg/1280px-Yandex-market.svg.png" alt="" />

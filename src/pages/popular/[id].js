@@ -52,7 +52,7 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
      <div className={s.body}>
      <Navbar/>
         <div className={s.page_road}>
-            <span>Главная</span><IoIosArrowForward />
+            <span>Bosh sahifa</span><IoIosArrowForward />
             <span style={{color:'grey'}}>{title} </span>
             </div>
             <div className={s.sub}>
@@ -74,7 +74,7 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
 
 
 <hr  className={s.hrr}/>
-<h3>Мы рекомендуем</h3>
+<h3>Tavsiya qilamiz</h3>
 
 <div className={s.cards2}>
   {drData.map((item,key)=>{
@@ -85,7 +85,7 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
     <div className={s.card1_body}>
       <h5>{item.pathName}</h5>
       <a href={`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`}><span>{item.name}</span></a>
-      <p>{item.minPrice.value/100} руб.</p>
+      <p>{item.minPrice.value/100} so`m.</p>
     </div>
   </div>
     }
@@ -106,7 +106,7 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
     <div className={s.card1_body}>
       <h5>Россия</h5>
       <a href=""><span>ПОС 40 прв d=1.0мм 1м спираль, Припой</span></a>
-      <p>230 руб.</p>
+      <p>230 so`m</p>
     </div>
   </div>
 
@@ -116,7 +116,7 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
     <div className={s.card1_body}>
       <h5>Solins</h5>
       <a href=""><span>СКФ (ФКСп, ФКЭт) с кисточкой 20мл, Флюс</span></a>
-      <p>170 руб.
+      <p>170 so`m
 </p>
     </div>
   </div>

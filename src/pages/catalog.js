@@ -33,7 +33,7 @@ export default function catalog() {
         <div className={s.body}>
             <Navbar/>
 <div className={s.page_road}>
-  <span>Главная</span>
+  <span>Bosh sahifa</span>
   <IoIosArrowForward/>
  
   <span>Средства разработки, конструкторы, модули</span> <IoIosArrowForward/>
@@ -145,14 +145,14 @@ export default function catalog() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -173,14 +173,14 @@ export default function catalog() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -201,14 +201,14 @@ export default function catalog() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -229,14 +229,14 @@ export default function catalog() {
                 <span>4 шт.</span>
                 <FaPlus />
                 </div>
-                <h3>490 руб.</h3>
+                <h3>490 so`m</h3>
                 <div className={s.button_pm}>
                     <div className={s.pm}>
                         <button>-</button>
                         <span>1</span>
                         <button>+</button>
                     </div>
-                    <button className={s.redbtn}>В корзину</button>
+                    <button className={s.redbtn}>Sotib olish</button>
                 </div>
             </div>
         </div>
@@ -265,7 +265,7 @@ export default function catalog() {
 </div>
 <div className={s.price}>
 <div className={s.butn}>
-  <span><IoClose /> 1 600 руб. </span>
+  <span><IoClose /> 1 600 so`m </span>
   <div className={s.btn2}>
     <button>-</button>
     <span>1</span>
@@ -273,7 +273,7 @@ export default function catalog() {
   </div>
   <button className={s.red}>В корзине</button>
 </div>
-<p>от 3 шт. — 1 500 руб.</p>
+<p>от 3 шт. — 1 500 so`m</p>
 </div>
   </div>
 
@@ -349,7 +349,7 @@ export default function catalog() {
     <div className={s.card1_body}>
       <h5>Россия</h5>
       <a href=""><span>ПОС 40 прв d=1.0мм 1м спираль, Припой</span></a>
-      <p>230 руб.</p>
+      <p>230 so`m</p>
     </div>
   </div>
 
@@ -359,7 +359,7 @@ export default function catalog() {
     <div className={s.card1_body}>
       <h5>Solins</h5>
       <a href=""><span>СКФ (ФКСп, ФКЭт) с кисточкой 20мл, Флюс</span></a>
-      <p>170 руб.
+      <p>170 so`m
 </p>
     </div>
   </div>

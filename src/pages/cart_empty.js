@@ -96,19 +96,19 @@ function sendMessage() {
         <div className={s.body}>
             <Navbar/>
             <div className={s.page_road}>
-                <span>Главная</span><IoIosArrowForward />
-                <span style={{color:'grey'}}>Корзина</span>
+                <span>Bosh sahifa</span><IoIosArrowForward />
+                <span style={{color:'grey'}}>Karzinka</span>
             </div>
             <div className={s.prip}>
-                <h1>Корзина</h1>
+                <h1>Karzinka</h1>
             {/* <FaArrowUpFromBracket  style={{fontSize:'25px'}} /> */}
             </div>
             {page==0?(      <> 
             <div className={s.empty_cart}>
                 <div className={s.cart1}>
                     <h3>Сейчас в корзине нет товаров</h3>
-                    <p>Для выбора используйте каталог товаров или поиск. <br />
-Чтобы добавить товар в корзину, кликните на кнопку <button onClick={()=>window.location="/"}>В корзину</button>, напротив интересующей вас позиции.</p>
+                    <p>Для выбора используйте Maxsulot turlari или поиск. <br />
+Чтобы добавить товар Sotib olish, кликните на кнопку <button onClick={()=>window.location="/"}>Sotib olish</button>, напротив интересующей вас позиции.</p>
                 </div>
             </div>
 </> ):(
@@ -121,9 +121,9 @@ function sendMessage() {
         <h5>{item.name}</h5>
         <p>ном. номер: {item.code}</p>
         <img width={'100px'} src={item.image} alt="" />
-        <h4>{item.price} руб.</h4>
+        <h4>{item.price} so`m</h4>
         <div className={s.count_button} ><button onClick={()=>{minus(key)}} >-</button><div className={s.count}>{item.count}</div><button onClick={()=>{plus(key)}} >+</button></div>
-            <p style={{fontSize:'13px',color:'grey'}}>от {item.count}  шт. — {item.price*item.count} руб.</p>
+            <p style={{fontSize:'13px',color:'grey'}}>от {item.count}  шт. — {item.price*item.count} so`m</p>
         </div>
    })}
  
@@ -144,9 +144,9 @@ function sendMessage() {
             <td><h5>{item.name}</h5>
             <p>ном. номер: {item.code}</p></td>
             <td><img width={'50px'} src={item.image} alt="" /></td>
-            <td>{item.price} руб.</td>
+            <td>{item.price} so`m</td>
             <td style={{position:'relative'}}><IoMdClose onClick={()=>cutdata(key)} className={s.close_button} /><div className={s.count_button} ><button onClick={()=>{minus(key)}} >-</button><div className={s.count}>{item.count}</div><button onClick={()=>{plus(key)}} > +</button></div>
-            <p style={{fontSize:'13px',color:'grey'}}>от {item.count}  шт. — {item.price*item.count} руб.</p> 
+            <p style={{fontSize:'13px',color:'grey'}}>от {item.count}  шт. — {item.price*item.count} so`m</p> 
             </td>
         </tr>
         })}
@@ -157,7 +157,7 @@ function sendMessage() {
    
      <div className={s.calculator}>
         <p>Всего {product.length} товара на сумму: </p>
-        <h1>{allprice} руб.</h1>
+        <h1>{allprice} so`m</h1>
         <button onClick={handleShow}>К оформлению</button>
      </div>
     </div>

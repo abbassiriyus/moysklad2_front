@@ -11,8 +11,8 @@ export default function about() {
         <div className={s.body}>
             <Navbar/>
             <div className={s.page_road}>
-            <span>Главная</span><IoIosArrowForward />
-            <span>О компании </span><IoIosArrowForward />
+            <span>Bosh sahifa</span><IoIosArrowForward />
+            <span>Magazin haqida </span><IoIosArrowForward />
             </div>
     <div className={s.plan}>
         <h1>Планируете стать поставщиком?</h1>

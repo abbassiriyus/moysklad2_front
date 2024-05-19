@@ -49,7 +49,7 @@ export default function onecategory() {
                     <span><FaCheck />14 шт. со склада г.Москва</span>
 
                     <div className={s.prc}>
-                        <h2>7 780 руб.</h2>
+                        <h2>7 780 so`m</h2>
                        <div className={s.bton}>
                        <div className={s.butn}>
                             <button>-</button>

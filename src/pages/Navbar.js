@@ -117,7 +117,7 @@ export default function Navbar() {
             document.querySelector("#menu").style = "display:block"
           }} className={s.red}>
             <CgMenuGridR style={{ fontSize: '30px' }} />
-            <span>Каталог товаров</span>
+            <span>Maxsulot turlari</span>
 
             <div id='menu' className={s.catalog_menu}>
               <div className={s.catalog_toolbar}>
@@ -169,19 +169,19 @@ export default function Navbar() {
           </div>
           <div onMouseLeave={() => { setSearchVid(false) }} className={s.search_inp}>
             <LiaSearchSolid style={{ marginLeft: '20px', color: 'red', fontSize: '20px' }} />
-            <input onKeyUp={(e) => search_d(e.target.value)} onClick={() => { setSearchVid(true) }} type="text" placeholder='Поиск среди 8 637 350 компонентов, электроники, приборов, электрики, автозапчастей, инструментов, сантехники…' />
+            <input onKeyUp={(e) => search_d(e.target.value)} onClick={() => { setSearchVid(true) }} type="text" placeholder='1000dan ortiq maxsulotlar, elektronika, maishiy texnika, elektrotexnika, avtomobil qismlari, asboblar, sanitariya-tesisat...' />
             {search_vid ? (<div id='search_res' className={s.search_result}>
-             {searchCategory.length>0 && <><h5>товарные группы</h5>
+             {searchCategory.length>0 && <><h5>Maxsulot turlari</h5>
               <ul>
                 {  searchCategory.map(item => {
                   return <li onClick={() => { window.location = `/catalog/${item.category_id}?title=${item.category_title}` }} >{item.category_title}</li>
                 })}
               </ul></> } 
             { searchProduct.length>0 && <>
-              <h5>быстрый поиск</h5>
+              <h5>Tezroq topish</h5>
               <ul className={s.product_search} >
                 {searchProduct.map(item => {
-                  return <li onClick={() =>{window.location=`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}` }} ><img src={`${item.images && item.images.rows && item.images.rows[0].miniature.downloadHref}`} style={{ height: '30px' }} alt="" />{item.name}<h6>{item.minPrice.value / 100} rubl</h6></li>
+                  return <li onClick={() =>{window.location=`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}` }} ><img src={`${item.images && item.images.rows && item.images.rows[0].miniature.downloadHref}`} style={{ height: '30px' }} alt="" />{item.name}<h6>{item.minPrice.value / 100} so`m</h6></li>
                 })}
 
               </ul></> }  
@@ -194,14 +194,14 @@ export default function Navbar() {
           </div>
           <div className={s.loc}>
             <IoLocationSharp style={{ marginTop: '5px' }} />
-            <p><strong>Узбекистан</strong> <br /> Магазины и оптовые отделы</p>
+            <p><strong>{company[0].address}</strong> <br /> Do'konlar va ulgurji bo'limlar</p>
           </div>
         </div>)}
 
         <div className={s.kirish}>
           <div className={s.order}>
             <FaRegUserCircle className={s.navbar_icon} /><br />
-            <span>Вход</span>
+            <span>Kirish</span>
           </div>
           {/* <div className={s.order}>
 <BsFillBoxSeamFill style={{fontSize:'30px'}} /><br />
@@ -214,7 +214,7 @@ export default function Navbar() {
           <div onClick={() => window.location = "/cart_empty"} className={s.order}>
             <IoCartOutline className={s.navbar_icon} /><sup>{count}</sup><br />
 
-            <span>Корзина</span>
+            <span>Karzinka</span>
           </div>
         </div>
       </div>
@@ -224,23 +224,23 @@ export default function Navbar() {
           document.querySelector("#menu1").style = "display:block"
         }} className={s.red}>
           <CgMenuGridR style={{ fontSize: '30px' }} />
-          <span>Каталог товаров</span>
+          <span>Maxsulot turlari</span>
         </div>
         <div onMouseLeave={() => setSearchVid(false)} className={s.search_inp}>
           <LiaSearchSolid style={{ marginLeft: '20px', color: 'red', fontSize: '20px' }} />
-          <input onKeyUp={(e) => search_d(e.target.value)} type="text" onClick={() => { setSearchVid(true) }} placeholder='Поиск среди 8 637 350 компонентов, электроники, приборов, электрики, автозапчастей, инструментов, сантехники…' />
+          <input onKeyUp={(e) => search_d(e.target.value)} type="text" onClick={() => { setSearchVid(true) }} placeholder='1000dan ortiq maxsulotlar, elektronika, maishiy texnika, elektrotexnika, avtomobil qismlari, asboblar, sanitariya-tesisat...' />
           {search_vid ? (<div id='search_res' className={s.search_result}>
-             {searchCategory.length>0 && <><h5>товарные группы</h5>
+             {searchCategory.length>0 && <><h5>Maxsulot turlari</h5>
               <ul>
                 {  searchCategory.map(item => {
                   return <li onClick={() => { window.location = `/catalog/${item.category_id}?title=${item.category_title}` }} >{item.category_title}</li>
                 })}
               </ul></> } 
             { searchProduct.length>0 && <>
-              <h5>быстрый поиск</h5>
+              <h5>Tezroq topish</h5>
               <ul className={s.product_search} >
                 {searchProduct.map(item => {
-                  return <li onClick={() =>{window.location=`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}` }} ><img src={`${item.images && item.images.rows && item.images.rows[0].miniature.downloadHref}`} style={{ height: '30px' }} alt="" />{item.name}<h6>{item.minPrice.value / 100} rubl</h6></li>
+                  return <li onClick={() =>{window.location=`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}` }} ><img src={`${item.images && item.images.rows && item.images.rows[0].miniature.downloadHref}`} style={{ height: '30px' }} alt="" />{item.name}<h6>{item.minPrice.value / 100} so`m</h6></li>
                 })}
 
               </ul></> }  
