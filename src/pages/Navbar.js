@@ -3,14 +3,17 @@ import s from "../styles/Navbar.module.css"
 import Image from 'next/image'
 import { IoCartOutline } from "react-icons/io5";
 import { CgMenuGridR } from "react-icons/cg";
+import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { FaRegUserCircle } from "react-icons/fa";
 import { LiaSearchSolid } from "react-icons/lia";
 import { MdArrowForwardIos } from "react-icons/md";
 import { BsFillBoxSeamFill } from "react-icons/bs";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import img1 from "../images/logo1.png"
+import { BsEye } from "react-icons/bs";
 // import GlobalStore from './GlobalStore';
 import { IoLocationSharp } from "react-icons/io5";
+import { IoCloseSharp } from "react-icons/io5";
 import axios from 'axios';
 import url from "./host.js"
 export default function Navbar() {
@@ -199,7 +202,9 @@ export default function Navbar() {
         </div>)}
 
         <div className={s.kirish}>
-          <div className={s.order}>
+          <div onClick={()=>{
+            document.querySelector("#modalk").style='display:flex'
+          }} className={s.order}>
             <FaRegUserCircle className={s.navbar_icon} /><br />
             <span>Kirish</span>
           </div>
@@ -298,8 +303,49 @@ export default function Navbar() {
 
       
       </div>
-  <div  className={s.modalkir}>
-                    
+  <div id='modalk'  className={s.modalkir}>
+            <div className={s.whitemodal}>
+              <div className={s.white}>
+                <IoCloseSharp onClick={()=>{
+                  document.querySelector("#modalk").style='display:none'
+                }} className={s.sharp} />
+                <h3>Kirish yoki ro'yxatdan o'tish</h3>
+                <label htmlFor="">Login yoki elektron pochta
+</label>
+                <input type="text" />
+
+                <label htmlFor="">Parol</label>
+                    <input className={s.rela} type="password" name="" id="pass" /><AiOutlineEyeInvisible className={s.invisible} id='bse' onClick={()=>{
+                      document.querySelector("#bse1").style='display:block'
+                      document.querySelector("#pass").type='text'
+                      document.querySelector("#bse").style='display:none'
+                    }} />
+                    <BsEye id='bse1' className={s.invisible1} onClick={()=>{
+                      document.querySelector("#bse1").style='display:none'
+                      document.querySelector("#pass").type='password'
+                      document.querySelector("#bse").style='display:block'
+                    }} />
+                    <button>Kirish</button><br />
+                    <a href="">Parolni unutdingizmi?</a><br />
+                   
+                    <span>Hisob yo'qmi?<a href="">Roʻyxatdan oʻtish</a> </span>
+                    <h4>Ijtimoiy tarmoqlar orqali</h4>
+                    <div className={s.sayt}>
+                    <div className={s.google}>
+                      <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="" />
+                    </div>
+                    <div className={s.google}>
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png" alt="" />
+                    </div>
+                    <div className={s.google}>
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Yandex_icon.svg/2048px-Yandex_icon.svg.png" alt="" />
+                    </div>
+                    <div className={s.google}>
+                      <img src="https://companieslogo.com/img/orig/RL9A.F-1749ce42.png?t=1604430964" alt="" />
+                    </div>
+                    </div>
+              </div>
+              </div>        
         </div>
     </>
   )
