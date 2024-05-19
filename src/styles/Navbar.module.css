@@ -28,7 +28,7 @@
     background-color: white;
     position: sticky !important;
     top: 0px;
-    z-index: 4334;
+    z-index: 34;
 padding-top: 0px;
 padding-bottom: 2px;
 }
@@ -169,7 +169,7 @@ padding-bottom: 2px;
     box-shadow: 0px 3px 3px rgba(128, 128, 128, 0.5);
     width: 100%;
     /* height: 300px; */
-    z-index: 123;
+    z-index: 23;
     position: absolute;
     left: 0pc;
     top: 100%;
@@ -268,7 +268,7 @@ font-size: 15px;
     top: 100%;
     display: none;
     left: 0px;
-    z-index: 2132;
+    z-index: 32;
     
 }
 .catalog_toolbar{
@@ -375,7 +375,7 @@ font-size: 15px;
         top: 100%;
         display: none;
         left: 0px;
-        z-index: 2132;
+        z-index: 32;
     }
 }
 @media (max-width:380px) {
@@ -401,5 +401,5 @@ font-size: 15px;
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 4335 ;
+    z-index: 99999;
 }

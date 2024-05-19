@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import s from "../styles/about.module.css"
 import Navbar from './Navbar'
 import Footer from './footer';
-import { IoIosArrowForward } from "react-icons/io";
-import Footer_1 from './footer_1';
 import r from "../styles/cart_empty.module.css"
 
 import { IoIosArrowForward, IoMdClose } from "react-icons/io";

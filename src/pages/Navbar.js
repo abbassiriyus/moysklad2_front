@@ -296,11 +296,11 @@ export default function Navbar() {
         </div>
 
 
-        <div className={s.modalkir}>
+      
+      </div>
+  <div  className={s.modalkir}>
                     
         </div>
-      </div>
-
     </>
   )
 }
