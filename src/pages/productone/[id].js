@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar'
-import Footer_1 from '../footer_1'
+import Footer_1 from '../footer'
 import { IoIosArrowForward } from "react-icons/io";
 import { FaCheck } from "react-icons/fa6";
 // import { FaArrowUpFromBracket } from "react-icons/fa6";

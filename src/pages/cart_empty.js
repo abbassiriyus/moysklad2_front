@@ -83,7 +83,7 @@ function sendMessage() {
     document.querySelector('.nomer1').value="" 
     axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=1520593027&text=${send}`).then(res=>{
       document.querySelector("#modalgl").style="display:none"
-      alert("Информация отправлена. Мы скоро свяжемся с вами")  
+      alert("Malumot yuborildi. tez orada siz bilan bog`lanamiz")  
     })
     }).catch(err=>{
         document.querySelector("#modalgl").style="display:none"
@@ -107,8 +107,8 @@ function sendMessage() {
             <div className={s.empty_cart}>
                 <div className={s.cart1}>
                     <h3>Сейчас в корзине нет товаров</h3>
-                    <p>Для выбора используйте Maxsulot turlari или поиск. <br />
-Чтобы добавить товар Sotib olish, кликните на кнопку <button onClick={()=>window.location="/"}>Sotib olish</button>, напротив интересующей вас позиции.</p>
+                    <p> Tanlash uchun Maxsulot turlaridan foydalaning yoki qidiruvdan foydalaning. <br />
+                   shu tugmani  <button style={{border:'none'}} onClick={()=>window.location="/"}>Sotib olish</button>, bosish orqali asosiy oynaga o`ting .</p>
                 </div>
             </div>
 </> ):(
@@ -146,7 +146,7 @@ function sendMessage() {
             <td><img width={'50px'} src={item.image} alt="" /></td>
             <td>{item.price} so`m</td>
             <td style={{position:'relative'}}><IoMdClose onClick={()=>cutdata(key)} className={s.close_button} /><div className={s.count_button} ><button onClick={()=>{minus(key)}} >-</button><div className={s.count}>{item.count}</div><button onClick={()=>{plus(key)}} > +</button></div>
-            <p style={{fontSize:'13px',color:'grey'}}>от {item.count}  шт. — {item.price*item.count} so`m</p> 
+            <p style={{fontSize:'13px',color:'grey'}}> {item.count}  ta. — {item.price*item.count} so`m</p> 
             </td>
         </tr>
         })}
@@ -156,9 +156,9 @@ function sendMessage() {
      </table>
    
      <div className={s.calculator}>
-        <p>Всего {product.length} товара на сумму: </p>
+        <p>Umumiy {product.length} ta maxsulot narxi: </p>
         <h1>{allprice} so`m</h1>
-        <button onClick={handleShow}>К оформлению</button>
+        <button onClick={handleShow}>Buyurtma berish</button>
      </div>
     </div>
     </>
@@ -166,15 +166,16 @@ function sendMessage() {
   
     <div id='modalgl' className={s.modal31}>
     <form style={{position:'relative'}} >
-    <IoMdClose style={{display:'block',fontSize:'20px',right:'20px'}} onClick={()=>{document.querySelector("#modalgl").style="display:none"}} className={s.close_button} />
-    <label for="fname">Ф. И.О.</label>
-    <input type="text" id="fname" className='ism' name="firstname" placeholder="Ф. И.О." />
+    <IoMdClose style={{display:'block',fontSize:'20px',right:'20px'}}
+     onClick={()=>{document.querySelector("#modalgl").style="display:none"}} className={s.close_button} />
+    <label for="fname">F.I.SH.</label>
+    <input type="text" id="fname" className='ism' name="firstname" placeholder="F. I. SH." />
 
-    <label for="lname">Ваш номер телефона</label>
-    <input type="phone" id="lname" className='nomer1' name="lastname" placeholder="Ваш номер телефона" />
+    <label for="lname">Telefon raqamingiz</label>
+    <input type="phone" id="lname" className='nomer1' name="lastname" placeholder="Telefon raqamingiz" />
 
   
-    <input type="button" onClick={()=>{sendMessage()}} value="Сделать заказ" />
+    <input type="button" onClick={()=>{sendMessage()}} value="Buyurtma berish" />
   </form>
     </div>
             <Footer/>

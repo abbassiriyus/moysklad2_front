@@ -44,14 +44,14 @@ useEffect(()=>{
 <div className={s.footer_sayt}>
      <div className={s.app2}>
      <img style={{height:'100px',marginBottom:'30px'}} src={company[0].image} alt="" />
-      <p>Download the app by clicking the link below :</p>
+      <p>Quyidagi havolani bosish orqali ilovani yuklab oling :</p>
     
 <div className={s.appsdf}>
 <div className={s.app}>
-   <img src="https://static.chipdip.ru/images/layout/apps/appstore.svg" alt="" />
+   <img style={{cursor:'pointer'}}  src="https://static.chipdip.ru/images/layout/apps/appstore.svg" alt="" />
     </div>
     <div className={s.app}>
-   <img src="	https://static.chipdip.ru/images/layout/apps/googleplay.svg" alt="" />
+   <img style={{cursor:'pointer'}}  src="	https://static.chipdip.ru/images/layout/apps/googleplay.svg" alt="" />
 
  
       </div>
@@ -59,14 +59,14 @@ useEffect(()=>{
      </div>
      <ul>
       <h3>Menu</h3>
-    <a href="/about/"><li>О компании</li></a>
-    
-    <a href={documen.image}><li>Документов</li></a>
-    <a href="/contact/"><li>Контакты</li></a>
+      <li style={{cursor:'pointer'}} onClick={()=>{window.location='/#xit'}}>Ko`p sotiladi</li>
+      <li style={{cursor:'pointer'}}  onClick={()=>{window.location='/#lut'}}>Eng yaxshilari</li>
+    <li style={{cursor:'pointer'}}  onClick={()=>{window.location='/#new1'}}>Eng yangilari</li>
+    <li style={{cursor:'pointer'}}  onClick={()=>{window.location='/#dic'}}>Xomiylarimiz</li>
      
      </ul>
      <ul>
-      <h3>Contact</h3>
+      <h3>Bog`lanish</h3>
       <a style={{textDecoration:'none'}} href={`tel:+${company[0].phone}`}><li><FaPhoneAlt style={{marginRight:'20px'}} />+{company[0].phone}</li></a>
      <a style={{textDecoration:'none'}} href={`mailto:${company[0].email}`}><li><MdEmail style={{marginRight:'20px'}}/>{company[0].email}</li></a> 
       <li><FaLocationDot style={{marginRight:'20px'}} />{company[0].address}</li>
