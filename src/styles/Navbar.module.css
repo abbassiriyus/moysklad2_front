@@ -495,12 +495,12 @@ font-size: 15px;
 }
 .invisible{
     position: absolute;
-    top:206px;
+    top:210px;
     right: 50px;
 }
 .invisible1{
     position: absolute;
-    top:206px;
+    top:210px;
     display: none;
     right: 50px;
 }

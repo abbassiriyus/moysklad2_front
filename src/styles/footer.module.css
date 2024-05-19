@@ -27,7 +27,6 @@
     padding-left: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
-    margin-top: 20px;
     transition: 1s;
 }
 .app:hover{
@@ -123,5 +122,19 @@
   .appsdf{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
+  }
+
+  .havola{
+    margin-bottom: 20px;
+  }
+  .logor{
+    height: 100px;
+    margin-bottom: 30px;
+  }
+  @media (max-width:450px) {
+    .logor{
+        height: 80px;
+    }
   }

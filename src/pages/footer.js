@@ -43,8 +43,8 @@ useEffect(()=>{
 <div className={s.foot}>
 <div className={s.footer_sayt}>
      <div className={s.app2}>
-     <img style={{height:'100px',marginBottom:'30px'}} src={company[0].image} alt="" />
-      <p>Quyidagi havolani bosish orqali ilovani yuklab oling :</p>
+     <img className={s.logor} src={company[0].image} alt="" />
+      <p className={s.havola}>Quyidagi havolani bosish orqali ilovani yuklab oling :</p>
     
 <div className={s.appsdf}>
 <div className={s.app}>
