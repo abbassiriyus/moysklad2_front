@@ -91,13 +91,13 @@ useEffect(()=>{
                 <div className={s.imgkar} style={{background:`url(${data.images && data.images.rows.length>0 && data.images.rows[0].miniature.downloadHref })`,backgroundSize:'cover'}} >
 
 </div>
-<p>Изображения служат только для ознакомления,
-см. техническую документацию</p>
+<p>Rasmlar faqat ma'lumot uchun,
+texnik hujjatlarga qarang</p>
                  </div>
 
                     <div className={s.textkar}>
 
-                    <h3>Описание</h3>
+                    <h3>Tavsif</h3>
                     <span>{data.description}</span><br />
        <h1>{ data.minPrice && data.minPrice.value/100} so`m
 </h1> 

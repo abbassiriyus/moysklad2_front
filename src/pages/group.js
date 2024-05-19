@@ -36,8 +36,8 @@ export default function group() {
                 <div className={s.imgkar}>
 
 </div>
-<p>Изображения служат только для ознакомления,
-см. техническую документацию</p>
+<p>Rasmlar faqat ma'lumot uchun,
+texnik hujjatlarga qarang</p>
                  </div>
 
                     <div className={s.textkar}>
@@ -80,7 +80,7 @@ export default function group() {
 
             <div className={s.grey}>
                 <div className={s.order_white}>
-                    <h3>Описание</h3>
+                    <h3>Tavsif</h3>
                     <span>Припой оловянно-свинцовый ПОС 40 спираль</span><br />
                     <span>Соответствует ГОСТ 21931-76</span>
                    <ul>
