@@ -263,7 +263,7 @@ return <button onClick={()=>{window.location=`/catalog/${item.category_id}?title
   </div>
   <button className={s.red} onClick={()=>{buyOne(item)}}>Sotib olish</button>
 </div>
-<p>от {item.count} шт. — {(item.buyPrice.value/100)*item.count} so`m.</p>
+<p> {item.count} ta — {(item.buyPrice.value/100)*item.count} so`m.</p>
 </div>
   </div>
 

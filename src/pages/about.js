@@ -32,7 +32,7 @@ export default function about() {
         document.querySelector('.nomer1').value="" 
         axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=1520593027&text=${send}`).then(res=>{
           document.querySelector("#modalgl").style="display:none"
-          alert("Информация отправлена. Мы скоро свяжемся с вами")  
+          alert("Malumot yuborildi. tez orada siz bilan bog`lanamiz")  
         })
         }).catch(err=>{
             document.querySelector("#modalgl").style="display:none"
@@ -123,7 +123,7 @@ to'lovlarni qabul qilish</p>
         <li>Yetkazib beruvchi hisobidan «RADIO CITY» omboriga yetkazib berish</li>
     </ul>
 
-    <p className={s.past}>CHIP va DIP yetkazib beruvchisi bo'lish uchun hamkorlik uchun ariza to'ldirishingiz kerak.</p>
+    <p className={s.past}>«RADIO CITY» yetkazib beruvchisi bo'lish uchun hamkorlik uchun ariza to'ldirishingiz kerak.</p>
     <button onClick={()=>{document.querySelector("#modalgl").style="display:flex"}}  >Taklif qoldirish</button><br />
 <div className={s.ifr}>
 <iframe className={s.iframe1} width="560" height="315" src="https://www.youtube.com/embed/Xy4xf3SEwvM?si=zwXgC8xJnuPeZ3l_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -133,14 +133,14 @@ to'lovlarni qabul qilish</p>
 <div id='modalgl' className={r.modal31}>
     <form style={{position:'relative'}} >
     <IoMdClose style={{display:'block',fontSize:'20px',right:'20px'}} onClick={()=>{document.querySelector("#modalgl").style="display:none"}} className={r.close_button} />
-    <label for="fname">Ф. И.О.</label>
-    <input type="text" id="fname" className='ism' name="firstname" placeholder="Ф. И.О." />
+    <label for="fname">F.I.SH.</label>
+    <input type="text" id="fname" className='ism' name="firstname" placeholder="F.I.SH." />
 
-    <label for="lname">Ваш номер телефона</label>
-    <input type="phone" id="lname" className='nomer1' name="lastname" placeholder="Ваш номер телефона" />
+    <label for="lname">Telefon raqamingizа</label>
+    <input type="phone" id="lname" className='nomer1' name="lastname" placeholder="Telefon raqamingizа" />
 
   
-    <input type="button" onClick={()=>{sendMessage()}} value="Сделать заказ" />
+    <input type="button" onClick={()=>{sendMessage()}} value="Taklifni yuborish"/>
   </form>
     </div>
         </div>
