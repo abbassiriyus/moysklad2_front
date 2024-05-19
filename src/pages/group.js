@@ -55,9 +55,9 @@ texnik hujjatlarga qarang</p>
     </div>
     <p>от <strong>3 шт</strong>. — 195 so`m</p>
 </div>
-<p style={{marginBottom:'20px'}}>Добавить Sotib olish 1 шт. на сумму 230 so`m
+<p style={{marginBottom:'20px'}}>Sotib olish 1 dona narxi 230 so`m
 </p>
-<button className={s.red1}>Добавить Sotib olish</button>
+<button className={s.red1}>Sotib olish</button>
                        
                     </div>
                 </div>
@@ -66,14 +66,14 @@ texnik hujjatlarga qarang</p>
 
 
                 <div className={s.number}>
-                    <span>Номенклатурный номер:
+                    <span>Shaxsiy raqami :
 
                         <p>9000195024</p>
                     </span>
 
                     <span>Артикул: <p>ПОС 40 прв d=1.0мм 1м спираль</p></span>
 
-                    <span>Бренд: <p>Россия
+                    <span>Brend: <p>Россия
 </p></span>
                 </div>
             </div>
@@ -124,7 +124,7 @@ texnik hujjatlarga qarang</p>
                     <span><a href="">Выберите регион</a>, чтобы увидеть способы получения товара.</span>
                 </div>
             </div>
-<h2>С этим товаром покупают</h2>
+<h2>Ushbu mahsulot bilan xarid qiling</h2>
             <div className={s.cards2}>
   <div className={s.card1}>
    <img src="https://static.chipdip.ru/lib/968/DOC000968750.jpg" alt="" />

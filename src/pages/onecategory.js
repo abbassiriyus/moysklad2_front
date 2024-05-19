@@ -39,11 +39,11 @@ export default function onecategory() {
                 </div>
 
                 <div className={s.num_price}>
-                    <span>	Номенклатурный номер:</span>
+                    <span>	Shaxsiy raqami :</span>
                     <p>9000163835</p>
                     <span>Артикул:</span>
                     <p>DMS-20LCD-2-5-C</p>
-                    <span>Бренд:</span>
+                    <span>Brend:</span>
                     <p>Murata Power Solutions</p>
 
                     <span><FaCheck />14 шт. со склада г.Москва</span>

@@ -181,7 +181,7 @@ margin-left: 5%;
     align-items: center;
     border-radius: 5px;
 
-    border: 1px solid black;
+    border: 1px solid grey;
   }
   .btn1 p{
     font-size: 13px;
@@ -191,11 +191,12 @@ margin-left: 5%;
     height: 40px;
     border: none;
     font-weight: 600;
-    color: white;
-    background-color: grey;
+    color: grey;
+    font-size: 12px;
+    background-color: rgba(114, 112, 112, 0.158);
 }
 .buttons button:hover{
-    background-color: rgb(114, 112, 112);
+    background-color: rgba(114, 112, 112, 0.103);
 }
 .buttons span{
     font-weight: 700;

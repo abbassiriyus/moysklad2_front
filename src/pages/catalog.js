@@ -249,7 +249,7 @@ export default function catalog() {
     <div className={s.smarttext}>
       <a href="">Arduino Breakout for LinkIt Smart 7688 Duo, Интерфейсная плата расширения для платформы LinkIt Smart 7688 Duo</a>
    
-    <p><span>Бренд:</span>Seeed Studio</p>
+    <p><span>Brend:</span>Seeed Studio</p>
     <p><span>Тип платы/модуля расширения:</span>переходник</p>
     <p><span>Функциональное назначение платы/модуля:</span> arduino, grove, ethernet интерфейс</p>
     <p><span>Совместимость:</span>linkit smart 7688 duo</p>

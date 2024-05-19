@@ -108,9 +108,9 @@ texnik hujjatlarga qarang</p>
         <button onClick={()=>setCount(count+1)} >+</button>
     </div>
 </div>
-<p style={{marginBottom:'20px'}}>Добавить Sotib olish {count} шт. на сумму { data.minPrice && (data.minPrice.value/100)*count}  so`m
+<p style={{marginBottom:'20px'}}>Sotib olish {count} dona narxi { data.minPrice && (data.minPrice.value/100)*count}  so`m
 </p>
-<button className={s.red1} onClick={()=>{buyOne()}}>Добавить Sotib olish</button>
+<button className={s.red1} onClick={()=>{buyOne()}}>Sotib olish</button>
                        
                     </div>
                 </div>
@@ -119,20 +119,20 @@ texnik hujjatlarga qarang</p>
 
 
                 <div className={s.number}>
-                    <span>Номенклатурный номер:
+                    <span>Shaxsiy raqami :
 
                         <p>{data.code}</p>
                     </span>
 
-                    <span>Категории: <p>
+                    <span>Turlar:<p>
                       {data.pathName}
                       </p></span>
 
-                    <span>Бренд: <p>Россия</p></span>
+                    <span>Brend: <p>Россия</p></span>
                 </div>
             </div>
             <hr  className={s.hrr}/>
-<h2>С этим товаром покупают</h2>
+<h2>Ushbu mahsulot bilan xarid qiling</h2>
             <div className={s.cards2}>
               {dr_data.map((item,key)=>{
               return   <div onClick={()=>window.location=`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`}  className={s.card1}>
