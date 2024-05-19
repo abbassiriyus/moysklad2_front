@@ -119,7 +119,7 @@ function sendMessage() {
     return   <div className={s.table2}>
    <IoMdClose className={s.close_button} onClick={()=>cutdata(key)} />
         <h5>{item.name}</h5>
-        <p>ном. номер: {item.code}</p>
+        <p>shaxsiy raqam: {item.code}</p>
         <img width={'100px'} src={item.image} alt="" />
         <h4>{item.price} so`m</h4>
         <div className={s.count_button} ><button onClick={()=>{minus(key)}} >-</button><div className={s.count}>{item.count}</div><button onClick={()=>{plus(key)}} >+</button></div>
@@ -133,16 +133,16 @@ function sendMessage() {
      
          <tbody>  <tr>
             <th>No</th>
-            <th >Наименование</th>
+            <th >Nomi</th>
             <th></th>
-            <th>Цена</th>
-            <th>Кол-во</th>
+            <th>Narx</th>
+            <th>Soni</th>
         </tr>
         {product.map((item,key)=>{
             return   <tr className={s.tr}>
             <td>{key+1}</td>
             <td><h5>{item.name}</h5>
-            <p>ном. номер: {item.code}</p></td>
+            <p>shaxsiy raqam: {item.code}</p></td>
             <td><img width={'50px'} src={item.image} alt="" /></td>
             <td>{item.price} so`m</td>
             <td style={{position:'relative'}}><IoMdClose onClick={()=>cutdata(key)} className={s.close_button} /><div className={s.count_button} ><button onClick={()=>{minus(key)}} >-</button><div className={s.count}>{item.count}</div><button onClick={()=>{plus(key)}} > +</button></div>

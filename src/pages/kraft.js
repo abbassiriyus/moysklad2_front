@@ -303,7 +303,7 @@ export default function kraft() {
 </details>
 
 <details className={s.detail1}>
-  <summary className={s.sum}>Цена,  so`m</summary>
+  <summary className={s.sum}>Narx,  so`m</summary>
   <input className={s.name1} type="text" name="" id="" placeholder="Поиск значений"/>
   <hr  style={{color:'grey'}}/>
   <div className={s.inp_sub}>
@@ -565,7 +565,7 @@ export default function kraft() {
     <div className={s.smarttext}>
       <a href="">Arduino Breakout for LinkIt Smart 7688 Duo, Интерфейсная плата расширения для платформы LinkIt Smart 7688 Duo</a>
    
-    <p><span>Бренд:</span>Seeed Studio</p>
+    <p><span>Brend:</span>Seeed Studio</p>
     <p><span>Тип платы/модуля расширения:</span>переходник</p>
     <p><span>Функциональное назначение платы/модуля:</span> arduino, grove, ethernet интерфейс</p>
     <p><span>Совместимость:</span>linkit smart 7688 duo</p>
@@ -596,7 +596,7 @@ export default function kraft() {
     <div className={s.smarttext}>
       <a href="">Arduino Breakout for LinkIt Smart 7688 Duo, Интерфейсная плата расширения для платформы LinkIt Smart 7688 Duo</a>
    
-    <p><span>Бренд:</span>Seeed Studio</p>
+    <p><span>Brend:</span>Seeed Studio</p>
     <p><span>Тип платы/модуля расширения:</span>переходник</p>
     <p><span>Функциональное назначение платы/модуля:</span> arduino, grove, ethernet интерфейс</p>
     <p><span>Совместимость:</span>linkit smart 7688 duo</p>
@@ -628,7 +628,7 @@ export default function kraft() {
     <div className={s.smarttext}>
       <a href="">Arduino Breakout for LinkIt Smart 7688 Duo, Интерфейсная плата расширения для платформы LinkIt Smart 7688 Duo</a>
    
-    <p><span>Бренд:</span>Seeed Studio</p>
+    <p><span>Brend:</span>Seeed Studio</p>
     <p><span>Тип платы/модуля расширения:</span>переходник</p>
     <p><span>Функциональное назначение платы/модуля:</span> arduino, grove, ethernet интерфейс</p>
     <p><span>Совместимость:</span>linkit smart 7688 duo</p>
