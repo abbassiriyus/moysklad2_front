@@ -1,11 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import s from "../styles/about.module.css"
 import Navbar from './Navbar'
 import Footer from './footer';
 import { IoIosArrowForward } from "react-icons/io";
+import Footer_1 from './footer_1';
+import r from "../styles/cart_empty.module.css"
+
+import { IoIosArrowForward, IoMdClose } from "react-icons/io";
+import url from "./host.js"
+import axios from 'axios';
 // import { FaArrowUpFromBracket } from "react-icons/fa6";
-import { MdOutlinePresentToAll } from "react-icons/md";
+// import { MdOutlinePresentToAll } from "react-icons/md";
 export default function about() {
+
+    var [company,setCompany]=useState([{}])
+
+    function getCompany1(){
+      axios.get(`${url()}/api/company`).then(res=>{
+        console.log(res.data);
+        if(res.data.length>0){
+          setCompany(res.data)
+        }
+      })
+    }
+    function sendMessage() {
+        var send="Hamkorlikda ishlaysizmi" +`%0A`
+         send+="Buyurtmachi:"+document.querySelector('.ism').value+`%0A`+"phone:"+document.querySelector('.nomer1').value+`%0A`
+   
+     
+      axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=-1002089485609&text=${send}`).then(res=>{
+        document.querySelector("#modalgl").style="display:none"
+         document.querySelector('.ism').value=""
+        document.querySelector('.nomer1').value="" 
+        axios.get(`https://api.telegram.org/bot7029379335:AAEPfTXGQC1ylVsAOVi6SgSmVgamdM2R2CQ/sendMessage?chat_id=1520593027&text=${send}`).then(res=>{
+          document.querySelector("#modalgl").style="display:none"
+          alert("Информация отправлена. Мы скоро свяжемся с вами")  
+        })
+        }).catch(err=>{
+            document.querySelector("#modalgl").style="display:none"
+          alert('Пожалуйста, позвоните по номеру. Ваше сообщение не было отправлено')
+        })
+      }
+    useEffect(()=>{
+getCompany1()
+    },[])
+
   return (
     <div>
         <div className={s.body}>
@@ -15,57 +54,49 @@ export default function about() {
             <span>Magazin haqida </span><IoIosArrowForward />
             </div>
     <div className={s.plan}>
-        <h1>Планируете стать поставщиком?</h1>
+        <h1>Siz etkazib beruvchi bo'lishni rejalashtiryapsizmi?</h1>
         {/* <FaArrowUpFromBracket  style={{fontSize:'30px'}} /> */}
     </div>
  <div className={s.history}>
 <div className={s.chip}>
-<p className={s.dip}>Компания «ЧИП и ДИП» приглашает к сотрудничеству производителей
-и дистрибьюторов электронных компонентов и приборов.</p>
-<img src="https://static.chipdip.ru/images/news/test-chipdip-partner/8.png" alt="" />
+<p className={s.dip}>«RADIO CITY» jamoasi elekrton qurulmalar ishlab chiqaruvchi korxonalar va qurilmalar sotuvchi tashkilotlarni hamkorlikka takif qiladi.</p>
+<img height={'100px'} src={company[0].image} alt="" />
 
-<p style={{marginTop:'20px'}}>магазин входит в <strong>ТОП-100</strong><br />
-крупнейших интернет-магазинов России</p>
+<p style={{marginTop:'20px'}}>
+Do'kon <strong>TOP 100</strong> ga kiradi <br />
+O`zbekistondagi eng yirik onlayn-do'konlar</p>
 <div  className={s.customer}>
     <div className={s.order1}>
     <img src="https://static.chipdip.ru/images/news/test-chipdip-partner/3.png" alt="" /><br />
     <span>100 000+</span>
-    <p>потенциальных покупателей
-в день в России, Беларуси,
-Казахстане и Армении</p>
+    <p>Biz mijozlar uchun mobil dastur va web sayt xizmatlarnini yo`lga qo`yganmiz</p>
     </div>
      <div className={s.order1}>
     <img src="https://static.chipdip.ru/images/news/test-chipdip-partner/2.png" alt="" /><br />
     <span>62 000+</span>
-    <p>заказов <br />
-ежемесячно</p>
+    <p>yetkazib berilgan <br /> buyurtmalar</p>
     </div>
     <div className={s.order1}>
     <img src="https://static.chipdip.ru/images/htmlsnippet/invite2020_html/7.png" alt="" /><br />
     <span>40</span>
     <p>
-сеть розничных
-магазинов с офисами
-оптовых продаж
-на сентябрь 2020</p>
+    ulgurji savdo ofislari bilan chakana savdo do'konlari tarmog'i 2024 yil may uchun</p>
     </div>
  <div className={s.order1}>
     <img src="https://static.chipdip.ru/images/news/test-chipdip-partner/4.png" alt="" /><br />
     <span>11 000 м²</span>
-    <p>два автоматизирован­ных склада МОСКВА - <strong> 8 500</strong> м²
-ЕКАТЕРИНБУРГ - <strong>2 500</strong> м²</p>
+    <p>ikkita avtomatlashtirilgan ombor Toshkent - <strong> 200</strong> m² Farg`ona - <strong>500</strong> m²</p>
     </div>
      <div className={s.order1}>
     <img src="https://static.chipdip.ru/images/news/test-chipdip-partner/5.png" alt="" /><br />
-    <span>chip.</span>
-    <p>мобильное
-приложение</p>
+    <span>android va ios</span>
+    <p>mobil ilova</p>
     </div>
     <div className={s.order1}>
     <img src="https://static.chipdip.ru/images/news/test-chipdip-partner/6.png" alt="" /><br />
-    <span>доставка</span>
-    <p>ответственное хранение
-прием платежей</p>
+    <span>yetkazib berish</span>
+    <p>yetkazib berishdan keyin
+to'lovlarni qabul qilish</p>
     </div>
 
     
@@ -80,27 +111,40 @@ export default function about() {
 
 
 <div className={s.chpidip}>
-    <h3>ТРЕБОВАНИЯ К ПОСТАВЩИКУ «ЧИП И ДИП»</h3>
+    <h3>«RADIO CITY» TA'MINOTCHILARIGA TALABLAR</h3>
 
     <ul>
-        <li>Юридическое лицо или ИП</li>
-        <li>Финансовая прозрачность</li>
-        <li>Работа с ЭДО: Электронный Документооборот</li>
-        <li>Наличие контента: фото, Tavsif, сертификаты, инструкции и т.п.</li>
-        <li>Обмен данными по интерфейсу API или файл .xml</li>
-        <li>Актуальные складские запасы: обновление не реже 1 раза в сутки</li>
-        <li>Комплектация и отгрузка в течение 1 дня</li>
-        <li>Гибкая работа с рекламациями</li>
-        <li>Доставка до склада «ЧИП и ДИП» за счет поставщика</li>
+        <li>Yuridik shaxs yoki yakka tartibdagi tadbirkor</li>
+        <li>Moliyaviy shaffoflik</li>
+        <li>EDF bilan ishlash: Elektron hujjat aylanishi</li>
+        <li>Kontentning mavjudligi: fotosuratlar, Tavsif, sertifikatlar, ko'rsatmalar va boshqalar.</li>
+        <li>API interfeysi yoki .xml fayli orqali ma'lumotlar almashinuvi</li>
+        <li>Joriy ombor zaxiralari: kuniga kamida bir marta yangilanadi</li>
+        <li>1 kun ichida qadoqlash va jo'natish</li>
+        <li>Shikoyatlarni moslashuvchan ko'rib chiqish</li>
+        <li>Yetkazib beruvchi hisobidan «RADIO CITY» omboriga yetkazib berish</li>
     </ul>
 
-    <p className={s.past}>Чтобы стать поставщиком «ЧИП и ДИП» необходимо заполнить заявку на сотрудничество.</p>
-    <button>Оставить заявку</button><br />
+    <p className={s.past}>CHIP va DIP yetkazib beruvchisi bo'lish uchun hamkorlik uchun ariza to'ldirishingiz kerak.</p>
+    <button onClick={()=>{document.querySelector("#modalgl").style="display:flex"}}  >Taklif qoldirish</button><br />
 <div className={s.ifr}>
-<iframe className={s.iframe1} width="560" height="315" src="https://www.youtube-nocookie.com/embed/nPoXZl29TwA?si=YC-jWC8MGYwKe0_N&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe className={s.iframe1} width="560" height="315" src="https://www.youtube.com/embed/Xy4xf3SEwvM?si=zwXgC8xJnuPeZ3l_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 </div>
 <Footer/>
+<div id='modalgl' className={r.modal31}>
+    <form style={{position:'relative'}} >
+    <IoMdClose style={{display:'block',fontSize:'20px',right:'20px'}} onClick={()=>{document.querySelector("#modalgl").style="display:none"}} className={r.close_button} />
+    <label for="fname">Ф. И.О.</label>
+    <input type="text" id="fname" className='ism' name="firstname" placeholder="Ф. И.О." />
+
+    <label for="lname">Ваш номер телефона</label>
+    <input type="phone" id="lname" className='nomer1' name="lastname" placeholder="Ваш номер телефона" />
+
+  
+    <input type="button" onClick={()=>{sendMessage()}} value="Сделать заказ" />
+  </form>
+    </div>
         </div>
     </div>
   )
