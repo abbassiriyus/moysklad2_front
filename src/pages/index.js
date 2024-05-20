@@ -153,7 +153,8 @@ var [header_top,setHeaderTop]=useState([])
 
 function getCategory_top() {
   axios.get(`${url()}/api/header_category`).then(res=>{
-setHeaderTop(res.data)
+
+setHeaderTop(res.data.sort((a, b) => a.id - b.id))
 console.log(res.data);
   })
 }
@@ -235,7 +236,7 @@ ISHLAB CHIQARISH VA DISTRIBUTORLAR
   <div onClick={()=>window.location=`/popular/${header_top[6].category_id}?title=${header_top[6].category_title}`} className={s.avto2}>
     <h3>{header_top[6].category_title}
 </h3>
-<img style={{height:'70%'}} src={header_top[6].image} alt="" />
+<img style={{width:'100%',left:0,padding:0,margin:0,marginTop:"20px"}} src={header_top[6].image} alt="" />
   </div>
   </div>
 </div>

@@ -152,7 +152,8 @@
 
  .famous{
   display: flex;
-  gap: 10px;width: 1400px;
+  gap: 10px;
+  width: 1400px;
 } 
 .popular1{
   display: flex;
@@ -313,3 +314,11 @@
 }
 
 
+
+@media(max-width:991px){
+  .famous{
+    display: flex;
+    gap: 10px;
+    width: 900px;
+  } 
+}
