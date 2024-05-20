@@ -204,39 +204,39 @@ ISHLAB CHIQARISH VA DISTRIBUTORLAR
   <div className={s.famous}>
   <div className={s.popular1}>
     <div onClick={()=>window.location=`/popular/${header_top[0].category_id}?title=${header_top[0].category_title}`} className={s.img1}>
-      <center> <img className={s.birr} style={{height:'70%'}} src={header_top[0].image} alt="" /></center>
+      <center> <img className={s.birr}   src={header_top[0].image} alt="" /></center>
       <h3>{header_top[0].category_title}</h3>
     </div>
     <div  className={s.img_2}>
-      <div   onClick={()=>window.location=`/popular/${header_top[1].category_id}?title=${header_top[1].category_title}`} className={s.rasm1} style={{display:'grid',position:'relative'}}>
+      <div   onClick={()=>window.location=`/popular/${header_top[1].category_id}?title=${header_top[1].category_title}`} className={s.rasm1}>
       <h3>{header_top[1].category_title}</h3><br />
-        <img style={{height:'70%',position:'absolute',bottom:'0px'}} src={header_top[1].image} alt="" />
+        <img   src={header_top[1].image} alt="" />
       </div>
-      <div style={{position:'relative'}} onClick={()=>window.location=`/popular/${header_top[2].category_id}?title=${header_top[2].category_title}`} className={s.rasm2}>
+      <div onClick={()=>window.location=`/popular/${header_top[2].category_id}?title=${header_top[2].category_title}`} className={s.rasm2}>
       <h3>{header_top[2].category_title}</h3>
-        <img style={{height:'60%',position:'absolute',bottom:'0px'}} src={header_top[2].image} alt="" />
+        <img  src={header_top[2].image} alt="" />
       </div>
     </div>
   </div>
 <div onClick={()=>window.location=`/popular/${header_top[3].category_id}?title=${header_top[3].category_title}`} className={s.popular2}>
   <h3>{header_top[3].category_title}</h3>
-  <img style={{width:'100%'}} src={header_top[3].image} alt="" />
+  <img  src={header_top[3].image} alt="" />
 </div>
 <div className={s.popular3}>
   <div onClick={()=>window.location=`/popular/${header_top[4].category_id}?title=${header_top[4].category_title}`} className={s.avto}>
 <h3>{header_top[4].category_title}
 </h3>
-<img style={{width:'100%'}} src={header_top[4].image} alt="" />
+<img   src={header_top[4].image} alt="" />
   </div>
   <div className={s.ato2}>
   <div onClick={()=>window.location=`/popular/${header_top[5].category_id}?title=${header_top[5].category_title}`} className={s.avto1}>
     <h3>{header_top[5].category_title}</h3>
-    <img style={{width:'100%'}} src={header_top[5].image} alt="" />
+    <img  src={header_top[5].image} alt="" />
   </div>
   <div onClick={()=>window.location=`/popular/${header_top[6].category_id}?title=${header_top[6].category_title}`} className={s.avto2}>
     <h3>{header_top[6].category_title}
 </h3>
-<img style={{width:'100%',left:0,padding:0,margin:0,marginTop:"20px"}} src={header_top[6].image} alt="" />
+<img src={header_top[6].image} alt="" />
   </div>
   </div>
 </div>
