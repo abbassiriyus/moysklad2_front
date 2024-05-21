@@ -198,7 +198,7 @@ ISHLAB CHIQARISH VA DISTRIBUTORLAR
      </div>
 
 <div style={{overflowX:"auto",overflowY:'visble',paddingTop:'20px',paddingBottom:'10px',overflowY: 'hidden',scrollbarVolor: 'white white  ',
-  scrollbarWidth: 'thin'
+  scrollbarWidth: 'thin',paddingLeft:'10px',paddingRight:'10px'
 }}>
   {header_top.length>6?(<>
   <div className={s.famous}>

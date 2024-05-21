@@ -9,10 +9,17 @@
 padding-top: 30px;
 padding-bottom: 30px;   
 padding-left: 20px;
-align-items: stretch;
+align-items: stretch ;
 padding-right: 20px;
 margin-bottom: 20px;
     
+}
+.top_slider .card{
+display: flex;
+justify-content: space-around;
+flex-direction: column;
+height: 300px;
+/* margin-right: 5px; */
 }
 .top_slider .main_1{
     width: 75%;
@@ -68,7 +75,7 @@ margin-bottom: 20px;
 }
 .top_slider .header_carousel .card h2{
     text-align: left;
-    height: 60px;
+    /* height: 60px; */
     /* background-color: red; */
 }
 .top_slider .main_2 .section2{
@@ -83,6 +90,7 @@ display: flex;
 justify-content: space-around;
 flex-direction: column;
 }
+
 
 .top_slider .main_2 .section2 button{
 font-family: "Open Sans",Arial,"Helvetica CY",Helvetica,Roboto,"Nimbus Sans L",sans-serif;
@@ -143,4 +151,53 @@ height: 200px;
     margin-bottom: 30px;
     margin-top: 10px;
 }
+}
+@media(max-width:500px){
+    .wer12{
+        display: none;
+    }
+    .top_slider .main_2 .section2 button{
+       padding-top: 7px;
+       padding-bottom: 7px; 
+    }
+    .top_slider .button_roll{
+        margin-bottom: 15px;
+        margin-top: 10px;
+    }
+    .top_slider{
+        padding-top: 10px;
+    }
+    .top_slider .header_carousel .card p{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: auto;
+        margin-top: 5px ;
+        margin-bottom: 5px;
+        font-size: 10px;
+    }
+    .top_slider .header_carousel .card h2{
+        text-align: left;
+        font-size: 12px;
+        /* height: 60px; */
+        /* background-color: red; */
+    }
+    .top_slider .card{
+        height: 190px;
+        margin-right: 3px;
+        }
+        .top_slider .header_carousel .card_img{
+            height: 100px;
+        }
+        .top_slider .header_carousel img{
+            width: 80px;
+        }
+        .top_slider .main_1 h1{
+            margin-bottom: 10px;
+            font-size: 24px;
+            }
+            .top_slider .main_2 .section2{
+                height: auto;
+                border: none;
+                padding: 0px;
+                }
 }

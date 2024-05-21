@@ -52,6 +52,9 @@
   height: 29px;
 }
 @media (max-width:660px) {
+  .pair_big{
+    padding-top: 10px;
+  }
   .line{
     display: none;
   }
@@ -99,36 +102,16 @@
     text-align: center;
   }
 }
-@media (max-width:480px) {
-  .line{
-    display: none;
-  }
-  .pair h1{
-    font-size: 22px;
-  }
-  .added h4{
-    font-size: 13px;
-  }
-  .button button{
-    padding: 1px 20px;
-    background-color: #0f415a;
-    border-radius: 20px;
-    font-size: 16px;
-    transition: 1s;
-    color: #fff;
-    border: solid 1px #fff;
-  }
-  .button {
-    padding: 5px 8px 5px 5px;
-    text-align: center;
-  }
-}
+
 .added {
   padding-left: 20px;
   font-size: 16px;
 }
 .button {
   padding: 15px 48px 15px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 .button button{
@@ -254,6 +237,36 @@ position: relative;
 }
 .popular2:hover h3{
   font-weight: 700;
+}
+@media (max-width:480px) {
+  .line{
+    display: none;
+  }
+  .pair h1{
+    font-size: 22px;
+  }
+  .added h4{
+    font-size: 13px;
+  }
+  .added{
+    padding: 0px;
+  }
+  .button button{
+    padding: 1px 20px;
+    background-color: #0f415a;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: 1s;
+    color: #fff;
+    border: solid 1px #fff;
+  }
+  .button {
+    /* padding: 5px 8px 5px 5px; */
+padding: 0px;
+padding-top: 10px;
+padding-bottom: 10px;
+    text-align: center;
+  }
 }
 .popular2 img{
   transform: scale(1.1);
@@ -415,7 +428,8 @@ position: relative;
   .birr{
     margin-top: -20px;
     height:70%;
-    width: 70%;
+    width: 100%;
+
   }
   
 .popular2 img{

@@ -39,7 +39,7 @@ ref={swiperRef}
       breakpoints={{
         // Breakpoints
         220: {
-          slidesPerView: 1,
+          slidesPerView: 2,
         },   400: {
           slidesPerView: 2,
         },
@@ -77,7 +77,7 @@ ref={swiperRef}
       <div className={s.button_roll}>  <FaArrowLeftLong onClick={handlePrevSlide}/>
     <FaArrowRightLong onClick={handleNextSlide} /> </div>
     <div className={s.section2}>
-       <div style={{width:'98%',margin:'auto'}}>
+       <div className={s.wer12} style={{width:'98%',margin:'auto'}}>
        <h2>{data && data.h1}</h2>
 <p>{data && data.p}</p>
        </div>
