@@ -1,5 +1,5 @@
 .body{
-    width: 100%;
+    width: 95%;
     max-width: 1400px;
     padding-top: 6px;
     margin: auto;
@@ -11,6 +11,7 @@
     gap: 10px;
     font-size: 13px;
     flex-wrap: wrap;
+    margin-top: 20px;
   }
   .aksessuar{
     display: grid;
