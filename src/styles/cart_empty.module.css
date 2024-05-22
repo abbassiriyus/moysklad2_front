@@ -171,7 +171,8 @@ color: #000;
   display: none ;
 }
 .tr .close_button{
-  transform: transition(1s);
+  transform: transition(1s);position: absolute;
+  top: 30px;
 }
 .tr:hover .close_button{
 display: block;
@@ -264,4 +265,7 @@ border-radius: 10px;
   align-items: center;
   display: none;
   left: 0px;
+}
+.name12{
+  max-width: 300px;
 }

@@ -141,11 +141,11 @@ function sendMessage() {
         {product.map((item,key)=>{
             return   <tr className={s.tr}>
             <td>{key+1}</td>
-            <td><h5>{item.name}</h5>
+            <td className={s.name12}><h5>{item.name}</h5>
             <p>shaxsiy raqam: {item.code}</p></td>
             <td><img width={'50px'} src={item.image} alt="" /></td>
             <td>{item.price} so`m</td>
-            <td style={{position:'relative'}}><IoMdClose onClick={()=>cutdata(key)} className={s.close_button} /><div className={s.count_button} ><button onClick={()=>{minus(key)}} >-</button><div className={s.count}>{item.count}</div><button onClick={()=>{plus(key)}} > +</button></div>
+            <td style={{position:'relative'}}><IoMdClose onClick={()=>cutdata(key)} className={s.close_button} /><div className={s.count_button} ><button onClick={()=>{minus(key)}} >-</button><div className={s.count}>{item.count}</div><button onClick={()=>{plus(key)}} >+</button></div>
             <p style={{fontSize:'13px',color:'grey'}}> {item.count}  ta. — {item.price*item.count} so`m</p> 
             </td>
         </tr>

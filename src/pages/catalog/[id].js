@@ -219,9 +219,9 @@ return <button onClick={()=>{window.location=`/catalog/${item.category_id}?title
           <img src={item.images.rows[0].miniature.downloadHref} alt="" />             
             </div>
             <div className={s.body_kraft}>
-                <h5>{item.pathName}</h5>
+                <h5>{item.pathName.slice(0,15)}{item.name.length>16?('...'):("")}</h5>
                 <div style={{height:"60px"}}>
-                <a href={`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`} >{item.name}</a></div>
+                <a href={`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`} > </a></div>
                 <div className={s.check_pl}>
                 </div>
                 <h3>{item.buyPrice.value/100} so`m</h3>
@@ -245,7 +245,7 @@ return <button onClick={()=>{window.location=`/catalog/${item.category_id}?title
    return <div className={s.pad}>
 <div className={s.smart}>
     <div className={s.smarttext}>
-      <a href="">{item.name}</a>
+      <a href="">{item.name.slice(0,9)}{item.name.length>30?('...'):("")}</a>
    
     <p><span>Turi:</span>{item.pathName}</p>
     <p><span>Shaxsiy raqami:</span>{item.code}</p>

@@ -305,10 +305,13 @@
   height: 150px;
   margin-top: 15px;
   position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: end;
   /* background-color: red; */
 }
 .img_kraft img{
-  height: 100%;
+  /* height: 100px; */
 }
 .dekraft{
   box-shadow: 1px 1px grey;
@@ -476,7 +479,9 @@
 }
 .smarttext{
   width: 100%;
-  /* margin-bottom: 20px; */
+  margin-bottom: 20px;
+  /* background-color: rebeccapurple; */
+  padding-bottom: 20px;
 }
 .smartimg{
   background: url("https://static.chipdip.ru/lib/839/DOC003839162.jpg");
@@ -484,6 +489,9 @@
   height: 100px;
   position: relative;
   background-size: 100% 100%;
+}
+.smart img{
+  padding-bottom: 20px;
 }
 .smartimg:hover{
   .fast{
@@ -554,10 +562,10 @@
 .price span{
   font-size: 15px;
 }
-.smarttext{
+/* .smarttext{
   width: 90%;
   margin: auto;
-}
+} */
 .smarttext a{
   text-decoration: none;
 }

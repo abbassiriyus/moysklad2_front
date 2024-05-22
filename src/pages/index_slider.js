@@ -61,8 +61,8 @@ ref={swiperRef}
             <div className={s.card_img}>
                 <img src={item.images.rows[0].miniature.downloadHref} alt="" />
             </div>
-            <h5>{item.pathName}</h5>
-            <p>{item.name}</p>
+            <h5>{item.pathName.slice(0,20)}</h5>
+            <p>{item.name.slice(0,40)}</p>
             <h2>{item.buyPrice.value/100} so`m</h2>
 
         </div>
