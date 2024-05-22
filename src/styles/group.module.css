@@ -407,7 +407,7 @@ margin-left: 5%;
     display: grid;
     justify-content: space-between;
     margin-top: 30px;
-    grid-template-columns:1fr;
+    grid-template-columns:1fr 1fr;
   }
   .card1{
     margin-top: 30px;
@@ -422,19 +422,37 @@ margin-left: 5%;
     display: grid;
     justify-content: space-between;
     margin-top: 30px;
-    grid-template-columns:1fr;
+    grid-template-columns:1fr ;
   }
   .cards2{
     display: grid;
     justify-content: space-between;
-    margin-top: 30px;
-    grid-template-columns:1fr;
+    margin-top: 10px;
+    grid-template-columns:1fr 1fr;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .hrr h2{
+    font-size: 17px !important;
   }
   .card1{
-    display: grid; 
-     margin: auto;
-    grid-template-columns: 1fr;
-    padding-top: 20px; 
+
+    padding-top: 10px; 
+    width: 150px !important;
+  }
+  .card1 img{
+    height: 70px;
+    width: auto;
+  }
+  .card1_body a{
+    font-size: 10px;
+  }
+  .card1_body p{
+    font-size: 13px;
+  }
+  .card1 h5{
+    font-size: 12px;
   }
   .texnika{
     background:url('../images/pff.png') 100% 100%;
