@@ -31,6 +31,7 @@ height: 300px;
 }
 .top_slider .header_carousel img{
     /* width: 120px; */
+    max-width: 90%;
     height: 120px;
 }
 .top_slider .header_carousel .card_img{
@@ -191,7 +192,9 @@ height: 200px;
             height: 100px;
         }
         .top_slider .header_carousel img{
-            /* width: 80px; */
+            width: 80px;
+            height: auto;
+            max-height: 90%;
             background-color: red;
         }
         .top_slider .main_1 h1{
