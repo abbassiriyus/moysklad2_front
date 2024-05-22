@@ -205,12 +205,15 @@ position: relative;
   width:50%;
 }
 .birr{
-  margin-top: -20px;
+  /* margin-top: -20px; */
+  margin-top: 20px;
   height:70%;
   width: 70%;
+  transform: scale(1.5);
 }
 .img1 h3{
   margin-left: 10px;
+  margin-top: 40px;
   color: white;
   font-weight: 400;
   transition: 1s;
@@ -226,7 +229,8 @@ position: relative;
   background-color: rgba(129, 179, 197, .533);
   width: 35%;
   height: 310px;
-  display: flex;
+  display: block;
+  position: relative;
 }
 .popular2 h3{
   margin-left: 10px;
@@ -269,9 +273,16 @@ padding-bottom: 10px;
   }
 }
 .popular2 img{
-  transform: scale(1.1);
-  margin-left: 50px;
-  width: 100%;
+  transform: scale(1.3);
+  /* margin-left: 50px; */
+  /* width: 50% ; */
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+  margin-top: 30px;
+  /* margin: auto; */
+  height: 200px;
+  /* background-color: red; */
 }
 .popular3{
   width: 30%;
@@ -377,16 +388,16 @@ padding-bottom: 10px;
     position: relative;
   }
   .avto1 h3{
-    font-size: 12px;
+    font-size: 15px;
   }
-  .avto{
+  /* .avto{
     background-color: rgba(96, 209, 237, .533);
     width: 100%;
     height: 120px;
     margin-bottom: 10px;
     display: flex;
     overflow: hidden;
-  }
+  } */
   .popular3{
     width: 30%;
   }
@@ -425,17 +436,17 @@ padding-bottom: 10px;
     /* background-color: black; */
     height: 250px;
   }
-  .birr{
+  /* .birr{
     margin-top: -20px;
     height:70%;
     width: 100%;
 
-  }
+  } */
   
 .popular2 img{
-  transform: scale(1);
+  transform: scale(0.9);
   /* margin-left: 50px; */
-  width: 70%;
+  /* width: 70%; */
 }
 
 .popular2{
@@ -443,5 +454,37 @@ padding-bottom: 10px;
   width: 35%;
   height: 250px;
   display: block;
+}
+.avto h3{
+  font-size: 15px;
+}
+.avto2 h3{
+  font-size: 15px;
+}
+
+.avto{
+  background-color: rgba(96, 209, 237, .533);
+  width: 100%;
+  height: 120px;
+  margin-bottom: 10px;
+  display: flex;
+  overflow: hidden;
+}
+.rasm1 h3{
+  margin-left: 10px;
+  margin-top: 0px;
+  font-weight: 400;
+  transition: 1s;
+  font-size: 15px;
+}
+.popular2 h3{
+ font-size: 15px;
+}
+.rasm2 h3{
+  font-size: 15px;
+  margin-top: 10px;
+}
+.img1 h3{
+  font-size: 15px;
 }
 } 

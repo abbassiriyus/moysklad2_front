@@ -30,7 +30,8 @@ height: 300px;
     text-align: center;
 }
 .top_slider .header_carousel img{
-    width: 120px;
+    /* width: 120px; */
+    height: 120px;
 }
 .top_slider .header_carousel .card_img{
     height: 160px;
@@ -190,7 +191,8 @@ height: 200px;
             height: 100px;
         }
         .top_slider .header_carousel img{
-            width: 80px;
+            /* width: 80px; */
+            background-color: red;
         }
         .top_slider .main_1 h1{
             margin-bottom: 10px;

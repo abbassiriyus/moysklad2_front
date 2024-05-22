@@ -88,7 +88,9 @@ useEffect(()=>{
             <div className={s.dobkar}>
                 <div className={s.img_text}>
                  <div className={s.doc_img}>
-                <div className={s.imgkar} style={{background:`url(${data.images && data.images.rows.length>0 && data.images.rows[0].miniature.downloadHref })`,backgroundSize:'cover'}} >
+                <div className={s.imgkar}  >
+
+                  <img src={data.images && data.images.rows.length>0 && data.images.rows[0].miniature.downloadHref } alt="" />
 
 </div>
 <p>Rasmlar faqat ma'lumot uchun,
@@ -139,8 +141,8 @@ texnik hujjatlarga qarang</p>
    <img src={item.images.rows[0].miniature.downloadHref} alt="" />
 
     <div className={s.card1_body}>
-      <h5>{item.pathName}</h5>
-      <a href={`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`}><span>{item.name}</span></a>
+      <h5>{item.pathName.slice(0,20)}{item.pathName.length>20?"...":""}</h5>
+      <a href={`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`}><span>{item.name.slice(0,40)}{item.name.length>40?"...":""}</span></a>
       <p>{item.buyPrice.value/100} so`m</p>
     </div>
   </div>

@@ -361,10 +361,12 @@
   align-items: center;
   width: 30%;
   border-radius: 7px;
-  border: 1px solid rgba(128, 128, 128, 0.341);
+  border: 1px solid grey;
+  overflow: hidden;
  }
  .pm button{
   width: 20px;
+  border: none;
   height: 35px;
  }
 .redbtn {
@@ -518,14 +520,16 @@
   color: green;
 }
 .btn2{
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.952);
   display: flex;
   gap: 10px;
   align-items: center;
   /* width: 60%; */
   border-radius: 4px;
+  overflow: hidden;
   justify-content: space-between;
 }
+
 .butn{
   display: flex;
   gap: 5px;
@@ -534,6 +538,12 @@
 .btn2 button{
   width: 20px;
   height: 30px;
+  overflow: hidden;
+  border: none;
+
+}
+.btn2 button:active{
+  background-color: rgba(128, 128, 128, 0.527);
 }
 .red{
   width: 30%;

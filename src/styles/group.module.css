@@ -1,9 +1,9 @@
 .texnika{
-    background:url('https://static.chipdip.ru/images/bnr/productbnrgroup/356/3899_spare-parts-for-office-equipment.jpg')no-repeat;
+    background:url('../images/pff.png') 100% 100%;
     width: 100%;
     background-position: center;
     min-width: 300px;
-    height: 100px;
+    height: 150px;
     background-size: cover;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -58,17 +58,10 @@
     margin-top: 30px;
     margin-bottom: 40px;
   }
-  .imgkar{
-    background: url("https://static.chipdip.ru/lib/968/DOC000968749.jpg") no-repeat;
-    width: 80%;
-    /* background-position: center; */
-    background-size: cover !important;
-    background-position: center !important;
-    height: 250px;
-    min-width: 280px;
-    margin-bottom: 20px;
-    text-align: center;
-    background-size: 100% 100%;
+  .imgkar img{
+  height: 150px;
+  max-width: 100%;
+  margin-bottom: 30px;    
   }
   .doc_img p{
     text-align: center;
@@ -96,17 +89,7 @@ font-size: 13px;
         grid-template-columns: 1fr;
     
       }
-      .imgkar{
-        background: url("https://static.chipdip.ru/lib/968/DOC000968749.jpg") no-repeat;
-        width: 50%;
-        /* background-position: center; */
-        height: 280px;
-        min-width: 280px;
-        margin-bottom: 20px;
-        text-align: center;
-        background-size: 100% 100%;
-        margin: auto;
-      }
+
       /* .doc_img p{
         text-align: center;
         color: grey;
@@ -123,17 +106,7 @@ font-size: 13px;
         width: 90%;
         margin-bottom: 40px;
       }
-      .imgkar{
-        background: url("https://static.chipdip.ru/lib/968/DOC000968749.jpg") no-repeat;
-        width: 40%;
-        /* background-position: center; */
-        height: 250px;
-        margin: auto;
-        min-width: 250px;
-        margin-bottom: 20px;
-        text-align: center;
-        background-size: 100% 100%;
-      }
+ 
       .doc_img p{
         text-align: center;
         color: grey;
@@ -165,17 +138,7 @@ margin-left: 5%;
     
   }
   @media (max-width:430px) {
-    .imgkar{
-        background: url("https://static.chipdip.ru/lib/968/DOC000968749.jpg") no-repeat;
-        width: 70%;
-        /* background-position: center; */
-        height: 250px;
-        margin: auto;
-        min-width: 280px;
-        margin-bottom: 20px;
-        text-align: center;
-        background-size: 100% 100%;
-      }
+    
   }
   .buttons{
     gap: 20px;
@@ -352,7 +315,7 @@ margin-left: 5%;
   }
   .card1 img{
     /* width: 150px; */
-    height: 150px;
+    height: 100px;
     margin: auto;
     
   }
@@ -412,7 +375,7 @@ margin-left: 5%;
     margin-top: 30px;
   }
   .texnika{
-    background:url('https://static.chipdip.ru/images/bnr/productbnrgroup/356/3899_spare-parts-for-office-equipment.jpg')no-repeat;
+    background:url('..//images/pff.png') 100% 100%;
     width: 100%;
     min-width: 300px;
     height: 80px;
@@ -424,7 +387,7 @@ margin-left: 5%;
 }
 @media (max-width:585px) {
   .texnika{
-    background:url('https://static.chipdip.ru/images/bnr/productbnrgroup/356/3899_spare-parts-for-office-equipment.jpg')no-repeat;
+    background:url('../images/pff.png') 100% 100%;
     width: 100%;
     min-width: 300px;
     height: 60px;
@@ -474,7 +437,7 @@ margin-left: 5%;
     padding-top: 20px; 
   }
   .texnika{
-    background:url('https://static.chipdip.ru/images/bnr/productbnrgroup/356/3899_spare-parts-for-office-equipment.jpg')no-repeat;
+    background:url('../images/pff.png') 100% 100%;
     width: 100%;
     min-width: 300px;
     height:50px;

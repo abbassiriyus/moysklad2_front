@@ -80,7 +80,7 @@ axios.get(`${url()}/api/category/product/${res.data[0].category_id}?limit=${id}`
   {drData.map((item,key)=>{
     if(key<10){
         return    <div onClick={()=>window.location=`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`}  className={s.card1}>
-   <img style={{height:'150px',width:'auto',margin:"auto"}} src={item.images.rows.length>0 && item.images.rows[0].miniature.downloadHref} alt="" />
+   <img  src={item.images.rows.length>0 && item.images.rows[0].miniature.downloadHref} alt="" />
 
     <div className={s.card1_body}>
       <h5>{item.pathName}</h5>
