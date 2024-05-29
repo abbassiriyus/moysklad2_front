@@ -216,7 +216,7 @@ export default function Navbar() {
 <HiOutlineClipboardDocumentList style={{fontSize:'30px'}} /><br />
 <span>BOM</span>
 </div> */}
-          <div onClick={() => window.location = "/cart_empty"} className={s.order}>
+          <div style={{cursor:'pointer'}} onClick={() => window.location = "/cart_empty"} className={s.order}>
             <IoCartOutline className={s.navbar_icon} /><sup>{count}</sup><br />
 
             <span>Karzinka</span>
@@ -238,7 +238,7 @@ export default function Navbar() {
              {searchCategory.length>0 && <><h5>Maxsulot turlari</h5>
               <ul>
                 {  searchCategory.map(item => {
-                  return <li onClick={() => { window.location = `/catalog/${item.category_id}?title=${item.category_title}` }} >{item.category_title}</li>
+                  return <li style={{cursor:'pointer'}}  onClick={() => { window.location = `/catalog/${item.category_id}?title=${item.category_title}` }} >{item.category_title}</li>
                 })}
               </ul></> } 
             { searchProduct.length>0 && <>

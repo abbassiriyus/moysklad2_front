@@ -28,6 +28,19 @@ useEffect(()=>{
   getData()
 },[])
 ;
+const handlePageChange = (pageNumber) => {
+  for (let i = 0; i < document.querySelectorAll("#dd").length; i++) {
+ if(pageNumber-1===i){
+document.querySelectorAll('#dd')[i].style="border-bottom:2px solid"
+ }else{
+  document.querySelectorAll('#dd')[i].style="border-bottom:none"
+
+ }
+  }
+  if (swiperRef.current) {
+    swiperRef.current.swiper.slideTo(pageNumber - 1);
+  }
+};
     const swiperRef = useRef(null);
 
     const handleNextSlide = () => {
@@ -61,14 +74,16 @@ ref={swiperRef}
      })} 
       {/* Add more slides as needed */}
     </Swiper>
-   <div className={s.arrow_lr}>
- 
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
- <div className={s.left_rig}> <FaArrowLeftLong  className={s.arrow1} onClick={handlePrevSlide}/>
+   <div className={s.arrow_lr}><div className={s.left_rig}> <FaArrowLeftLong  className={s.arrow1} onClick={handlePrevSlide}/>
     <FaArrowRightLong className={s.arrow1}  onClick={handleNextSlide} /></div>
+   
+    <div></div>
+    <div></div>
+ {carousel.map((item,key)=>{
+    return  <div id='dd' style={key==0?{borderBottom:'2px solid'}:{}} onClick={()=>handlePageChange(key+1
+    )}> {item.title}</div>
+     })} 
+    
    </div>
     </div>
   )

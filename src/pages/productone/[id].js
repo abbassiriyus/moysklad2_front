@@ -147,17 +147,7 @@ texnik hujjatlarga qarang</p>
     </div>
   </div>
               })}
-       {dr_data.map((item,key)=>{
-              return   <div onClick={()=>window.location=`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`}  className={s.card1}>
-   <img src={item.images.rows[0].miniature.downloadHref} alt="" />
-
-    <div className={s.card1_body}>
-      <h5>{item.pathName.slice(0,20)}{item.pathName.length>20?"...":""}</h5>
-      <a href={`/productone/${item.id}?dr=${item.productFolder.meta.href.slice(-36)}`}><span>{item.name.slice(0,40)}{item.name.length>40?"...":""}</span></a>
-      <p>{item.buyPrice.value/100} so`m</p>
-    </div>
-  </div>
-              })}
+    
 
 
 </div>
